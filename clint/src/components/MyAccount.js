@@ -1,6 +1,7 @@
 'use client';
 import React, { useState } from 'react';
 import { FaEdit, FaUser, FaMapMarkerAlt, FaPhone, FaCalendarAlt } from 'react-icons/fa';
+import { MdOutlineAccountCircle } from "react-icons/md";
 
 const MyAccount = ({ userType = "normal" }) => {
     const [userInfo, setUserInfo] = useState({

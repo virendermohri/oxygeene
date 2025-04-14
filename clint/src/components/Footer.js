@@ -3,10 +3,12 @@ import Link from 'next/link';
 import { FaInstagram, FaFacebookF, FaTwitter, FaLinkedin } from 'react-icons/fa';
 export default function Footer() {
   return (
-    <footer className="bg-gray-100 text-gray-700 px-6 py-10 mt-10">
-      <div className="max-w-7xl mx-auto grid md:grid-cols-4 gap-8 text-sm">
+    <footer className=" text-gray-700  py-10 mt-10">
+      <h1 className='text-center  md:text-xl font-bold  md:mb-20 font-mono mb-10 justify-center flex gap-1.5'>The scroll ends, but <p className='text-green-700 '>Oxygeene </p> doesn’t</h1>
+      <div className="max-w-7xl px-6 mx-auto grid md:grid-cols-4 gap-8 text-sm">
         {/* Logo & Tagline */}
         <div>
+          
           <h2 className="text-xl font-bold text-green-700">Oxygeene</h2>
           <p className="mt-2 text-gray-600">Caring begins here. Homecare you can trust.</p>
         </div>

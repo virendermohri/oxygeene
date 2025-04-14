@@ -42,10 +42,12 @@ export default function Navbar() {
           </div>
           <div>
             {CSR && user ?
+                <Link href={"/login"}> <IoNotificationsCircle className="text-4xl cursor-pointer" /></Link>
+              :
               <Link href={"/login"}> <button className="bg-black text-white md:px-7 md:py-3 px-5 py-3 hover:bg-[#212121] font-semibold md:text-lg transition duration-300 cursor-pointer ease-in-out">
                 Login
-              </button></Link> :
-              <Link href={"/login"}> <IoNotificationsCircle className="text-4xl cursor-pointer" /></Link>}
+              </button></Link> 
+              }
           </div>
         </div>
       </div>

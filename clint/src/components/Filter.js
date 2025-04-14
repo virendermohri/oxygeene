@@ -229,22 +229,21 @@ const Filter = () => {
                                     </label>
                                     <select
                                         id="subject"
-                                        value={subject}
+                                        value={questionType}
                                         onChange={((e) => {
                                             setSubject(e.target.value)
                                         })}
                                         className="block cursor-pointer w-[60%] px-4 py-2 text-gray-700 bg-white rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-black"
-                                        disabled={!examType} // Disable if no exam type is selected
+                                      // Disable if no exam type is selected
                                     >
                                         <option value="" disabled>
                                            Select Language
                                         </option>
-                                        {examType &&
-                                            subjectOptions[examType]?.map((sub, index) => (
-                                                <option key={index} value={sub}>
-                                                    {sub}
-                                                </option>
-                                            ))}
+                                        {Language.map((option, index) => (
+                                            <option key={index} value={option}>
+                                                {option}
+                                            </option>
+                                        ))}
                                     </select>
                                 </div>
                                 <div className="flex items-center justify-between  w-full">
@@ -262,7 +261,7 @@ const Filter = () => {
                                         <option value="" disabled>
                                             Select Budget
                                         </option>
-                                        {Language.map((option, index) => (
+                                        {Budget.map((option, index) => (
                                             <option key={index} value={option}>
                                                 {option}
                                             </option>

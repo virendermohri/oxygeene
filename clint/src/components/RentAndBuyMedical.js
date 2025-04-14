@@ -48,23 +48,21 @@ const products = [
 const RentAndBuyMedical = () => {
   const [filters, setFilters] = useState({
     category: "",
-    priceRange: [0, 10000],
+    priceRange: [100, 10000],
     type: "",
   });
+  const [searchQuery, setSearchQuery] = useState("");
+  const [openSuggestions, setOpenSuggestions] = useState(false);
 
   const handleCategoryChange = (e) => {
+    setFilters({priceRange: [100, 10000]});
     setFilters((prev) => ({ ...prev, category: e.target.value }));
   };
 
-  const handlePriceRangeChange = (e) => {
-    const value = e.target.value.split(",");
-    setFilters((prev) => ({
-      ...prev,
-      priceRange: [parseInt(value[0]), parseInt(value[1])],
-    }));
-  };
-
+  
   const handleTypeChange = (e) => {
+    setFilters({priceRange: [100, 10000]});
+
     setFilters((prev) => ({ ...prev, type: e.target.value }));
   };
 
@@ -73,27 +71,57 @@ const RentAndBuyMedical = () => {
       product.price >= filters.priceRange[0] && product.price <= filters.priceRange[1];
     const matchesCategory = filters.category ? product.category === filters.category : true;
     const matchesType = filters.type ? product.type === filters.type : true;
+    const matchesSearch = product.name.toLowerCase().includes(searchQuery.toLowerCase());
 
-    return priceInRange && matchesCategory && matchesType;
+    return priceInRange && matchesCategory && matchesType && matchesSearch;
   });
 
   return (
     <div className="px-4 py-8">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-3xl font-bold text-center text-green-700 mb-8">Rent & Buy Medical Equipment</h2>
+        <h2 className="text-3xl font-bold text-center text-green-700 mb-8">
+          Rent & Buy Medical Equipment
+        </h2>
 
         {/* Filter Section */}
-        <div className="flex flex-wrap justify-between mb-6 gap-4">
-          <div className="flex items-center space-x-4 mb-4 sm:mb-0 w-full sm:w-auto">
-            <button
-              className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 flex items-center w-full sm:w-auto"
-              onClick={() => console.log("Filter Menu Opened")}
-            >
-              <FaFilter className="mr-2" /> Filters
-            </button>
+        <div className="flex  flex-col  mb-6 gap-4">
+          <div className="flex  gap-3">
+
+            <div className="relative w-[80%] ">
+              <input
+                type="text"
+                value={searchQuery}
+                onChange={((e) => {
+                  setSearchQuery(e.target.value);
+                  setOpenSuggestions(true);
+                })}
+                placeholder="Search products..."
+                className="px-4 py-2 shadow border border-1 rounded w-full sm:w-64"
+              />
+              {searchQuery && openSuggestions && (
+                <div className="absolute bg-white border rounded w-full z-10 max-h-40 overflow-y-auto">
+                  {products
+                    .filter((product) =>
+                      product.name.toLowerCase().includes(searchQuery.toLowerCase())
+                    )
+                    .map((suggestion) => (
+                      <div
+                        key={suggestion.id}
+                        className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
+                        onClick={(() => {
+                          setSearchQuery(suggestion.name);
+                          setOpenSuggestions(false);
+                        })}
+                      >
+                        {suggestion.name}
+                      </div>
+                    ))}
+                </div>
+              )}
+            </div>
             <select
               onChange={handleCategoryChange}
-              className="px-4 py-2 border rounded w-full sm:w-auto"
+              className="px-4 py-2 border rounded  w-[40%]"
               value={filters.category}
             >
               <option value="">All Categories</option>
@@ -101,59 +129,75 @@ const RentAndBuyMedical = () => {
               <option value="Medical Kit">Medical Kit</option>
               <option value="Medicine">Medicine</option>
             </select>
+          </div>
+
+
+
+          <div className="flex  items-center   gap-5 ">
+
 
             <select
               onChange={handleTypeChange}
-              className="px-4 py-2 border rounded w-full sm:w-auto"
+              className="px-4 py-2 border rounded w-[50%]"
               value={filters.type}
             >
               <option value="">Rent or Buy</option>
               <option value="rent">Rent</option>
               <option value="buy">Buy</option>
             </select>
-          </div>
 
-          <div className="flex items-center space-x-4 w-full sm:w-auto">
-            <label className="text-sm">Price Range:</label>
-            <input
-              type="range"
-              min={200}
-              max={10000}
-              step={100}
-              value={filters.priceRange[1]}
-              onChange={handlePriceRangeChange}
-              className="w-full sm:w-48"
-            />
-            <span>
-              {filters.priceRange[0]} - {filters.priceRange[1]}
-            </span>
+
+            <div className="flex  items-center">
+              <div className="flex items-center space-x-2">
+                <label className="text-sm">Price:</label>
+                <input
+                  type="range"
+                  min={200}
+                  max={10000}
+                  step={100}
+                  value={filters.priceRange[1]}
+                  onChange={(e) =>
+                    setFilters((prev) => ({
+                      ...prev,
+                      priceRange: [filters.priceRange[0], parseInt(e.target.value)],
+                    }))
+                  }
+                  className="w-full "
+                />
+                <span>
+                  ₹{filters.priceRange[0]} - ₹{filters.priceRange[1]}
+                </span>
+              </div>
+            </div>
           </div>
         </div>
 
         {/* Products Display Section */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6">
           {filteredProducts.map((product) => (
             <div key={product.id} className="bg-white p-6 rounded-lg shadow-md">
-              <img
+              {/* <img
                 src={product.img}
                 alt={product.name}
                 className="w-full h-48 object-cover rounded-lg mb-4"
-              />
+              /> */}
               <h3 className="text-xl font-semibold text-gray-800 mb-2">{product.name}</h3>
               <p className="text-sm text-gray-600 mb-4">{product.description}</p>
               <div className="flex justify-between items-center">
                 <p className="text-lg font-semibold text-green-700">
-                  {product.type === "rent" ? `Rent: ₹${product.rentPrice}/day` : `Buy: ₹${product.price}`}
+                  {product.type === "rent"
+                    ? `Rent: ₹${product.rentPrice}/day`
+                    : `Buy: ₹${product.price}`}
                 </p>
                 <div className="flex items-center space-x-4">
                   <button
-                    className="px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700"
+                    className="px-4 py-2 cursor-pointer bg-green-600 text-white rounded hover:bg-green-700"
                     onClick={() => alert(`Renting ${product.name}`)}
                   >
                     Rent
                   </button>
                   <button
-                    className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
+                    className="px-4 cursor-pointer py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
                     onClick={() => alert(`Buying ${product.name}`)}
                   >
                     Buy
@@ -163,7 +207,12 @@ const RentAndBuyMedical = () => {
             </div>
           ))}
         </div>
+
+        {filteredProducts.length === 0 && (
+          <p className="text-center text-gray-500 mt-10">No products found.</p>
+        )}
       </div>
+
     </div>
   );
 };

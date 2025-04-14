@@ -2,6 +2,8 @@
 import React from 'react';
 import { FaPhone, FaMapMarkerAlt, FaRupeeSign, FaUser } from 'react-icons/fa';
 import "../app/globals.css";
+import { MdOutlineAccountCircle } from "react-icons/md";
+
 import Link from 'next/link';
 const caretakers = [
     {
@@ -97,18 +99,18 @@ const CaretakerProfile = () => {
     return (
         <div className="md:px-10  px-4 py-8  mb-10 md:mb-20">
             <h2 className="text-2xl font-bold text-center mb-6 text-green-700">Meet Our Caretakers</h2>
-            <div className="flex  w-auto overflow-auto gap-4 md:caretakerbox" >
+            <div className="flex  w-auto overflow-auto gap-4 caretakerbox" >
                 {caretakers.map((caretaker, idx) => (
                     <div
                         key={idx}
-                        className="flex min-w-[300px] border sm:min-w-[350px] md:min-w-[350px] shadow rounded border-[#212121] flex-col items-start justify-start   p-3 bg-white rounded-lg "
+                        className="flex cursor-pointer min-w-[300px] border sm:min-w-[350px] md:min-w-[350px] shadow rounded border-[#212121] flex-col items-start justify-start   p-3 bg-white rounded-lg "
                     >
                         <div className="flex  mb-4  gap-5 items-center justify-between">
 
-                            <img
-                                src={"https://www.pba.edu/wp-content/uploads/2023/05/academics-physical-science-female-student-indoors-pba-palm-beach-atlantic-university-1200x800-1.jpg"}
-                                alt={caretaker.name}
-                                className="w-20 h-20 rounded-full object-cover  shadow-md "
+                            <MdOutlineAccountCircle
+                                // src={"https://www.pba.edu/wp-content/uploads/2023/05/academics-physical-science-female-student-indoors-pba-palm-beach-atlantic-university-1200x800-1.jpg"}
+                                // alt={caretaker.name}
+                                className="w-20 h-20 rounded-full object-cover   "
                             />
                             <div className="flex flex-col">
 
