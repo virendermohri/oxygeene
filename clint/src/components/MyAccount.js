@@ -28,7 +28,7 @@ const MyAccount = ({ userType = "normal" }) => {
                 {/* User Information */}
                 <div className="flex items-center justify-between mb-8">
                     <img
-                        src={"https://www.pba.edu/wp-content/uploads/2023/05/academics-physical-science-female-student-indoors-pba-palm-beach-atlantic-university-1200x800-1.jpg"}
+                        src={"https://res.cloudinary.com/divlt5fqo/image/upload/v1744655374/academics-physical-science-female-student-indoors-pba-palm-beach-atlantic-university-1200x800-1_cxi01f.jpg"}
 
                         alt={userInfo.name}
                         className="w-24 h-24 rounded-full object-cover shadow-md"

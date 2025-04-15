@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { useSearchParams } from 'next/navigation';
+import { usePathname, useSearchParams } from 'next/navigation';
 import {
   FaStethoscope, FaUserNurse, FaBaby, FaHeartbeat, FaSyringe,
   FaDumbbell, FaVial, FaUserShield, FaHeadset
@@ -14,7 +14,7 @@ import Link from 'next/link';
 
 const services = [
   { name: "Elder Care", icon: <FaUserShield /> },
-  { name: "Mother & Baby Care", icon: <FaBaby /> },
+  { name: "Mother, Baby Care", icon: <FaBaby /> },
   { name: "Nursing Care", icon: <FaUserNurse /> },
   { name: "Physiotherapy", icon: <FaDumbbell /> },
   { name: "Doctor Consultation", icon: <FaStethoscope /> },
@@ -95,7 +95,8 @@ const caretakers = [
 const Services = () => {
   const searchParams = useSearchParams();
   const defaultService = searchParams.get("service");
-
+  console.log(defaultService);
+const pathname= usePathname()
   const [selectedService, setSelectedService] = useState(null);
 
   useEffect(() => {
@@ -122,7 +123,7 @@ const Services = () => {
     : caretakers;
 
   return (
-    <div className="px-4 py-4 mb-10">
+    <div className={`px-4 ${pathname=="/services"? "md:h-screen":""} py-4 mb-10`}>
       {selectedService && (
         <div className='mb-10 md:w-[80%] m-auto'>
           <div className="flex justify-between items-center mt-8 mb-4">

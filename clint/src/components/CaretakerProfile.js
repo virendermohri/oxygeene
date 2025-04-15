@@ -107,10 +107,10 @@ const CaretakerProfile = () => {
                     >
                         <div className="flex  mb-4  gap-5 items-center justify-between">
 
-                            <MdOutlineAccountCircle
-                                // src={"https://www.pba.edu/wp-content/uploads/2023/05/academics-physical-science-female-student-indoors-pba-palm-beach-atlantic-university-1200x800-1.jpg"}
-                                // alt={caretaker.name}
-                                className="w-20 h-20 rounded-full object-cover   "
+                            <img
+                                src={"https://www.pba.edu/wp-content/uploads/2023/05/academics-physical-science-female-student-indoors-pba-palm-beach-atlantic-university-1200x800-1.jpg"}
+                                alt={caretaker.name}
+                                className="w-20 h-20 rounded-full object-cover  shadow-md "
                             />
                             <div className="flex flex-col">
 

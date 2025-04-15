@@ -30,7 +30,7 @@ export default function Footer() {
           <h3 className="font-semibold mb-3 text-gray-800">Services</h3>
           <ul className="space-y-2">
             <li><Link href="/services?service=elder care" className="hover:text-green-600">Elder Care</Link></li>
-            <li><Link href="/services?service=Mother & Baby Care" className="hover:text-green-600">Mother & Baby Care</Link></li>
+            <li><Link href="/services?service=mother, baby care" className="hover:text-green-600">Mother & Baby Care</Link></li>
             <li><Link href="/services?service=nursing care" className="hover:text-green-600">Nursing Care</Link></li>
             <li><Link href="/services?service=Critical Care" className="hover:text-green-600">ICU at Home, Critical Care</Link></li>
             <li><Link href="/services?service=physiotherapy" className="hover:text-green-600">Physiotherapy</Link></li>

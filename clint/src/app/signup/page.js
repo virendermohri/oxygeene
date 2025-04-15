@@ -1,78 +1,51 @@
-"use client"
+"use client";
 import { useState } from "react";
 import Link from "next/link";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-export default function SignupPage() {
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
+export default function SignupPage() {
   const [formData, setFormData] = useState({
     name: "",
+    phone_number: "",
     email: "",
+    address: "",
     password: "",
     confirmPassword: "",
   });
   const [loading, setLoading] = useState(false);
-  // Handle input change
+
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (formData.password !== formData.confirmPassword) {
+      toast.error("Passwords do not match!");
+      return;
+    }
+  
     setLoading(true);
 
     try {
-      const response = await fetch("http://localhost:5000/api/auth/register", {
+      const response = await fetch("http://localhost:5000/api/auth/signup", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
       });
 
       const data = await response.json();
       if (response.ok) {
-        toast.success("Signup successful!", {
-          position: "top-right",
-          autoClose: 2000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-
-        });
-        localStorage.setItem("auth-token", data.authToken); // Save token for authentication
-        localStorage.setItem("user", JSON.stringify(data.user)); // Save token for authentication
-
-        setTimeout(() => {
-          window.location.href = "/"; // Redirect after login
-        }, 1500);
+        toast.success("Signup successful!");
+        localStorage.setItem("auth-token", data.authToken);
+        localStorage.setItem("user", JSON.stringify(data.user));
+        setTimeout(() => (window.location.href = "/"), 1500);
       } else {
-        toast.error(data.error || "Invalid credentials", {
-          position: "top-right",
-          autoClose: 2000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-
-        });
+        toast.error(data.error || "Invalid credentials");
       }
     } catch (error) {
-      toast.error("Something went wrong. Try again later.");
-      toast.error(error || "Invalid email or password", {
-        position: "top-right",
-        autoClose: 2000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-
-      });
+      toast.error("Something went wrong.");
     } finally {
       setLoading(false);
     }
@@ -80,112 +53,111 @@ export default function SignupPage() {
 
   return (
     <>
-      <ToastContainer
-        position="top-left"
-        autoClose={1000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-
-      />
-      <div className="flex min-h-[80vh] items-center justify-center   px-4">
-        <div className="w-full max-w-2xl p-8 space-y-4 bg-white  rounded-lg">
-          <div className="text-center">
-            <h2 className="text-3xl font-bold text-gray-900 ">
-              Create an Account
-            </h2>
-            <p className="text-gray-500 ">
-              Sign up to get started
-            </p>
+      <ToastContainer position="top-right" autoClose={2000} />
+      <div className="min-h-screen   flex items-center justify-center px-4">
+        <div className="max-w-2xl w-full bg-white p-10  rounded-2xl ">
+          <div className="mb-6 text-center">
+            <h2 className="text-3xl font-bold text-indigo-700">Create Account</h2>
+            <p className="text-gray-500 mt-2">Start your journey with Oxygeene</p>
           </div>
 
-          <form onSubmit={handleSubmit} className="space-y-4">
-            <div>
-              <label className="block text-sm font-medium text-gray-700 ">
-                Full Name
-              </label>
-              <input
-                type="name"
-                name="name"
-                id="new-name"
-                value={formData.name}
-                onChange={handleChange}
-                required
-                className="w-full mt-1 px-4 py-2 border rounded-md bg-gray-50  text-gray-900  focus:ring-indigo-500 focus:border-indigo-500"
-                placeholder="John Doe"
-              />
+          <form onSubmit={handleSubmit} className="space-y-5">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <label className="text-sm text-gray-600 font-medium">Full Name</label>
+                <input
+                  type="text"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  className="w-full px-4 py-2 mt-1 border rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-300"
+                  placeholder="Virender Kumar"
+                  required
+                />
+              </div>
+              <div>
+                <label className="text-sm text-gray-600 font-medium">Phone Number</label>
+                <input
+                  type="tel"
+                  name="phone_number"
+                  value={formData.phone_number}
+                  onChange={handleChange}
+                  className="w-full px-4 py-2 mt-1 border rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-300"
+                  placeholder="9876543210"
+                  required
+                />
+              </div>
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700 ">
-                Email Address
-              </label>
+              <label className="text-sm text-gray-600 font-medium">Email</label>
               <input
                 type="email"
                 name="email"
-                id="user-email"
                 value={formData.email}
                 onChange={handleChange}
+                className="w-full px-4 py-2 mt-1 border rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-300"
+                placeholder="example@oxygeene.com"
                 required
-                className="w-full mt-1 px-4 py-2 border rounded-md bg-gray-50  text-gray-900  focus:ring-indigo-500 focus:border-indigo-500"
-                placeholder="example@example.com"
               />
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700 ">
-                Password
-              </label>
+              <label className="text-sm text-gray-600 font-medium">Address</label>
               <input
-                type="password"
-                name="password"
-                id="new-password"
-                value={formData.password}
+                type="text"
+                name="address"
+                value={formData.address}
                 onChange={handleChange}
+                className="w-full px-4 py-2 mt-1 border rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-300"
+                placeholder="Kurukshetra, Haryana"
                 required
-                className="w-full mt-1 px-4 py-2 border rounded-md bg-gray-50 text-gray-900  focus:ring-indigo-500 focus:border-indigo-500"
-                placeholder="••••••••"
               />
             </div>
 
-            <div>
-              <label className="block text-sm font-medium text-gray-700">
-                Confirm Password
-              </label>
-              <input
-                type="password"
-                name="confirmPassword"
-                id="new-confirmPassword"
-                value={formData.confirmPassword}
-                onChange={handleChange}
-                required
-                className="w-full mt-1 px-4 py-2 border rounded-md bg-gray-50 text-gray-900  focus:ring-indigo-500 focus:border-indigo-500"
-                placeholder="••••••••"
-              />
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <label className="text-sm text-gray-600 font-medium">Password</label>
+                <input
+                  type="password"
+                  name="password"
+                  value={formData.password}
+                  onChange={handleChange}
+                  className="w-full px-4 py-2 mt-1 border rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-300"
+                  placeholder="••••••••"
+                  required
+                />
+              </div>
+              <div>
+                <label className="text-sm text-gray-600 font-medium">Confirm Password</label>
+                <input
+                  type="password"
+                  name="confirmPassword"
+                  value={formData.confirmPassword}
+                  onChange={handleChange}
+                  className="w-full px-4 py-2 mt-1 border rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-300"
+                  placeholder="••••••••"
+                  required
+                />
+              </div>
             </div>
 
             <button
               type="submit"
-              className="w-full px-4 py-2 text-white bg-indigo-600 rounded-md hover:bg-indigo-500 transition-all"
+              className="w-full mt-4 bg-indigo-600 hover:bg-indigo-500 text-white font-medium py-2 px-4 rounded-md transition duration-200"
             >
-              Sign Up
+              {loading ? "Creating Account..." : "Sign Up"}
             </button>
           </form>
 
-          <p className="text-center text-sm text-gray-600 ">
+          <p className="mt-6 text-sm text-center text-gray-600">
             Already have an account?{" "}
-            <Link href="/login" className="text-indigo-600  hover:underline">
-              Sign in
+            <Link href="/login" className="text-indigo-600 hover:underline">
+              Log in here
             </Link>
           </p>
         </div>
-
       </div>
     </>
-
   );
 }

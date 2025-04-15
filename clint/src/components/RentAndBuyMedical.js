@@ -55,13 +55,13 @@ const RentAndBuyMedical = () => {
   const [openSuggestions, setOpenSuggestions] = useState(false);
 
   const handleCategoryChange = (e) => {
-    setFilters({priceRange: [100, 10000]});
+    setFilters({ priceRange: [100, 10000] });
     setFilters((prev) => ({ ...prev, category: e.target.value }));
   };
 
-  
+
   const handleTypeChange = (e) => {
-    setFilters({priceRange: [100, 10000]});
+    setFilters({ priceRange: [100, 10000] });
 
     setFilters((prev) => ({ ...prev, type: e.target.value }));
   };
@@ -84,10 +84,10 @@ const RentAndBuyMedical = () => {
         </h2>
 
         {/* Filter Section */}
-        <div className="flex  flex-col  mb-6 gap-4">
-          <div className="flex  gap-3">
+        <div className="flex  flex-col  mb-10 md:mb-20 gap-4">
+          <div className="flex justify-between  gap-4">
 
-            <div className="relative w-[80%] ">
+            <div className="relative md:w-1/3 ">
               <input
                 type="text"
                 value={searchQuery}
@@ -96,10 +96,10 @@ const RentAndBuyMedical = () => {
                   setOpenSuggestions(true);
                 })}
                 placeholder="Search products..."
-                className="px-4 py-2 shadow border border-1 rounded w-full sm:w-64"
+                className="px-4 py-2 shadow border border-1 rounded w-full "
               />
               {searchQuery && openSuggestions && (
-                <div className="absolute bg-white border rounded w-full z-10 max-h-40 overflow-y-auto">
+                <div className="absolute bg-white shadow-2xl rounded w-full z-10 max-h-40  overflow-y-auto">
                   {products
                     .filter((product) =>
                       product.name.toLowerCase().includes(searchQuery.toLowerCase())
@@ -121,7 +121,7 @@ const RentAndBuyMedical = () => {
             </div>
             <select
               onChange={handleCategoryChange}
-              className="px-4 py-2 border rounded  w-[40%]"
+              className="px-4 py-2 border rounded  md:w-1/3 w-[40%]"
               value={filters.category}
             >
               <option value="">All Categories</option>
@@ -130,15 +130,10 @@ const RentAndBuyMedical = () => {
               <option value="Medicine">Medicine</option>
             </select>
           </div>
-
-
-
-          <div className="flex  items-center   gap-5 ">
-
-
+          <div className="flex  items-center justify-between    gap-4  ">
             <select
               onChange={handleTypeChange}
-              className="px-4 py-2 border rounded w-[50%]"
+              className="px-4 py-2 border rounded md:w-1/3"
               value={filters.type}
             >
               <option value="">Rent or Buy</option>
@@ -147,9 +142,9 @@ const RentAndBuyMedical = () => {
             </select>
 
 
-            <div className="flex  items-center">
+            <div className="flex  items-center md:w-1/3  ">
               <div className="flex items-center space-x-2">
-                <label className="text-sm">Price:</label>
+                <label className="text-sm font-semibold">Price:</label>
                 <input
                   type="range"
                   min={200}
@@ -162,7 +157,7 @@ const RentAndBuyMedical = () => {
                       priceRange: [filters.priceRange[0], parseInt(e.target.value)],
                     }))
                   }
-                  className="w-full "
+                  className="w-full font-semibold "
                 />
                 <span>
                   ₹{filters.priceRange[0]} - ₹{filters.priceRange[1]}
@@ -176,11 +171,11 @@ const RentAndBuyMedical = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6">
           {filteredProducts.map((product) => (
             <div key={product.id} className="bg-white p-6 rounded-lg shadow-md">
-              {/* <img
+              <img
                 src={product.img}
                 alt={product.name}
                 className="w-full h-48 object-cover rounded-lg mb-4"
-              /> */}
+              />
               <h3 className="text-xl font-semibold text-gray-800 mb-2">{product.name}</h3>
               <p className="text-sm text-gray-600 mb-4">{product.description}</p>
               <div className="flex justify-between items-center">
