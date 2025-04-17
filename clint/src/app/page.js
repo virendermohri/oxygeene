@@ -5,18 +5,19 @@ import CaretakerProfile from "@/components/CaretakerProfile";
 import RentalEquipment from "@/components/RentalEquipment";
 import Testimonials from "@/components/Testimonials";
 
+import React, { Suspense } from "react";
 async function getData() {
-  const res= await fetch("http://localhost:5000/api/service", {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-      // Add any other headers you need
-    },
-  });
-  if (!res.ok) {
-    console.log("Failed to fetch data");
-  }
-  const data = await res.json();
+  const services = [
+    { name: "Elder Care", icon: "FaUserShield" },
+    { name: "Mother & Baby Care", icon: "FaBaby" },
+    { name: "Nursing Care", icon: "FaUserNurse" },
+    { name: "Physiotherapy", icon: "FaDumbbell" },
+    { name: "Doctor Consultation", icon: "FaStethoscope" },
+    { name: "Critical Care", icon: "FaHeartbeat" },
+    { name: "Vaccination", icon: "FaSyringe" },
+    { name: "Lab Tests", icon: "FaVial" },
+    { name: "Counselling", icon: "FaHeadset" },
+  ];
 
 
   const caretakers = [
@@ -27,20 +28,24 @@ async function getData() {
     { name: "Dr. Kapoor", service: "Doctor Consultation" },
   ];
 
-  return { data, caretakers };
+  return { services, caretakers };
 }
-export default async function Home () {
-  const { data, caretakers } = await getData();  
+
+export default async function Home() {
+  const { services, caretakers } = await getData();
   return (
     <div className="bg-white">
       <div className="h-38  ">
-        
-    <Typewriter />
+
+        <Typewriter />
       </div>
-   <Services services={data} caretakers={caretakers} />;
-    <CaretakerProfile/>
-    <RentalEquipment/>
-    <Testimonials/>
+      <Suspense fallback={<div>Loading Services...</div>}>
+        <Services />;
+
+      </Suspense>
+      <CaretakerProfile />
+      <RentalEquipment />
+      <Testimonials />
     </div>
   );
 }

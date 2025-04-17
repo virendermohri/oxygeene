@@ -24,9 +24,10 @@ async function getData() {
 
   return { services, caretakers };
 }
-
+import React, { Suspense } from 'react';
 export default async function Home() {
   const { services, caretakers } = await getData();
-
-  return <Services services={services} caretakers={caretakers} />;
+  <Suspense fallback={<div>Loading Services...</div>}>
+ <Services services={services} caretakers={caretakers} />;
+</Suspense>
 }
