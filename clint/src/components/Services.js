@@ -129,9 +129,9 @@ const Services = ({ }) => {
                           {"☆".repeat(5 - Math.floor(caretaker.rating))}
                         </div>
                       </div>
-                  <p className="text-gray-600 mb-3 text-sm mt-1">
-                    {caretaker.age} yrs • {caretaker.gender}
-                  </p>
+                      <p className="text-gray-600 mb-3 text-sm mt-1">
+                        {caretaker.age} yrs • {caretaker.gender}
+                      </p>
                     </div>
                   </div>
                   <div className="flex  gap-3">
