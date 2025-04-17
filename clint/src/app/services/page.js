@@ -22,7 +22,6 @@ async function getData() {
     { name: "Dr. Kapoor", service: "Doctor Consultation" },
   ];
 
-  console.log(services, caretakers, "ll")
   return { services, caretakers };
 }
 import React, { Suspense } from 'react';
