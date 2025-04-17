@@ -12,7 +12,7 @@ const History = () => {
     const fetchHistory = async () => {
       const token = localStorage.getItem("auth-token");
       try {
-        const res = await fetch(`http://localhost:5000/api/bookservice/user/${user._id}`, {
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/bookservice/user/${user._id}`, {
           method: "GET",
           headers: {
             "Content-Type": "application/json",

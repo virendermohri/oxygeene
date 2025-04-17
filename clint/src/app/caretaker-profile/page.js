@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 async function getCaretakerData() {
-  const res = await fetch("http://localhost:5000/api/caretaker", {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/caretaker`, {
     method: "GET",  
     headers: {
       "Content-Type": "application/json",

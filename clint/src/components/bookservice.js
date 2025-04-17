@@ -92,7 +92,7 @@ const BookService = () => {
         paymentMethod,
       };
 
-      const res = await fetch("http://localhost:5000/api/bookservice/", {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/bookservice/`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -12,7 +12,7 @@ const CaretakerProfile = () => {
         getdata()
     }, [])
     const getdata = async () => {
-        const res = await fetch("http://localhost:5000/api/caretaker", {
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/caretaker`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",

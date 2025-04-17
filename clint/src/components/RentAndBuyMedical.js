@@ -11,7 +11,7 @@ const RentAndBuyWithCart = () => {
   const [filterType, setFilterType] = useState('all');
   
   const fetchProducts = async () => {
-    const res = await fetch("http://localhost:5000/api/product", {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/product`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
