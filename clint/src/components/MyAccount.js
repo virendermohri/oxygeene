@@ -67,8 +67,8 @@ const MyAccount = () => {
      
 
         {/* Bookings Section */}
-        <div className="bg-white  overflow-auto h-[70vh] shadow pb-6  pl-6 pr-6 rounded-lg ">
-          <h3 className="text-xl font-semibold text-gray-800 mb-4 pt-6 w-full pb-6 absolute pl-6 bg-white">My Bookings</h3>
+        <div className="bg-white w-auto  overflow-auto h-[70vh] shadow pb-6  pl-6 pr-6 rounded-lg ">
+          <h3 className="text-xl  font-semibold text-gray-800 mb-4 pt-6 w-full pb-6 relative pl-6 bg-white">My Bookings</h3>
           {bookings.length === 0 ? (
             <p className="text-gray-600">No bookings found.</p>
           ) : (
