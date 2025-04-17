@@ -1,215 +1,211 @@
 'use client';
-import React, { useState } from 'react';
-import { FaFilter, FaShoppingCart, FaRegHeart } from 'react-icons/fa';
+import React, { useEffect, useState } from 'react';
+import Image from 'next/image';
+import { FaShoppingCart, FaTrash } from 'react-icons/fa';
+import { IoIosCloseCircleOutline } from "react-icons/io";
+const RentAndBuyWithCart = () => {
+  const [products, Setprodcuts] = useState([])
+  const [cart, setCart] = useState([]);
+  const [showCart, setShowCart] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
+  const [filterType, setFilterType] = useState('all');
+  
+  const fetchProducts = async () => {
+    const res = await fetch("http://localhost:5000/api/product", {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        // Add any other headers you need
+      },
+    });
+    if (!res.ok) {
+      console.log("Failed to fetch data");
+    }
+    const products = await res.json();
+   Setprodcuts(products.products)
+  
 
-const products = [
-  {
-    id: 1,
-    name: "Oxygen Cylinder",
-    category: "Medical Equipment",
-    price: 5000,
-    rentPrice: 500,
-    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTm6ltySej-tFGr5UiHai2nH2T5hZnJPU7ykQ&s",
-    description: "Portable oxygen cylinder with regulator and mask.",
-    type: "rent",
-  },
-  {
-    id: 2,
-    name: "Medical Kit",
-    category: "Medical Kit",
-    price: 1200,
-    rentPrice: 150,
-    img: "https://insights.ibx.com/wp-content/uploads/2019/06/first-aid-kit-screenshot.png",
-    description: "Comprehensive medical kit with first aid essentials.",
-    type: "buy",
-  },
-  {
-    id: 3,
-    name: "Blood Pressure Monitor",
-    category: "Medical Equipment",
-    price: 2000,
-    rentPrice: 200,
-    img: "https://m.media-amazon.com/images/I/71-qOprKrIL.jpg",
-    description: "Automatic digital blood pressure monitor.",
-    type: "buy",
-  },
-  {
-    id: 4,
-    name: "Pain Relief Medicine",
-    category: "Medicine",
-    price: 100,
-    rentPrice: 20,
-    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0-iLxyEZIFKatvRswU01gDl3cNNJJOTVQdA&s",
-    description: "Pain relief medicine, effective for headaches and body aches.",
-    type: "buy",
-  },
-];
-
-const RentAndBuyMedical = () => {
-  const [filters, setFilters] = useState({
-    category: "",
-    priceRange: [100, 10000],
-    type: "",
-  });
-  const [searchQuery, setSearchQuery] = useState("");
-  const [openSuggestions, setOpenSuggestions] = useState(false);
-
-  const handleCategoryChange = (e) => {
-    setFilters({ priceRange: [100, 10000] });
-    setFilters((prev) => ({ ...prev, category: e.target.value }));
+  };
+  useEffect( () => {
+    fetchProducts()
+  }, [])
+  const addToCart = (product, mode) => {
+    const existing = cart.find(item => item.id === product.id && item.mode === mode);
+    if (existing) {
+      setCart(cart.map(item =>
+        item.id === product.id && item.mode === mode
+          ? { ...item, qty: item.qty + 1 }
+          : item
+      ));
+    } else {
+      setCart([...cart, {
+        ...product,
+        mode,
+        qty: 1,
+        unitPrice: mode === 'rent' ? product.rentPrice : product.price
+      }]);
+    }
   };
 
-
-  const handleTypeChange = (e) => {
-    setFilters({ priceRange: [100, 10000] });
-
-    setFilters((prev) => ({ ...prev, type: e.target.value }));
+  const updateQty = (id, mode, qty) => {
+    if (qty < 1) return;
+    setCart(cart.map(item =>
+      item.id === id && item.mode === mode ? { ...item, qty } : item
+    ));
   };
 
-  const filteredProducts = products.filter((product) => {
-    const priceInRange =
-      product.price >= filters.priceRange[0] && product.price <= filters.priceRange[1];
-    const matchesCategory = filters.category ? product.category === filters.category : true;
-    const matchesType = filters.type ? product.type === filters.type : true;
-    const matchesSearch = product.name.toLowerCase().includes(searchQuery.toLowerCase());
+  const removeItem = (id, mode) => {
+    setCart(cart.filter(item => !(item.id === id && item.mode === mode)));
+  };
 
-    return priceInRange && matchesCategory && matchesType && matchesSearch;
-  });
+  const total = cart.reduce((sum, item) => sum + item.qty * item.unitPrice, 0);
+
+  const filteredProducts = products.filter(p =>
+    (p.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      p.category.toLowerCase().includes(searchQuery.toLowerCase())) &&
+    (filterType === 'all' || filterType === 'buy' || filterType === 'rent')
+  );
 
   return (
-    <div className="px-4 py-8">
-      <div className="max-w-6xl mx-auto">
-        <h2 className="text-3xl font-bold text-center text-green-700 mb-8">
-          Rent & Buy Medical Equipment
-        </h2>
-
-        {/* Filter Section */}
-        <div className="flex  flex-col  mb-10 md:mb-20 gap-4">
-          <div className="flex justify-between  gap-4">
-
-            <div className="relative md:w-1/3 ">
-              <input
-                type="text"
-                value={searchQuery}
-                onChange={((e) => {
-                  setSearchQuery(e.target.value);
-                  setOpenSuggestions(true);
-                })}
-                placeholder="Search products..."
-                className="px-4 py-2 shadow border border-1 rounded w-full "
-              />
-              {searchQuery && openSuggestions && (
-                <div className="absolute bg-white shadow-2xl rounded w-full z-10 max-h-40  overflow-y-auto">
-                  {products
-                    .filter((product) =>
-                      product.name.toLowerCase().includes(searchQuery.toLowerCase())
-                    )
-                    .map((suggestion) => (
-                      <div
-                        key={suggestion.id}
-                        className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
-                        onClick={(() => {
-                          setSearchQuery(suggestion.name);
-                          setOpenSuggestions(false);
-                        })}
-                      >
-                        {suggestion.name}
-                      </div>
-                    ))}
-                </div>
-              )}
-            </div>
-            <select
-              onChange={handleCategoryChange}
-              className="px-4 py-2 border rounded  md:w-1/3 w-[40%]"
-              value={filters.category}
-            >
-              <option value="">All Categories</option>
-              <option value="Medical Equipment">Medical Equipment</option>
-              <option value="Medical Kit">Medical Kit</option>
-              <option value="Medicine">Medicine</option>
-            </select>
-          </div>
-          <div className="flex  items-center justify-between    gap-4  ">
-            <select
-              onChange={handleTypeChange}
-              className="px-4 py-2 border rounded md:w-1/3"
-              value={filters.type}
-            >
-              <option value="">Rent or Buy</option>
-              <option value="rent">Rent</option>
-              <option value="buy">Buy</option>
-            </select>
-
-
-            <div className="flex  items-center md:w-1/3  ">
-              <div className="flex items-center space-x-2">
-                <label className="text-sm font-semibold">Price:</label>
-                <input
-                  type="range"
-                  min={200}
-                  max={10000}
-                  step={100}
-                  value={filters.priceRange[1]}
-                  onChange={(e) =>
-                    setFilters((prev) => ({
-                      ...prev,
-                      priceRange: [filters.priceRange[0], parseInt(e.target.value)],
-                    }))
-                  }
-                  className="w-full font-semibold "
-                />
-                <span>
-                  ₹{filters.priceRange[0]} - ₹{filters.priceRange[1]}
-                </span>
-              </div>
-            </div>
-          </div>
+    <div className="px-4 py-8 max-w-7xl mx-auto mt-10 relative">
+      {/* Your original top bar design */}
+      <div className="flex flex-col md:flex-row md:justify-between items-center mb-6 gap-4">
+        <div className="text-center md:text-left">
+          <h2 className="text-3xl font-bold text-green-700 mt-5">Rent & Buy Medical</h2>
         </div>
-
-        {/* Products Display Section */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6">
-          {filteredProducts.map((product) => (
-            <div key={product.id} className="bg-white p-6 rounded-lg shadow-md">
-              <img
-                src={product.img}
-                alt={product.name}
-                className="w-full h-48 object-cover rounded-lg mb-4"
-              />
-              <h3 className="text-xl font-semibold text-gray-800 mb-2">{product.name}</h3>
-              <p className="text-sm text-gray-600 mb-4">{product.description}</p>
-              <div className="flex justify-between items-center">
-                <p className="text-lg font-semibold text-green-700">
-                  {product.type === "rent"
-                    ? `Rent: ₹${product.rentPrice}/day`
-                    : `Buy: ₹${product.price}`}
-                </p>
-                <div className="flex items-center space-x-4">
-                  <button
-                    className="px-4 py-2 cursor-pointer bg-green-600 text-white rounded hover:bg-green-700"
-                    onClick={() => alert(`Renting ${product.name}`)}
-                  >
-                    Rent
-                  </button>
-                  <button
-                    className="px-4 cursor-pointer py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
-                    onClick={() => alert(`Buying ${product.name}`)}
-                  >
-                    Buy
-                  </button>
-                </div>
-              </div>
-            </div>
-          ))}
+        <div className=" flex flex-wrap md:justify-end justify-center items-center gap-3">
+          <input
+            type="text"
+            placeholder="Search products..."
+            value={searchQuery}
+            onChange={e => setSearchQuery(e.target.value)}
+            className="px-4 py-2 border border-gray-300 w-[70%] md:w-auto rounded-md shadow-sm focus:outline-none"
+          />
+          <select
+            value={filterType}
+            onChange={(e) => setFilterType(e.target.value)}
+            className="px-4 hidden md:block py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none"
+          >
+            <option value="all">All</option>
+            <option value="rent">Rent</option>
+            <option value="buy">Buy</option>
+          </select>
+          <button
+            onClick={() => setShowCart(!showCart)}
+            className="flex items-center  top-0 right-10 px-4 py-2 bg-orange-600 text-white rounded hover:bg-orange-700"
+          >
+            <FaShoppingCart className="mr-2" />
+            <p className='hidden md:block'>Cart</p>({cart.length})
+          </button>
+          <select
+            value={filterType}
+            onChange={(e) => setFilterType(e.target.value)}
+            className="px-4 md:hidden block py-2 w-full border border-gray-300 rounded-md shadow-sm focus:outline-none"
+          >
+            <option value="all">All</option>
+            <option value="rent">Rent</option>
+            <option value="buy">Buy</option>
+          </select>
         </div>
-
-        {filteredProducts.length === 0 && (
-          <p className="text-center text-gray-500 mt-10">No products found.</p>
-        )}
       </div>
 
+      {/* Product Grid */}
+      <div className="grid grid-cols-1 overflow-auto z-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        {filteredProducts.length === 0 && (
+          <div className="col-span-1 sm:col-span-2 md:col-span-3 text-center p-6 bg-gray-100 rounded-lg shadow-md">
+            <h3 className="text-xl font-semibold text-gray-800 mb-2">No products found</h3>
+            <p className="text-gray-600">Try adjusting your search or filter.</p>
+          </div>
+        )}
+
+        {filteredProducts.map((product) => (
+          <div key={product._id} className="bg-white   p-6 rounded-lg shadow-md">
+            <Image
+              src={product.img}
+              alt={product.name}
+              width={500}
+              height={300}
+              className="w-full h-48 object-cover rounded mb-4"
+            />
+            <h3 className="text-xl font-semibold text-gray-800 mb-2">{product.name}</h3>
+            <p className="text-gray-600 text-sm mb-2">{product.description}</p>
+            <div className="flex justify-between mb-2">
+              <span className="text-green-700 font-medium">Rent: ₹{product.rentPrice}/day</span>
+              <span className="text-blue-700 font-medium">Buy: ₹{product.price}</span>
+            </div>
+            <div className="flex space-x-2">
+              <button
+                onClick={() => addToCart(product, 'rent')}
+                className="flex-1 bg-green-600 text-white py-1 rounded hover:bg-green-700"
+              >
+                Rent
+              </button>
+              <button
+                onClick={() => addToCart(product, 'buy')}
+                className="flex-1 bg-blue-600 text-white py-1 rounded hover:bg-blue-700"
+              >
+                Buy
+              </button>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Cart Panel */}
+      {showCart && (
+        <div className="fixed top-0 right-0 w-full md:w-96 h-full bg-white shadow-2xl p-6 z-50 overflow-y-auto">
+          <div className=" mb-4 flex  justify-between items-center ">
+
+            <h3 className="text-xl font-bold text-gray-800">Your Cart</h3>
+            <IoIosCloseCircleOutline className='text-2xl cursor-pointer' onClick={(() => { setShowCart(false) })} />
+          </div>
+          {cart.length === 0 ? (
+            <p className="text-gray-500">Cart is empty.</p>
+          ) : (
+            <>
+              {cart.map((item) => (
+                <div key={`${item.id}-${item.mode}`} className="mb-4 border-b pb-3">
+                  <div className="flex justify-between items-center">
+                    <div>
+                      <p className="font-semibold">{item.name} ({item.mode})</p>
+                      <p className="text-sm text-gray-600">₹{item.unitPrice} x {item.qty}</p>
+                    </div>
+                    <button
+                      onClick={() => removeItem(item.id, item.mode)}
+                      className="cursor-pointer text-red-600 hover:text-red-800"
+                    >
+                      <FaTrash />
+                    </button>
+                  </div>
+                  <div className="flex mt-2 space-x-2">
+                    <button
+                      onClick={() => updateQty(item.id, item.mode, item.qty - 1)}
+                      className="px-2 cursor-pointer py-1 bg-gray-200 rounded"
+                    >
+                      -
+                    </button>
+                    <span className="px-2">{item.qty}</span>
+                    <button
+                      onClick={() => updateQty(item.id, item.mode, item.qty + 1)}
+                      className="px-2 cursor-pointer py-1 bg-gray-200 rounded"
+                    >
+                      +
+                    </button>
+                  </div>
+                </div>
+              ))}
+              <div className="mt-4 font-semibold text-lg text-right">
+                Total: ₹{total}
+              </div>
+              <button className="mt-6 w-full cursor-pointer bg-green-600 text-white py-2 rounded hover:bg-green-700">
+                Proceed to Checkout
+              </button>
+            </>
+          )}
+        </div>
+      )}
     </div>
   );
 };
 
-export default RentAndBuyMedical;
+export default RentAndBuyWithCart;

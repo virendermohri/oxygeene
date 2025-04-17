@@ -19,6 +19,9 @@ app.get('/', (req, res) => {
 });
 app.use("/api/auth", require('./routes/auth'));
 app.use("/api/bookservice", require('./routes/bookservice'));
+app.use("/api/service", require('./routes/service'));
+app.use("/api/caretaker", require('./routes/caretaker'));
+app.use("/api/product", require('./routes/product'));
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
 });

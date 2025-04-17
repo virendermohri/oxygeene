@@ -1,4 +1,5 @@
 'use client';
+import Link from 'next/link';
 import React from 'react';
 import { FaHeartbeat, FaWheelchair, FaProcedures, FaLungs } from 'react-icons/fa';
 
@@ -45,12 +46,12 @@ const RentalEquipment = () => {
             <h3 className="text-lg font-semibold mb-1">{eq.name}</h3>
             <p className="text-sm text-gray-600 mb-2">{eq.description}</p>
             <p className="text-sm font-medium text-black">Rent: {eq.priceRange}</p>
+            <Link href={"/medicale-quipment"}>
             <button
-              onClick={() => alert(`Requesting ${eq.name}`)}
-              className="mt-3 bg-green-700 text-white py-1.5 px-4 rounded hover:bg-green-800 transition"
+              className="mt-3 cursor-pointer bg-green-700 text-white py-1.5 px-4 rounded hover:bg-green-800 transition"
             >
               Book Now
-            </button>
+            </button></Link>
           </div>
         ))}
       </div>

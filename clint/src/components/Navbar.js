@@ -6,8 +6,12 @@ import { MdOutlineShoppingCart, MdOutlineMedicalServices, MdMedicalServices, MdS
 import { RiAccountCircleLine, RiAccountCircleFill } from "react-icons/ri";
 import { BsClockHistory } from "react-icons/bs";
 import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
+import { IoIosArrowBack } from "react-icons/io";
 export default function Navbar() {
   const pathname = usePathname();
+  const isHome =pathname === "/";
+  const router = useRouter();
   const [CSR,SetCSR] = useState(false)
   const [user, setUser] = useState(null)
   useEffect(() => {
@@ -18,16 +22,24 @@ export default function Navbar() {
     { name: "Home", href: "/" },
     { name: "Rent & Buy", href: "/medicale-quipment" },
     { name: "Services", href: "/services" },
-    { name: "Transactions", href: "/transactions" },
+    { name: "Transactions", href: "/history" },
   ];
   return (
     <nav>
-      <div className={` ${pathname == "/services" ? " mb-10  " : ""}bg-white shadow top-0 md:px-10 md:py-7 px-3 py-5 flex justify-between items-center`}>
-        <div className="flex gap-20 items-center w-full justify-around">
+      <div className={`  bg-white ${pathname=="/"?" shadow ":""} top-0 md:px-10 md:py-7 px-3 py-5 flex justify-between items-center`}>
+        <div className={`flex gap-20 items-center w-full ${pathname=="/"?" justify-around ":""}`}>
           <div>
+            {isHome ? 
             <Link href="/">
               <p className="md:text-3xl text-2xl md:font-semibold font-bold font-mono">Oxygeene</p>
             </Link>
+            :
+            <button 
+            onClick={() => router.back()}
+             className="flex items-center  gap-3 text-xl font-semibold text-gray-700 hover:text-green-500">
+             <IoIosArrowBack/>Back
+          </button>
+          }
           </div>
           <div className="hidden md:block"> 
             <ul className="flex space-x-10">
@@ -40,9 +52,15 @@ export default function Navbar() {
               ))}
             </ul>
           </div>
-          <div>
+          <div className={`${pathname!="/"? " hidden ":""}`}>
             {CSR && user ?
-                <Link href={"/login"}> <IoNotificationsCircle className="text-4xl cursor-pointer" /></Link>
+            <div className=" flex gap-5 items-center">
+                <Link href={"/history"}> <IoNotificationsCircle className="text-4xl cursor-pointer" /></Link>
+                <Link className="hidden md:block" href="/my-account">
+            {pathname === "/my-account" ?<div className="flex gap-5 text-white bg-black  border cursor-pointer px-5 py-3"> <RiAccountCircleFill className="text-3xl " /> <p>My Account</p></div> : <div className="flex gap-5 border cursor-pointer px-5 py-3"><RiAccountCircleLine className="text-3xl" /><p>My Account</p></div>}
+          </Link>
+          
+            </div>
               :
               <Link href={"/login"}> <button className="bg-black text-white md:px-7 md:py-3 px-5 py-3 hover:bg-[#212121] font-semibold md:text-lg transition duration-300 cursor-pointer ease-in-out">
                 Login
@@ -53,22 +71,22 @@ export default function Navbar() {
       </div>
 
       {/* Mobile Navbar */}
-      <div className="absolute fixed bottom-0 shadow-xl bg-gray-100 md:hidden w-full py-7 px-5 block">
+      <div className="absolute z-10 fixed bottom-0 shadow-xl bg-gray-100 md:hidden w-full py-7 px-5 block">
         <div className="flex items-center justify-around gap-5">
           <Link href="/">
-            {pathname === "/" ? <IoHomeSharp className="text-3xl" /> : <IoHomeOutline className="text-3xl" />}
+            {pathname === "/" ? <IoHomeSharp className="text-3xl  text-gray-700" /> : <IoHomeOutline className="text-3xl text-gray-700" />}
           </Link>
           <Link href="/medicale-quipment">
-            {pathname === "/medicale-quipment" ? <MdShoppingCart className="text-3xl" /> : <MdOutlineShoppingCart className="text-3xl" />}
+            {pathname === "/medicale-quipment" ? <MdShoppingCart className="text-3xl text-gray-700" /> : <MdOutlineShoppingCart className="text-3xl  text-gray-700" />}
           </Link>
           <Link href="/services">
-            {pathname === "/services" ? <MdMedicalServices className="text-3xl" /> : <MdOutlineMedicalServices className="text-3xl" />}
+            {pathname === "/services" ? <MdMedicalServices className="text-3xl text-gray-700" /> : <MdOutlineMedicalServices className="text-3xl  text-gray-700" />}
           </Link>
-          <Link href="/transactions">
-            <BsClockHistory className="text-3xl" />
+          <Link href="/history">
+            <BsClockHistory className="text-3xl text-gray-700" />
           </Link>
           <Link href="/my-account">
-            {pathname === "/my-account" ? <RiAccountCircleFill className="text-3xl" /> : <RiAccountCircleLine className="text-3xl" />}
+            {pathname === "/my-account" ? <RiAccountCircleFill className="text-3xl text-gray-700" /> : <RiAccountCircleLine className="text-3xl  text-gray-700" />}
           </Link>
         </div>
       </div>

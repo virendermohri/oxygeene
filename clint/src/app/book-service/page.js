@@ -11,7 +11,7 @@ const services = {
   "Mother & Baby Care": { durations: ["Weekly", "Monthly"], price: { Weekly: 6000, Monthly: 18000 } },
 };
 
-export default function BookService({ searchParams }) {
+export default function BookService({  }) {
   const searchParam = useSearchParams();
   const serviceParam = searchParam.get('service') || '';
   const serviceKey = Object.keys(services).find(
@@ -27,19 +27,24 @@ export default function BookService({ searchParams }) {
 
   // ⬇️ Get user address from localStorage
   useEffect(() => {
-    const user = JSON.parse(localStorage.getItem("user"));
-    if (user?.address) {
-      setAddress(user.address);
-    }
-    if (user?.name) {
-      SetName(user.name);
+    if (typeof window !== "undefined") {
+      const user = JSON.parse(localStorage.getItem("user"));
+      if (user?.address) setAddress(user.address);
+      if (user?.name) SetName(user.name);
     }
   }, []);
+  
   useEffect(() => {
     if (selectedService && selectedService.durations.length > 0) {
       setDuration(selectedService.durations[0]);
     }
   }, [selectedService]);
+  useEffect(() => {
+    if (selectedService && duration && selectedService.price?.[duration]) {
+      setPrice(selectedService.price[duration]);
+    }
+  }, [selectedService, duration]);
+  
   if (!selectedService) {
     return (
       <div className="p-6 text-center text-red-500 font-semibold">
@@ -51,11 +56,6 @@ export default function BookService({ searchParams }) {
     setAddress(e.target.value);
     localStorage.setItem("userAddress", e.target.value);
   };
-  useEffect(() => {
-    if (selectedService && duration) {
-      setPrice(selectedService.price[duration]);
-    }
-  }, [selectedService, duration]);
   const handleSubmit = async (e) => {
     try {
       e.preventDefault();

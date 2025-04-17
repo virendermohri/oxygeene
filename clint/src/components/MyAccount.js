@@ -1,133 +1,108 @@
 'use client';
-import React, { useState } from 'react';
-import { FaEdit, FaUser, FaMapMarkerAlt, FaPhone, FaCalendarAlt } from 'react-icons/fa';
-import { MdOutlineAccountCircle } from "react-icons/md";
+import Image from 'next/image';
+import React, { useEffect, useState } from 'react';
+import { FaMapMarkerAlt, FaPhone } from 'react-icons/fa';
+import { MdOutlineMode } from "react-icons/md";
+const MyAccount = () => {
+  const [userInfo, setUserInfo] = useState({});
+  const [bookings, setBookings] = useState([]);
 
-const MyAccount = ({ userType = "normal" }) => {
-    const [userInfo, setUserInfo] = useState({
-        name: "Virender Singh",
-        email: "virender@example.com",
-        location: "Kurukshetra, India",
-        phone: "+91 123 456 7890",
-        profilePic: "https://source.unsplash.com/random/150x150?person",
-    });
+  useEffect(() => {
+    if(!localStorage.getItem("auth-token")) {
+      window.location.href = "/login";
+    }
+    const user = JSON.parse(localStorage.getItem('user'));
+    if (user) setUserInfo(user);
 
-    const [caretakerInfo, setCaretakerInfo] = useState({
-        name: "John Doe",
-        role: "Nurse",
-        rating: 4.5,
-        location: "Delhi, India",
-        phone: "+91 987 654 3210",
-        experience: "5 years",
-        available: true, // Caretaker availability toggle
-    });
+    const fetchBookings = async () => {
+      try {
+        const res = await fetch(`http://localhost:5000/api/bookservice/user/${user._id}`, {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            "auth-token": localStorage.getItem("auth-token"),
+          },
+        });
+        const data = await res.json();
+        console.log(data);
+        setBookings(data.bookings.flat());
+      } catch (err) {
+        console.error("Error fetching bookings:", err);
+      }
+    };
 
-    return (
-        <div className="px-4 py-8">
-            <div className="max-w-4xl mx-auto">
-                {/* User Information */}
-                <div className="flex items-center justify-between mb-8">
-                    <img
-                        src={"https://res.cloudinary.com/divlt5fqo/image/upload/v1744655374/academics-physical-science-female-student-indoors-pba-palm-beach-atlantic-university-1200x800-1_cxi01f.jpg"}
+    fetchBookings();
+  }, []);
 
-                        alt={userInfo.name}
-                        className="w-24 h-24 rounded-full object-cover shadow-md"
-                    />
-                    <div className="ml-4">
-                        <h2 className="text-2xl font-semibold text-gray-800">{userInfo.name}</h2>
-                        <p className="text-sm text-gray-600">{userInfo.email}</p>
-                        <p className="text-sm text-gray-600">
-                            <FaMapMarkerAlt className="inline mr-2" />
-                            {userInfo.location}
-                        </p>
-                        <p className="text-sm text-gray-600">
-                            <FaPhone className="inline mr-2" />
-                            {userInfo.phone}
-                        </p>
-                    </div>
-                    <button className="px-4 py-2 bg-blue-600 text-white rounded-full hover:bg-blue-700">
-                        <FaEdit />
-                    </button>
-                </div>
+  const handleLogout = () => {
+    localStorage.removeItem("auth-token");
+    localStorage.removeItem("user");
+    window.location.href = "/";
+  };
 
-                {/* Different Views for User or Caretaker */}
-                {userType === "caretaker" ? (
-                    <div className="bg-white p-6 rounded-lg shadow-md">
-                        <h3 className="text-xl font-semibold text-gray-800 mb-4">Caretaker Profile</h3>
-                        <div className="flex flex-col mb-4">
-                            <h4 className="font-medium text-gray-700">Role: {caretakerInfo.role}</h4>
-                            <div className="flex items-center text-yellow-400 mb-2">
-                                {"★".repeat(Math.floor(caretakerInfo.rating))}
-                                {"☆".repeat(5 - Math.floor(caretakerInfo.rating))}
-                            </div>
-                            <p className="text-sm text-gray-600">{caretakerInfo.experience} of experience</p>
-                            <p className="text-sm text-gray-600">
-                                <FaMapMarkerAlt className="inline mr-2" />
-                                {caretakerInfo.location}
-                            </p>
-                            <p className="text-sm text-gray-600">
-                                <FaPhone className="inline mr-2" />
-                                {caretakerInfo.phone}
-                            </p>
-                        </div>
+  const handleChangeAddress = () => {
+    const newAddress = prompt("Enter your new address:");
+    if (newAddress) {
+      setUserInfo(prev => ({ ...prev, address: newAddress }));
+      localStorage.setItem("user", JSON.stringify({ ...userInfo, address: newAddress }));
+    }
+  };
 
-                        {/* Availability Toggle */}
-                        <div className="flex items-center justify-between">
-                            <p className="text-sm text-gray-600">Available for Service:</p>
-                            <label className="relative inline-flex items-center cursor-pointer">
-                                <input
-                                    type="checkbox"
-                                    className="sr-only"
-                                    checked={caretakerInfo.available}
-                                    onChange={() =>
-                                        setCaretakerInfo((prevState) => ({
-                                            ...prevState,
-                                            available: !prevState.available,
-                                        }))
-                                    }
-                                />
-                                <span className="block w-10 h-5 bg-gray-200 rounded-full"></span>
-                                <span
-                                    className={`absolute left-0.5 top-0.5 w-4 h-4 bg-white rounded-full transition-all ${caretakerInfo.available ? "translate-x-5" : ""
-                                        }`}
-                                ></span>
-                            </label>
-                        </div>
-
-                        {/* Caretaker Action Buttons */}
-                        <div className="mt-6 flex gap-4">
-                            <button className="px-6 py-2 bg-green-600 text-white rounded hover:bg-green-700">
-                                View My Bookings
-                            </button>
-                            <button className="px-6 py-2 bg-yellow-600 text-white rounded hover:bg-yellow-700">
-                                Manage Availability
-                            </button>
-                        </div>
-                    </div>
-                ) : (
-                    <div className="bg-white p-6 rounded-lg shadow-md">
-                        <h3 className="text-xl font-semibold text-gray-800 mb-4">User Profile</h3>
-                        <div className="flex flex-col mb-4">
-                            <p className="text-sm text-gray-600">
-                                You can view and manage your personal information, and view your booking
-                                history here.
-                            </p>
-                        </div>
-
-                        {/* User Action Buttons */}
-                        <div className="mt-6 flex gap-4">
-                            <button className="px-6 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">
-                                View My Bookings
-                            </button>
-                            <button className="px-6 py-2 bg-green-600 text-white rounded hover:bg-green-700">
-                                Edit Profile
-                            </button>
-                        </div>
-                    </div>
-                )}
+  return (
+    <div className="px-4 py-8 min-h-screen ">
+      <div className="max-w-4xl mx-auto">
+        {/* Top Section */}
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
+          <div className="flex items-center gap-4">
+            
+            <div>
+              <h2 className="text-xl font-semibold text-gray-800">{userInfo.name}</h2>
+              <p className="text-sm text-gray-600">{userInfo.email}</p>
             </div>
+          </div>
+         
         </div>
-    );
+
+        {/* Address Section */}
+     
+
+        {/* Bookings Section */}
+        <div className="bg-white  overflow-auto h-[70vh] shadow pb-6  pl-6 pr-6 rounded-lg ">
+          <h3 className="text-xl font-semibold text-gray-800 mb-4 pt-6 w-full pb-6 absolute pl-6 bg-white">My Bookings</h3>
+          {bookings.length === 0 ? (
+            <p className="text-gray-600">No bookings found.</p>
+          ) : (
+            <div className="space-y-4 mt-10">
+              {bookings.map((booking, index) => (
+                <div key={index} className="shadow p-3 rounded-md">
+                  <p><span className="font-semibold">Service:</span> {booking.serviceName}</p>
+                  <p><span className="font-semibold">Duration:</span> {booking.duration}</p>
+                  <p><span className="font-semibold">Scheduled:</span> {new Date(booking.scheduleDateTime).toLocaleString()}</p>
+                  <p><span className="font-semibold">Price:</span> ₹{booking.price}</p>
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
+        <div className="bg-white p-4 rounded-lg shadow mb-6">
+          <h3 className="text-lg font-semibold text-gray-800 flex gap-5 mb-2">Contact Info <MdOutlineMode
+            onClick={handleChangeAddress}
+            className='text-2xl p-1 text-gray-500 hover:text-gray-700 cursor-pointer rounded-full bg-gray-200 hover:bg-gray-300 transition duration-300 ease-in-out'
+            /></h3>
+          <p className="text-gray-600 mb-1"><FaMapMarkerAlt className="inline mr-2" />{userInfo.address || 'No address found'}</p>
+          <p className="text-gray-600"><FaPhone className="inline mr-2" />{userInfo.phone_number || 'No phone number'}</p>
+         
+          
+        </div>
+      </div>
+      <div className="flex mt-20  itmes-center justify-center">
+
+       <button onClick={handleLogout} className="px-4 cursor-pointer py-2 bg-red-500 text-white rounded hover:bg-red-600 w-full sm:w-auto">
+            Log Out
+          </button>
+      </div>
+    </div>
+  );
 };
 
 export default MyAccount;

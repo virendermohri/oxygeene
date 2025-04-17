@@ -1,4 +1,5 @@
 'use client';
+import Image from 'next/image';
 import React from 'react';
 import { FaQuoteLeft } from 'react-icons/fa';
 
@@ -39,13 +40,16 @@ const Testimonials = () => {
             key={index}
             className="bg-gray-50 shadow-md rounded-lg p-6 flex flex-col items-center text-center"
           >
-            <img
+            <Image
+            width={100}
+
+            height={100}
               src={"https://www.pba.edu/wp-content/uploads/2023/05/academics-physical-science-female-student-indoors-pba-palm-beach-atlantic-university-1200x800-1.jpg"}
               alt={t.name}
               className="w-20 h-20 rounded-full object-cover mb-4"
             />
             <FaQuoteLeft className="text-green-600 text-xl mb-2" />
-            <p className="text-gray-700 text-sm italic mb-4">"{t.feedback}"</p>
+            <p className="text-gray-700 text-sm italic mb-4">&#34;{t.feedback}&#34;</p>
             <h4 className="font-semibold text-gray-900">{t.name}</h4>
             <p className="text-sm text-gray-500">{t.location}</p>
           </div>
