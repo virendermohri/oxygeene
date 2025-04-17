@@ -13,7 +13,7 @@ async function getCaretakerData() {
  const caretakerData=  await res.json();
 return caretakerData;
 } 
-export default async function   CaretakerProfile ({ onBack, onBook }) {
+export default async function   CaretakerProfile ({ }) {
   const caretakerData = await getCaretakerData();
   if (!caretakerData) {
     return <div>Loading...</div>;
@@ -110,13 +110,13 @@ export default async function   CaretakerProfile ({ onBack, onBook }) {
         <div className="flex gap-4">
           <button
             className="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-xl text-sm"
-            onClick={onBook}
+            // onClick={onBook}
           >
             Book Now
           </button>
           <button
             className="bg-gray-100 hover:bg-gray-200 text-gray-700 px-5 py-2 rounded-xl text-sm"
-            onClick={onBack}
+            // onClick={onBack}
           >
             Back
           </button>
