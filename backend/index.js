@@ -11,7 +11,7 @@ app.use(cors({
 }));
 main().catch(err => console.log(err));
 async function main() {
-  await mongoose.connect("mongodb://localhost:27017/oxygeene");
+  await mongoose.connect("mongodb+srv://money2xhelp:mongodbvirendersandhu8055@cluster0.pk7bkkj.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0");
   console.log('db connected');
 }
 app.get('/', (req, res) => {
