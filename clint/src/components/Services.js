@@ -6,7 +6,6 @@ import {
   FaStethoscope, FaUserNurse, FaBaby, FaHeartbeat, FaSyringe,
   FaDumbbell, FaVial, FaUserShield, FaHeadset
 } from 'react-icons/fa';
-import * as FaIcons from "react-icons/fa";
 import { MdOutlineClear } from "react-icons/md";
 import Filter from './Filter';
 import { FaPhone, FaMapMarkerAlt, FaRupeeSign, FaUser } from 'react-icons/fa';
@@ -27,7 +26,6 @@ const services = [
 ];
 
 const Services = ({ }) => {
-
   const searchParams = useSearchParams();
   const defaultService = searchParams.get("service");
   const pathname = usePathname()

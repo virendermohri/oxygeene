@@ -22,12 +22,16 @@ async function getData() {
     { name: "Dr. Kapoor", service: "Doctor Consultation" },
   ];
 
+  console.log(services, caretakers, "ll")
   return { services, caretakers };
 }
 import React, { Suspense } from 'react';
 export default async function Home() {
   const { services, caretakers } = await getData();
-  <Suspense fallback={<div>Loading Services...</div>}>
- <Services services={services} caretakers={caretakers} />;
-</Suspense>
+  return(
+    <Suspense fallback={<div>Loading Services...</div>}>
+
+    <Services services={services} caretakers={caretakers} />;
+  </Suspense>
+  )
 }
