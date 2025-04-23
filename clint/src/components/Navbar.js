@@ -31,7 +31,7 @@ export default function Navbar() {
           <div>
             {isHome ? 
             <Link href="/">
-              <p className="md:text-3xl text-2xl md:font-semibold font-bold font-mono">Oxygeene</p>
+              <p className="md:text-3xl text-2xl md:font-semibold font-bold font-mono">CareKwik</p>
             </Link>
             :
             <button 
