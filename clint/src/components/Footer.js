@@ -2,13 +2,43 @@
 import Link from 'next/link';
 import { FaInstagram, FaFacebookF, FaTwitter, FaLinkedin } from 'react-icons/fa';
 export default function Footer() {
+  const slugify = (text) => {
+    return text
+      .toLowerCase()
+      .replace(/[^a-z0-9\s]/g, '') // remove special characters
+      .replace(/\s+/g, '-')         // replace spaces with -
+      .trim();
+  }
+  const services = [
+    'Elder Care',
+    'Mother & Baby Care',
+    'Nursing Care',
+    'ICU at Home, Critical Care',
+    'Physiotherapy',
+    'Doctor Consultation',
+    'Vaccination',
+    'Lab Tests',
+    'Counselling',
+  ];
+
+  <ul>
+    {services.map(service => (
+      <li key={service}>
+        <Link href={`/services/${slugify(service)}`} className="hover:text-green-600">
+          {service}
+        </Link>
+      </li>
+    ))}
+  </ul>
+
   return (
     <footer className=" text-gray-700  py-10 mt-10">
-      <h1 className='text-center  md:text-xl font-bold  md:mb-20 font-mono mb-10 justify-center flex gap-1.5'>The scroll ends, but <p className='text-green-700 '>Oxygeene </p> doesn’t</h1>
+      <h1 className='text-center  md:text-xl font-bold  md:mb-20 font-mono mb-10 justify-center flex gap-1.5'>
+       The page may end here, but <p className='text-green-700 '>CareKwik </p> doesn’t</h1>
       <div className="max-w-7xl px-6 mx-auto grid md:grid-cols-4 gap-8 text-sm">
         {/* Logo & Tagline */}
         <div>
-          
+
           <h2 className="text-xl font-bold text-green-700">Oxygeene</h2>
           <p className="mt-2 text-gray-600">Caring begins here. Homecare you can trust.</p>
         </div>
@@ -29,15 +59,13 @@ export default function Footer() {
         <div>
           <h3 className="font-semibold mb-3 text-gray-800">Services</h3>
           <ul className="space-y-2">
-            <li><Link href="/services?service=elder care" className="hover:text-green-600">Elder Care</Link></li>
-            <li><Link href="/services?service=mother, baby care" className="hover:text-green-600">Mother & Baby Care</Link></li>
-            <li><Link href="/services?service=nursing care" className="hover:text-green-600">Nursing Care</Link></li>
-            <li><Link href="/services?service=Critical Care" className="hover:text-green-600">ICU at Home, Critical Care</Link></li>
-            <li><Link href="/services?service=physiotherapy" className="hover:text-green-600">Physiotherapy</Link></li>
-            <li><Link href="/services?service=Doctor Consultation" className="hover:text-green-600">Doctor Consultation</Link></li>
-            <li><Link href="/services?service=Vaccination" className="hover:text-green-600">Vaccination</Link></li>
-            <li><Link href="/services?service=Lab Tests" className="hover:text-green-600">Lab Tests</Link></li>
-            <li><Link href="/services?service=Counselling" className="hover:text-green-600">Counselling</Link></li>
+            {services.map(service => (
+              <li key={service}>
+                <Link href={`/services/${slugify(service)}`} className="hover:text-green-600">
+                  {service}
+                </Link>
+              </li>
+            ))}
           </ul>
         </div>
 

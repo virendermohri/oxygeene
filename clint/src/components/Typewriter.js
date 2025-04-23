@@ -4,13 +4,14 @@ import { Typewriter } from 'react-simple-typewriter';
 
 const OxyTagline = () => {
   const taglines = [
-    "When care is near, there's nothing to fear — Oxygeene is always here.",
-    "For love and care, we’re always there — Oxygeene.",
-    "Day or night, we bring the light — Oxygeene by your side.",
-    "With heart and screen, we care unseen — that’s Oxygeene.",
-    "From pain to peace, our care won’t cease — only with Oxygeene.",
-    "Feel the ease, live in peace — choose Oxygeene."
+    "CareKwik is here, no need to fear.",
+    "Love and care, we’re always there — CareKwik.",
+    "Night or day, we light your way — CareKwik by your side.",
+    "Heart and tech, we’ll keep you in check — that’s CareKwik.",
+    "From pain to peace, our care won’t cease — CareKwik for you.",
+    "Ease your mind, peace you’ll find — CareKwik every time."
   ];
+  
 
   return (
     <div className="text-center text-lg md:text-2xl   font-semibold p-4 mt-5 font-mono">

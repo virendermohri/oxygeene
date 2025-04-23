@@ -24,8 +24,13 @@ async function getData() {
 
   return { services, caretakers };
 }
+export const metadata = {
+  title: "Carekwik - Instant care, anytime, anywhere",
+  description: " by create next app",
+};
+
 import React, { Suspense } from 'react';
-export default async function Home() {
+export default async function page() {
   const { services, caretakers } = await getData();
   return(
     <Suspense fallback={<div>Loading Services...</div>}>
