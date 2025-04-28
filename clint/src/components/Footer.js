@@ -32,14 +32,13 @@ export default function Footer() {
   </ul>
 
   return (
-    <footer className=" text-gray-700  py-10 mt-10">
-      <h1 className='text-center  md:text-xl font-bold  md:mb-20 font-mono mb-10 justify-center flex gap-1.5'>
-       The page may end here, but <p className='text-green-700 '>CareKwik </p> doesn’t</h1>
+    <footer className="pb-20 text-gray-700  py-10 mt-10">
+      
       <div className="max-w-7xl px-6 mx-auto grid md:grid-cols-4 gap-8 text-sm">
         {/* Logo & Tagline */}
         <div>
 
-          <h2 className="text-xl font-bold text-green-700">Oxygeene</h2>
+          <h2 className="text-xl font-bold text-green-700">CareKwik</h2>
           <p className="mt-2 text-gray-600">Caring begins here. Homecare you can trust.</p>
         </div>
 
@@ -72,10 +71,9 @@ export default function Footer() {
         {/* Contact & Social */}
         <div>
           <h3 className="font-semibold mb-3 text-gray-800">Contact</h3>
-          <p>Email: oxygeene1@gmail.com</p>
           <p>Phone: +91-8307190216</p>
           <div className="flex gap-4 mt-4 text-green-700 text-xl">
-            <Link href="https://instagram.com/oxygeene_" target='_blank'><FaInstagram /></Link>
+            <Link href="https://instagram.com/getcarekwik" target='_blank'><FaInstagram /></Link>
             <Link href="https://instagram.com/oxygeene_"><FaFacebookF /></Link>
             <Link href="https://instagram.com/oxygeene_"><FaTwitter /></Link>
             <Link href="https://instagram.com/oxygeene_"><FaLinkedin /></Link>
@@ -84,7 +82,7 @@ export default function Footer() {
       </div>
 
       <div className="border-t mt-8 pt-4 text-center text-xs text-gray-500">
-        © {new Date().getFullYear()} Oxygeene. All rights reserved.
+        © {new Date().getFullYear()} CareKwik. All rights reserved.
       </div>
     </footer>
   );

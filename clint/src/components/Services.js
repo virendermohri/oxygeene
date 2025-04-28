@@ -154,7 +154,7 @@ const Services = ({ }) => {
         <meta property="og:description" content={serviceData.description} />
         <meta property="og:type" content="website" />
       </Head> */}
-        <div className={`px-4 ${pathname == "/services" ? "md:h-screen" : ""} py-4 mb-10`}>
+        <div className={`px-4  ${pathname == "/services" ? " md:h-screen  md:mt-20" : ""}  py-4 mb-10`}>
           {selectedService && (
             <div className='mb-10 md:w-[80%] m-auto'>
               <div className="flex justify-between items-center mt-8 mb-4">

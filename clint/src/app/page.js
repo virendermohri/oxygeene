@@ -34,7 +34,7 @@ async function getData() {
 export default async function Home() {
   const { services, caretakers } = await getData();
   return (
-    <div className="bg-white">
+    <div className="">
       <div className="h-38  ">
 
         <Typewriter />

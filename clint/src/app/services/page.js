@@ -1,18 +1,7 @@
-import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import Services from "@/components/Services";
+import React, { Suspense } from 'react';
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
+// ✅ SEO Metadata
 export const metadata = {
   title: "Home Healthcare Services | Trained Caretakers at Your Doorstep | CareKwik",
   description: "Find verified nurses, elder care, physiotherapists, and home caretakers near you. CareKwik delivers professional healthcare services instantly at your home across India.",
@@ -26,17 +15,12 @@ export const metadata = {
   robots: "index, follow",
 };
 
+// ✅ Main Page
+export default async function ServicesPage() {
 
-export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <Navbar/>
-        {children}
-        <Footer/>
-      </body>
-    </html>
+    <Suspense fallback={<div>Loading Services...</div>}>
+      <Services  />
+    </Suspense>
   );
 }
