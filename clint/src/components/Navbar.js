@@ -74,19 +74,19 @@ export default function Navbar() {
       <div className="absolute z-10 fixed bottom-0 shadow-xl  bg-gray-100 md:hidden w-full py-6 rounded-full shadow-xl px-5 block">
         <div className="flex items-center justify-around gap-5">
           <Link href="/">
-            {pathname === "/" ? <IoHomeSharp className="text-3xl  text-gray-500" /> : <IoHomeOutline className="text-3xl text-gray-500" />}
+            {pathname === "/" ? <IoHomeSharp className="text-3xl  text-gray-700" /> : <IoHomeOutline className="text-3xl text-gray-500" />}
           </Link>
           <Link href="/medicale-quipment">
-            {pathname === "/medicale-quipment" ? <MdShoppingCart className="text-3xl text-gray-500" /> : <MdOutlineShoppingCart className="text-3xl  text-gray-500" />}
+            {pathname === "/medicale-quipment" ? <MdShoppingCart className="text-3xl text-gray-700" /> : <MdOutlineShoppingCart className="text-3xl  text-gray-500" />}
           </Link>
           <Link href="/services/">
-            {pathname === "/services" ? <MdMedicalServices className="text-3xl text-gray-500" /> : <MdOutlineMedicalServices className="text-3xl  text-gray-500" />}
+            {pathname === "/services" ? <MdMedicalServices className="text-3xl text-gray-700" /> : <MdOutlineMedicalServices className="text-3xl  text-gray-500" />}
           </Link>
           <Link href="/history">
-            <BsClockHistory className="text-3xl text-gray-500" />
+            <BsClockHistory className="text-3xl text-gray-700" />
           </Link>
           <Link href="/my-account">
-            {pathname === "/my-account" ? <RiAccountCircleFill className="text-3xl text-gray-500" /> : <RiAccountCircleLine className="text-3xl  text-gray-500" />}
+            {pathname === "/my-account" ? <RiAccountCircleFill className="text-3xl text-gray-700" /> : <RiAccountCircleLine className="text-3xl  text-gray-500" />}
           </Link>
         </div>
       </div>
