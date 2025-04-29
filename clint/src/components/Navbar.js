@@ -83,7 +83,8 @@ export default function Navbar() {
             {pathname === "/services" ? <MdMedicalServices className="text-3xl text-gray-700" /> : <MdOutlineMedicalServices className="text-3xl  text-gray-500" />}
           </Link>
           <Link href="/history">
-            <BsClockHistory className="text-3xl text-gray-700" />
+          {pathname === "/history" ? <BsClockHistory className="text-3xl text-gray-700" /> : <BsClockHistory className="text-3xl  text-gray-500" />}
+
           </Link>
           <Link href="/my-account">
             {pathname === "/my-account" ? <RiAccountCircleFill className="text-3xl text-gray-700" /> : <RiAccountCircleLine className="text-3xl  text-gray-500" />}
