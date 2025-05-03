@@ -165,15 +165,8 @@ const BookService = () => {
 
           <div className="mb-4">
             <label className="block font-medium mb-1">Payment Method:</label>
-            <select
-              required
-              name="paymentMethod"
-              onChange={(e) => setPaymentMethod(e.target.value)}
-              className="w-full border p-2 rounded"
-            >
-              <option value="online">Online</option>
-              <option value="cash">Cash on Service</option>
-            </select>
+            
+              <p className="p-2 bg-gray-100 rounded ">Cash on Service</p>
           </div>
 
           <button

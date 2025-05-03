@@ -4,7 +4,8 @@ const nextConfig = {
     domains: ['www.pba.edu',
       "encrypted-tbn0.gstatic.com",
       "insights.ibx.com",
-      "m.media-amazon.com"
+      "m.media-amazon.com",
+      "res.cloudinary.com"
 
     ], // Add your image domains here
   },

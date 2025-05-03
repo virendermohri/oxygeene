@@ -106,7 +106,7 @@ const Services = () => {
                         <Image
                           width={100}
                           height={100}
-                          src={"https://www.pba.edu/wp-content/uploads/2023/05/academics-physical-science-female-student-indoors-pba-palm-beach-atlantic-university-1200x800-1.jpg"}
+                          src={caretaker.photo}
                           alt={caretaker.name}
                           className="w-15 h-15 md:w-20 md:h-20 rounded-full object-cover shadow-md"
                         />

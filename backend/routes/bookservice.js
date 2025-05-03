@@ -2,7 +2,7 @@ const express = require("express");
 const fetchuser = require("../middleware/fetchuser");
 const BookService = require("../modles/bookservice");
 const router = express.Router();
-
+const User = require("../modles/user");
 // POST /api/book-service
 router.post('/', fetchuser, async (req, res) => {
   try {
@@ -23,7 +23,10 @@ router.post('/', fetchuser, async (req, res) => {
     ) {
       return res.status(400).json({ error: 'All fields are required' });
     }
-
+const user=await User.findById(req.user.id);
+if (!user) {  
+  return res.status(404).json({ error: 'Error' });
+}
     const newBooking = new BookService({
       userId:req.user.id,
       serviceName,
@@ -32,6 +35,7 @@ router.post('/', fetchuser, async (req, res) => {
       scheduleDateTime: new Date(scheduleDateTime),
       paymentMethod,
       address,
+      phone_number: user.phone_number,
     });
 
     await newBooking.save();
