@@ -8,25 +8,25 @@ const testimonials = [
     name: "Priya Sharma",
     location: "Gurgaon, India",
     feedback:
-      "Oxygeene helped me find a nurse for my father within hours. The service was professional and extremely comforting.",
+      "CareKwik helped me find a nurse for my father within hours. The service was professional and extremely comforting.",
     image:
-      "https://randomuser.me/api/portraits/women/44.jpg",
+      "https://res.cloudinary.com/divlt5fqo/image/upload/v1746626443/1434464084-1187_1_cfxprf.png",
   },
   {
     name: "Ravi Mehta",
     location: "Delhi, India",
     feedback:
-      "The caretaker we got through Oxygeene was kind and skilled. Highly recommended for elder care at home!",
+      "The caretaker we got through CareKwik was kind and skilled. Highly recommended for elder care at home!",
     image:
-      "https://randomuser.me/api/portraits/men/36.jpg",
+      "https://res.cloudinary.com/divlt5fqo/image/upload/v1746626591/average-height-in-men-in-india_900_bwjs3k.jpg",
   },
   {
     name: "Sunita Deswal",
     location: "Panipat, India",
     feedback:
-      "I was worried about renting medical equipment, but Oxygeene made it seamless and affordable.",
+      "I was worried about renting medical equipment, but CareKwik made it seamless and affordable.",
     image:
-      "https://randomuser.me/api/portraits/women/68.jpg",
+      "https://res.cloudinary.com/divlt5fqo/image/upload/v1746626506/e2d88306b280450d5ff98421db4296be_f6lxaf.jpg",
   },
 ];
 
@@ -44,7 +44,7 @@ const Testimonials = () => {
             width={100}
 
             height={100}
-              src={"https://www.pba.edu/wp-content/uploads/2023/05/academics-physical-science-female-student-indoors-pba-palm-beach-atlantic-university-1200x800-1.jpg"}
+              src={t.image}
               alt={t.name}
               className="w-20 h-20 rounded-full object-cover mb-4"
             />

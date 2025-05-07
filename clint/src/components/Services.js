@@ -9,7 +9,7 @@ import "../app/globals.css";
 import Link from 'next/link';
 import Image from 'next/image';
 import Head from 'next/head';
-
+import Loading from './../../public/loading.gif';
 const services = [
   { name: "Elder Care", icon: <FaUserShield /> },
   { name: "Mother Baby Care", icon: <FaBaby /> },
@@ -73,8 +73,9 @@ const Services = () => {
       </Head>
 
       {loading ? (
-        <div className="flex items-center justify-center h-screen">
-          <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-blue-500"></div>
+        
+        <div className="flex items-center justify-center border h-screen absolute top-0 left-0 right-0 bottom-0 bg-white z-50">
+          <Image src={Loading} alt="Loading" width={50} height={50} className="animate-spin" />
         </div>
       ) : (
         <div className={`px-4 ${pathname == "/services" ? "md:h-screen md:mt-20" : ""} py-4 mb-10`}>

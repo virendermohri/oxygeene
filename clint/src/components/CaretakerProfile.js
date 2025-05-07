@@ -5,8 +5,9 @@ import "../app/globals.css";
 import { MdOutlineAccountCircle } from "react-icons/md";
 import Link from 'next/link';
 import Image from 'next/image';
+import Loading from './../../public/loading.gif';
 const CaretakerProfile = () => {
-
+    const [loading, setLoading] = useState(true);
     const [caretakers, setCaretaker] = useState(null);
     useEffect(() => {
         getdata()
@@ -23,9 +24,11 @@ const CaretakerProfile = () => {
         }
         const caretakerData = await res.json();
         setCaretaker(caretakerData)
-        console.log(caretakerData)
-    }
+        setLoading(false);
+    }   
     return (
+        <>
+              
         <div className="md:px-10  px-4 py-8  mb-10 md:mb-20">
             <h2 className="text-2xl font-bold text-center mb-6 text-green-700">Meet Our Caretakers</h2>
             <div className="flex  w-auto overflow-auto gap-4 caretakerbox" >
@@ -108,6 +111,8 @@ const CaretakerProfile = () => {
                 ))}
             </div>
         </div>
+        </>
+
     );
 };
 
