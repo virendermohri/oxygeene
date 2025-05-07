@@ -6,6 +6,7 @@ import RentalEquipment from "@/components/RentalEquipment";
 import Testimonials from "@/components/Testimonials";
 
 import React, { Suspense } from "react";
+import Showcase from "@/components/Showcase";
 async function getData() {
   const services = [
     { name: "Elder Care", icon: "FaUserShield" },
@@ -44,6 +45,7 @@ export default async function Home() {
 
       </Suspense>
       <CaretakerProfile />
+      <Showcase/>
       <RentalEquipment />
       <Testimonials />
     </div>

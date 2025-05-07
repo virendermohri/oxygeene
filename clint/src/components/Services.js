@@ -102,13 +102,13 @@ const Services = () => {
                 {filteredCaretakers.map((caretaker, idx) => (
                   <div key={idx} className="flex border border-[#212121] flex-col items-start justify-start p-3 bg-white rounded-lg">
                     <div className="flex flex-col">
-                      <div className="flex mb-4 gap-5 items-center justify-between">
+                      <div className="flex mb-4 gap-5  items-center ">
                         <Image
                           width={100}
                           height={100}
                           src={caretaker.photo}
                           alt={caretaker.name}
-                          className="w-15 h-15 md:w-20 md:h-20 rounded-full object-cover shadow-md"
+                          className="w-15 h-15  md:w-20 md:h-20 rounded-full object-cover shadow-md"
                         />
                         <div className="flex flex-col">
                           <div className="flex gap-2">
@@ -145,7 +145,7 @@ const Services = () => {
                       {caretaker.pricePerDay} per day
                     </p>
                     <div className="flex w-full my-5 items-center justify-between space-x-4">
-                      <Link href={`/caretaker-profile`}>
+                      <Link  href={`/caretaker-profile?id=${caretaker._id}`}>
                         <button className="px-6 py-2 bg-blue-500 cursor-pointer text-white rounded hover:bg-blue-700 transition duration-300">
                           Profile
                         </button>

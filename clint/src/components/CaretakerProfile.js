@@ -91,7 +91,7 @@ const CaretakerProfile = () => {
                             {caretaker.pricePerDay} per day
                         </p>
                         <div className="flex w-full my-5 items-center justify-between space-x-4">
-                            <Link href={`/caretaker-profile`}>
+                            <Link href={`/caretaker-profile?id=${caretaker._id}`}>
                                 <button
                                     className="px-6 py-2 bg-blue-500 cursor-pointer text-white rounded hover:bg-blue-700 transition duration-300"
                                 >

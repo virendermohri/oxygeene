@@ -1,6 +1,7 @@
 import Image from "next/image";
 import React from "react";
 async function getCaretakerData() {
+
   const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/caretaker`, {
     method: "GET",  
     headers: {
@@ -27,7 +28,7 @@ export default async function   CaretakerProfile ({ }) {
         <Image
           width={100}
           height={100}
-          src={caretaker.photo || "/default-avatar.png"}
+          src={caretaker.photo || caretaker.name}
           alt="Caretaker"
           className="w-15 h-15 md:w-20 md:h-20 rounded-full object-cover shadow-md"
         />
