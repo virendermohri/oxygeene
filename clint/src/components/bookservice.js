@@ -42,7 +42,7 @@ const BookService = () => {
 
   const [paymentMethod, setPaymentMethod] = useState("online");
   const [address, setAddress] = useState("");
-  const [name, SetName] = useState("");
+  const [phone_number, SetPN] = useState();
   const [scheduleDateTime, setScheduleDateTime] = useState("");
   const [duration, setDuration] = useState("");
   const [price, setPrice] = useState(0);
@@ -52,7 +52,7 @@ const BookService = () => {
     if (typeof window !== "undefined") {
       const user = JSON.parse(localStorage.getItem("user"));
       if (user?.address) setAddress(user.address);
-      if (user?.name) SetName(user.name);
+    
     }
     const res = fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/caretaker/${caretakerParam}`, {
       method: "GET",
@@ -106,6 +106,7 @@ const BookService = () => {
         serviceName: selectedService.name,
         price,
         duration,
+        phone_number,
         paymentMethod,
       };
 
@@ -194,6 +195,19 @@ const BookService = () => {
               name="address"
               value={address}
               onChange={handleAddressChange}
+              className="w-full border p-2 rounded bg-gray-100 text-gray-700"
+            />
+          </div>
+          <div className="mb-4">
+            <label className="block font-medium mb-1">Phone:</label>
+            <input
+              type="tel"
+              name="phone_number"
+              
+              onChange={((e) => SetPN(e.target.value))}
+              required
+              inputMode="numeric"
+              pattern="[0-9]{10}"
               className="w-full border p-2 rounded bg-gray-100 text-gray-700"
             />
           </div>

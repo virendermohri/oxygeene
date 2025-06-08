@@ -4,7 +4,7 @@ const BookService = require("../modles/bookservice");
 const router = express.Router();
 const User = require("../modles/user");
 // POST /api/book-service
-router.post('/', fetchuser, async (req, res) => {
+router.post('/', async (req, res) => {
   try {
     const {
     
@@ -14,28 +14,25 @@ router.post('/', fetchuser, async (req, res) => {
       price,
       scheduleDateTime,
       paymentMethod,
+      phone_number
     } = req.body;
 
     // Validate fields
     if (
-       !serviceName || !duration || !price ||
+       !serviceName || !duration || !price || !phone_number ||
       !scheduleDateTime || !paymentMethod || !address
     ) {
       return res.status(400).json({ error: 'All fields are required' });
     }
-const user=await User.findById(req.user.id);
-if (!user) {  
-  return res.status(404).json({ error: 'Error' });
-}
+
     const newBooking = new BookService({
-      userId:req.user.id,
       serviceName,
       duration,
       price,
       scheduleDateTime: new Date(scheduleDateTime),
       paymentMethod,
       address,
-      phone_number: user.phone_number,
+      phone_number: phone_number,
     });
 
     await newBooking.save();
