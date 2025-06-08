@@ -74,8 +74,8 @@ const Services = () => {
 
       {loading ? (
         
-        <div className="flex items-center justify-center border h-screen absolute top-0 left-0 right-0 bottom-0 bg-white z-50">
-          <Image src={Loading} alt="Loading" width={50} height={50} className="animate-spin" />
+        <div className="flex  items-center justify-center   bg-white ">
+         <h1 >Loading...</h1>
         </div>
       ) : (
         <div className={`px-4 ${pathname == "/services" ? "md:h-screen md:mt-20" : ""} py-4 mb-10`}>
