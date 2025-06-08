@@ -4,9 +4,7 @@ import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
-
-
+import Image from "next/image";
 const services = {
   "Elder Care": {
     durations: ["Daily", "Weekly", "Monthly"],
@@ -33,6 +31,8 @@ const services = {
 const BookService = () => {
   const searchParam = useSearchParams();
   const serviceParam = searchParam.get("service") || "";
+  const caretakerParam = searchParam.get("caretaker");
+
   const serviceKey = Object.keys(services).find(
     (key) => key.toLowerCase() === serviceParam.toLowerCase()
   );
@@ -46,13 +46,30 @@ const BookService = () => {
   const [scheduleDateTime, setScheduleDateTime] = useState("");
   const [duration, setDuration] = useState("");
   const [price, setPrice] = useState(0);
-
+  const [caretaker, setCaretaker] = useState(null);
+  const [loading, setLoading] = useState(true);
   useEffect(() => {
     if (typeof window !== "undefined") {
       const user = JSON.parse(localStorage.getItem("user"));
       if (user?.address) setAddress(user.address);
       if (user?.name) SetName(user.name);
     }
+    const res = fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/caretaker/${caretakerParam}`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        "auth-token": localStorage.getItem("auth-token"),
+      },
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        setCaretaker(data);
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.error("Error fetching caretaker:", error);
+      });
+
   }, []);
 
   useEffect(() => {
@@ -117,10 +134,28 @@ const BookService = () => {
   return (
     <>
       <ToastContainer position="top-right" autoClose={2000} />
-      <div className="max-w-3xl m-auto p-6 bg-white md:h-screen mt-10 rounded">
-        <h1 className="text-2xl font-bold text-green-700 mb-6">
-          Book {selectedService.name}
-        </h1>
+      {loading ? (
+        <div className="flex items-center justify-center h-screen bg-white">
+          <h1 className="text-xl font-semibold text-gray-600">Loading...</h1>
+        </div>):
+
+      <div className="max-w-3xl m-auto p-10 md:mb-20 bg-gray-100  md:h-screen mt-10 rounded">
+        <div className="flex justify-between mb-6">
+
+          <h1 className=" text-2xl font-bold text-green-700">
+            {selectedService.name}
+          </h1>
+          <div className="flex justify-center items-center gap-4 text-gray-600 mb-4">
+            <Image
+              width={100}
+              height={100}
+              src={caretaker.photo}
+              alt={caretaker.name}
+              className="w-10 h-10 md:w-15 md:h-15 rounded-full object-cover  shadow-md "
+            />
+             {caretaker?.name || "Caretaker"}
+          </div>
+        </div>
 
         <form>
           <div className="mb-4">
@@ -165,8 +200,8 @@ const BookService = () => {
 
           <div className="mb-4">
             <label className="block font-medium mb-1">Payment Method:</label>
-            
-              <p className="p-2 bg-gray-100 rounded ">Cash on Service</p>
+
+            <p className="p-2 bg-white rounded ">Cash on Service</p>
           </div>
 
           <button
@@ -177,7 +212,7 @@ const BookService = () => {
             Confirm Booking
           </button>
         </form>
-      </div>
+      </div>}
     </>
   );
 };

@@ -6,8 +6,7 @@ import { MdOutlineAccountCircle } from "react-icons/md";
 import Link from 'next/link';
 import Image from 'next/image';
 import Loading from './../../public/loading.gif';
-const CaretakerProfile = () => {
-    const [loading, setLoading] = useState(true);
+const CaretakerProfile = (loading) => {
     const [caretakers, setCaretaker] = useState(null);
     useEffect(() => {
         getdata()
@@ -24,7 +23,6 @@ const CaretakerProfile = () => {
         }
         const caretakerData = await res.json();
         setCaretaker(caretakerData)
-        setLoading(false);
     }   
     return (
         <>

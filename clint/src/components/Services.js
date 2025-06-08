@@ -151,7 +151,7 @@ const Services = () => {
                           Profile
                         </button>
                       </Link>
-                      <Link href={`/book-service?service=${selectedService}`}>
+                      <Link href={`/book-service?service=${selectedService}&caretaker=${caretaker._id}`}>
                         <button className="px-6 py-2 bg-green-500 cursor-pointer text-white rounded hover:bg-green-700 transition duration-300">
                           Book
                         </button>
