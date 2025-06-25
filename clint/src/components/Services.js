@@ -9,7 +9,6 @@ import "../app/globals.css";
 import Link from 'next/link';
 import Image from 'next/image';
 import Head from 'next/head';
-import Loading from './../../public/loading.gif';
 const services = [
   { name: "Elder Care", icon: <FaUserShield /> },
   { name: "Mother Baby Care", icon: <FaBaby /> },
