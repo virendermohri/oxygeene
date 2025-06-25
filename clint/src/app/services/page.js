@@ -1,19 +1,41 @@
 import Services from "@/components/Services";
 import React, { Suspense } from 'react';
 
-// ✅ SEO Metadata
-// export const metadata = {
-//   title: "Home Healthcare Services | Trained Caretakers at Your Doorstep | CareKwik",
-//   description: "Find verified nurses, elder care, physiotherapists, and home caretakers near you. CareKwik delivers professional healthcare services instantly at your home across India.",
-//   keywords: "Home healthcare services, nurse at home, elder care India, physiotherapy services, CareKwik caretakers, healthcare at home, best homecare India, trusted homecare services, book caretaker online, post surgery care at home, home nursing services, physiotherapy at home, doctor consultation at home, vaccination services, lab tests at home, counselling services home care near me, icu care at home, critical care services, home healthcare solutions, trained nurses near me, physiotherapists near me, elder care services, home healthcare providers",
-//   openGraph: {
-//     title: "Best Home Healthcare Services in India | CareKwik",
-//     description: "Need home healthcare? Hire trained nurses, caretakers, and physiotherapists easily with CareKwik. Trusted by families across India for safe, affordable care.",
-//     url: "https://carekwik.com/services",
-//     type: "website",
-//   },
-//   robots: "index, follow",
-// };
+export const metadata = {
+  title: 'Our Healthcare Services | CareKwik',
+  description: 'Explore a wide range of healthcare services at CareKwik including elder care, nursing care, physiotherapy, doctor consultation, ICU at home, lab tests, and more — all at your doorstep.',
+  keywords: `
+    healthcare services at home,
+    elder care services at home,
+    nursing care for elderly at home,
+    home physiotherapy service,
+    doctor consultation at home,
+    ICU setup at home,
+    critical care at home,
+    baby care services at home,
+    mother and baby care at home,
+    vaccination at home,
+    lab tests home sample collection,
+    counselling services online,
+    home medical equipment rental,
+    trusted healthcare services in India,
+    affordable home healthcare services,
+    CareKwik healthcare solutions
+  `,
+  openGraph: {
+    title: 'Our Healthcare Services | CareKwik',
+    description: 'Find professional healthcare services like elder care, mother-baby care, ICU at home, physiotherapy, and more — delivered to your home by CareKwik.',
+    url: 'https://carekwik.com/services',
+    siteName: 'CareKwik',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Our Healthcare Services | CareKwik',
+    description: 'Discover CareKwik’s full range of home healthcare services: elder care, nursing, physiotherapy, lab tests, doctor consultation, and more.',
+  }
+};
+
 
 // ✅ Main Page
 export default async function ServicesPage() {
