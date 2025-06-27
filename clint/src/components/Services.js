@@ -59,7 +59,7 @@ export default function Services({ serviceSlug }) {
 
   if (loading) {
     return (
-      <div className="flex items-center justify-center bg-white min-h-screen">
+      <div className="flex items-center justify-center bg-white ">
         <h1>Loading...</h1>
       </div>
     );
@@ -138,7 +138,7 @@ export default function Services({ serviceSlug }) {
               transition duration-300`}
           >
             <span className="text-2xl text-green-600 mb-2">{service.icon}</span>
-            <span className="text-sm font-medium text-gray-700">{service.name}</span>
+            <span className="text-sm text-center  font-medium text-gray-700">{service.name}</span>
           </Link>
         ))}
       </div>
