@@ -9,6 +9,8 @@ const History = () => {
   const [orders, setOrders] = useState([]);
   useEffect(() => {
     const user = JSON.parse(localStorage.getItem('user'));
+    if(user){
+
     const fetchHistory = async () => {
       const token = localStorage.getItem("auth-token");
       try {
@@ -38,6 +40,8 @@ const History = () => {
     };
 
     fetchHistory();
+    }
+
   }, []);
 
   const TabButton = ({ label, icon, active }) => (

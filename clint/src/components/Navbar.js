@@ -25,7 +25,7 @@ export default function Navbar() {
   }, [])
   const navItems = [
     { name: "Home", href: "/" },
-    { name: "Rent & Buy", href: "/medicale-quipment" },
+    { name: "Rent & Buy", href: "/medicale-equipment" },
     { name: "Services", href: "/services" },
     { name: "Transactions", href: "/history" },
   ];
@@ -34,17 +34,11 @@ export default function Navbar() {
       <div className={`  bg-white ${pathname == "/" ? " shadow " : ""} top-0 md:px-10 md:py-7 px-3 py-5 flex justify-between items-center`}>
         <div className={`flex gap-20 items-center w-full ${pathname == "/" ? " justify-around " : ""}`}>
           <div>
-            {isHome ?
+         
               <Link href="/">
                 <p className="md:text-3xl text-[#074369] text-2xl md:font-semibold font-bold font-mono">CareKwik</p>
               </Link>
-              :
-              <button
-                onClick={() => router.back()}
-                className="flex items-center  gap-3 text-xl font-semibold text-gray-700 hover:text-green-500">
-                <IoIosArrowBack />Back
-              </button>
-            }
+              
           </div>
           <div className="hidden md:block">
             <ul className="flex space-x-10">
@@ -75,27 +69,7 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Navbar */}
-      {/* <div className="absolute z-10 fixed bottom-0 shadow-xl  bg-white border-t-1  border-gray-200 md:hidden w-full py-6  shadow-xl px-5 block">
-        <div className="flex items-center justify-around gap-5">
-          <Link href="/">
-            {pathname === "/" ? <IoHomeSharp className="text-3xl  text-gray-700" /> : <IoHomeOutline className="text-3xl text-gray-500" />}
-          </Link>
-          <Link href="/medicale-quipment">
-            {pathname === "/medicale-quipment" ? <MdShoppingCart className="text-3xl text-gray-700" /> : <MdOutlineShoppingCart className="text-3xl  text-gray-500" />}
-          </Link>
-          <Link href="/services/">
-            {pathname === "/services" ? <MdMedicalServices className="text-3xl text-gray-700" /> : <MdOutlineMedicalServices className="text-3xl  text-gray-500" />}
-          </Link>
-          <Link href="/history">
-          {pathname === "/history" ? <BsClockHistory className="text-3xl text-gray-700" /> : <BsClockHistory className="text-3xl  text-gray-500" />}
-
-          </Link>
-          <Link href="/my-account">
-            {pathname === "/my-account" ? <RiAccountCircleFill className="text-3xl text-gray-700" /> : <RiAccountCircleLine className="text-3xl  text-gray-500" />}
-          </Link>
-        </div>
-      </div> */}
+      
       <div className="fixed bottom-0 left-0 bg-white right-0 z-50  text-white shadow-inner  md:hidden flex justify-around py-2 border-t-1border-gray-700">
                 <Link href="/" className="flex flex-col  items-center gap-2 text-xs mt-1">
                     {pathname == "/" ?
@@ -109,14 +83,14 @@ export default function Navbar() {
                         <p className="text-gray-500">Home</p>
                     }
                 </Link>
-                <Link href="/medicale-quipment" className="flex flex-col  items-center gap-2 text-xs mt-1">
-                    {pathname == "/medicale-quipment" ?
+                <Link href="/medicale-equipment" className="flex flex-col  items-center gap-2 text-xs mt-1">
+                    {pathname == "/medicale-equipment" ?
 
                         <FaBriefcaseMedical className={`text-xl text-black`} /> :
                         <LuBriefcaseMedical className={`text-xl text-gray-500`} />
 
                     }
-                    {pathname == "/medicale-quipment" ?
+                    {pathname == "/medicale-equipment" ?
                         <p className="text-black">Equipment</p> :
                         <p className="text-gray-500">Equipment</p>
                     }

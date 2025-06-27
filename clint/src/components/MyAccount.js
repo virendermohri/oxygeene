@@ -10,6 +10,7 @@ const MyAccount = () => {
   useEffect(() => {
     if(!localStorage.getItem("auth-token")) {
       window.location.href = "/login";
+      return ;
     }
     const user = JSON.parse(localStorage.getItem('user'));
     if (user) setUserInfo(user);
