@@ -2,7 +2,7 @@
 import React from 'react';
 import { FaCheckSquare } from "react-icons/fa";
 const BookingSuccessModal = ({ isOpen, onClose }) => {
-  if (isOpen) return null;
+  if (!isOpen) return null;
 
   return (
     <div className="fixed inset-0 backdrop-10 p-5  z-50 flex justify-center items-center">
