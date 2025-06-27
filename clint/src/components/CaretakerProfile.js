@@ -79,10 +79,10 @@ const CaretakerProfile = (loading) => {
                             <span>📍 {caretaker.availability}</span>
                         </p>
 
-                        <p className="text-sm  text-gray-600 mb-2">
+                        {/* <p className="text-sm  text-gray-600 mb-2">
                             <FaMapMarkerAlt className="inline mr-2" />
                             {caretaker.location}
-                        </p>
+                        </p> */}
                         <p className="text-sm text-gray-600 mb-4">
                             <FaUser className="inline mr-2" />
                             {caretaker.experience}y of experience

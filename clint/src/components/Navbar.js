@@ -1,6 +1,11 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { FaFire, FaSearch, FaClipboardList,FaBriefcaseMedical, FaHeart, FaRegUserCircle,FaHistory ,FaUserCircle} from "react-icons/fa";
+import { AiFillHome } from "react-icons/ai";
+import { AiOutlineHome } from "react-icons/ai";
+import { MdOutlineSell,MdSell } from "react-icons/md";
+import { LuClipboardList ,LuBriefcaseMedical} from "react-icons/lu";
 import { IoHomeOutline, IoHomeSharp, IoNotificationsCircle } from "react-icons/io5";
 import { MdOutlineShoppingCart, MdOutlineMedicalServices, MdMedicalServices, MdShoppingCart } from "react-icons/md";
 import { RiAccountCircleLine, RiAccountCircleFill } from "react-icons/ri";
@@ -71,7 +76,7 @@ export default function Navbar() {
       </div>
 
       {/* Mobile Navbar */}
-      <div className="absolute z-10 fixed bottom-0 shadow-xl  bg-gray-100 md:hidden w-full py-6 rounded-full shadow-xl px-5 block">
+      {/* <div className="absolute z-10 fixed bottom-0 shadow-xl  bg-white border-t-1  border-gray-200 md:hidden w-full py-6  shadow-xl px-5 block">
         <div className="flex items-center justify-around gap-5">
           <Link href="/">
             {pathname === "/" ? <IoHomeSharp className="text-3xl  text-gray-700" /> : <IoHomeOutline className="text-3xl text-gray-500" />}
@@ -90,7 +95,71 @@ export default function Navbar() {
             {pathname === "/my-account" ? <RiAccountCircleFill className="text-3xl text-gray-700" /> : <RiAccountCircleLine className="text-3xl  text-gray-500" />}
           </Link>
         </div>
-      </div>
+      </div> */}
+      <div className="fixed bottom-0 left-0 bg-white right-0 z-50  text-white shadow-inner  md:hidden flex justify-around py-2 border-t-1border-gray-700">
+                <Link href="/" className="flex flex-col  items-center gap-2 text-xs mt-1">
+                    {pathname == "/" ?
+
+                        <AiFillHome className={`text-xl text-black`} /> :
+                        <AiOutlineHome className={`text-xl text-gray-500`} />
+
+                    }
+                    {pathname == "/" ?
+                        <p className="text-black">Home</p> :
+                        <p className="text-gray-500">Home</p>
+                    }
+                </Link>
+                <Link href="/medicale-quipment" className="flex flex-col  items-center gap-2 text-xs mt-1">
+                    {pathname == "/medicale-quipment" ?
+
+                        <FaBriefcaseMedical className={`text-xl text-black`} /> :
+                        <LuBriefcaseMedical className={`text-xl text-gray-500`} />
+
+                    }
+                    {pathname == "/medicale-quipment" ?
+                        <p className="text-black">Equipment</p> :
+                        <p className="text-gray-500">Equipment</p>
+                    }
+                </Link>
+                <Link href="/services" className="flex flex-col  items-center gap-2 text-xs mt-1">
+                    {pathname == "/services" ?
+
+                        <FaClipboardList className={`text-xl text-black`} /> :
+                        <LuClipboardList className={`text-xl text-gray-500`} />
+
+                    }
+                    {pathname == "/services" ?
+                        <p className="text-black">Services</p> :
+                        <p className="text-gray-500">Services</p>
+                    }
+                </Link>
+                <Link href="/history" className="flex flex-col  items-center gap-2 text-xs mt-1">
+                    {pathname == "/history" ?
+
+                        <FaHistory className={`text-xl text-black`} /> :
+                        <FaHistory className={`text-xl text-gray-500`} />
+
+                    }
+                    {pathname == "/history" ?
+                        <p className="text-black">History</p> :
+                        <p className="text-gray-500">History</p>
+                    }
+                </Link>
+                <Link href="/my-account" className="flex flex-col  items-center gap-2 text-xs mt-1">
+                    {pathname == "/my-account" ?
+
+                        <FaUserCircle className={`text-xl text-black`} /> :
+                        <FaRegUserCircle className={`text-xl text-gray-500`} />
+
+                    }
+                    {pathname == "/my-account" ?
+                        <p className="text-black">My Account</p> :
+                        <p className="text-gray-500">My Account</p>
+                    }
+                </Link>
+                
+
+            </div>
     </nav>
   );
 }

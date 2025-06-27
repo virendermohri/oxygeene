@@ -1,13 +1,6 @@
 // components/Showcase.js
 import React from "react";
 
-// const media = [
-//   { type: "video", src: "https://res.cloudinary.com/divlt5fqo/video/upload/v1746254624/VID-20250503-WA0012_ani51h.mp4" },
-//   { type: "video", src: "https://res.cloudinary.com/divlt5fqo/video/upload/v1746254625/VID-20250503-WA0011_xjjnsz.mp4" },
-//   { type: "video", src: "https://res.cloudinary.com/divlt5fqo/video/upload/v1746254623/VID-20250503-WA0004_uknbw6.mp4" },
-//   { type: "image", src: "https://res.cloudinary.com/divlt5fqo/image/upload/v1746254565/IMG-20250503-WA0001_e5f40e.jpg" },
-//   { type: "image", src: "https://res.cloudinary.com/divlt5fqo/image/upload/v1746254569/IMG-20250503-WA0002_pkknnt.jpg" },
-// ];
 const media = [
   {
     type: "image",
@@ -37,7 +30,7 @@ const media = [
 ];
 const Showcase = () => {
   return (
-    <section className="bg-gray-100 py-10 px-4 sm:px-8 md:px-16 lg:px-24">
+    <section className=" py-10 px-4 sm:px-8 md:px-16 lg:px-24">
       <div className="max-w-7xl mx-auto text-center">
         <h2 className="text-4xl font-bold text-gray-800 mb-4">Our Work Speaks for Itself</h2>
         <p className="text-gray-600 text-lg mb-10 max-w-2xl mx-auto">
@@ -49,7 +42,7 @@ const Showcase = () => {
         {media.map((item, index) => (
           <div
             key={index}
-            className="rounded-xl overflow-hidden  bg-white "
+            className=" overflow-hidden  bg-white "
           >
             <div className="w-full  ">
               {item.type === "image" ? (

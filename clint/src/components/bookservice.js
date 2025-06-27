@@ -5,16 +5,17 @@ import { useEffect, useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Image from "next/image";
+import BookingSuccessModal from "./BookingSuccessModal";
 const services = {
   "Elder Care": {
     durations: ["Daily", "Weekly", "Monthly"],
-    price: { Daily: 800, Weekly: 5000, Monthly: 15000 },
+    price: { Daily: 600, Weekly: 4500, Monthly: 15000 },
   },
   "Nursing Care": {
     durations: ["Daily", "Monthly"],
     price: { Daily: 800, Monthly: 20000 },
   },
-  Physiotherapy: {
+  "Physiotherapy": {
     durations: ["Session"],
     price: { Session: 1200 },
   },
@@ -22,7 +23,7 @@ const services = {
     durations: ["30 mins"],
     price: { "30 mins": 500 },
   },
-  "Mother & Baby Care": {
+  "Mother Baby Care": {
     durations: ["Weekly", "Monthly"],
     price: { Weekly: 6000, Monthly: 18000 },
   },
@@ -48,6 +49,7 @@ const BookService = () => {
   const [price, setPrice] = useState(0);
   const [caretaker, setCaretaker] = useState(null);
   const [loading, setLoading] = useState(true);
+  const[ismoadalOpen, setIsModalOpen] = useState(false);
   useEffect(() => {
     if (typeof window !== "undefined") {
       const user = JSON.parse(localStorage.getItem("user"));
@@ -121,8 +123,8 @@ const BookService = () => {
 
       const response = await res.json();
       if (res.ok) {
-        toast.success("Booking successful!");
-        setTimeout(() => (window.location.href = "/my-account"), 2000);
+        setIsModalOpen(true);
+        setTimeout(() => (window.location.href = "/"), 5000);
       } else {
         toast.error(response.error || "Something went wrong.");
       }
@@ -135,6 +137,7 @@ const BookService = () => {
   return (
     <>
       <ToastContainer position="top-right" autoClose={2000} />
+      <BookingSuccessModal isOpen={ismoadalOpen} onClose={(()=>{setIsModalOpen(false)})}/>
       {loading ? (
         <div className="flex items-center justify-center h-screen bg-white">
           <h1 className="text-xl font-semibold text-gray-600">Loading...</h1>
