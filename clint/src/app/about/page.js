@@ -1,5 +1,11 @@
 import React from 'react';
-
+const metadata = {
+  title: "About CareKwik | Home Healthcare Services", 
+  description: "Learn about CareKwik, India's emerging health super app connecting families with trusted caretakers and medical help. Discover our mission to redefine home healthcare.",
+  keywords: "CareKwik, home healthcare, health super app, trusted caretakers, medical help, elder care, nursing care, physiotherapy, post-surgery support",
+  
+  robots: "index, follow",
+};
 const AboutPage = () => {
   return (
     <div className="max-w-5xl mx-auto px-4 py-10 text-gray-800">
