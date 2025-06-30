@@ -109,7 +109,7 @@ export default function Services({ serviceSlug }) {
                 <p className="text-sm text-gray-600">🧠 Exp: {c.experience} yrs</p>
                 <p className="text-sm text-gray-600">🎓 {c.qualification}</p>
                 <p className="text-sm text-gray-600">📍 {c.availability}</p>
-                <p className="text-sm text-gray-600"><FaMapMarkerAlt className="inline mr-2" />{c.location}</p>
+                {/* <p className="text-sm text-gray-600"><FaMapMarkerAlt className="inline mr-2" />{c.location}</p> */}
                 <p className="text-sm text-gray-600"><FaUser className="inline mr-2" />{c.experience} of experience</p>
                 <p className="text-sm font-semibold text-gray-600"><FaRupeeSign className="inline mr-2" />{c.pricePerDay} per day</p>
                 <div className="flex w-full my-5 items-center justify-between">

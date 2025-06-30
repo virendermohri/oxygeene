@@ -50,6 +50,7 @@ const BookService = () => {
   const [caretaker, setCaretaker] = useState(null);
   const [loading, setLoading] = useState(true);
   const[ismoadalOpen, setIsModalOpen] = useState(false);
+  const[referenceid, setReferenceid] = useState("");
   useEffect(() => {
     if (typeof window !== "undefined") {
       const user = JSON.parse(localStorage.getItem("user"));
@@ -110,6 +111,7 @@ const BookService = () => {
         duration,
         phone_number,
         paymentMethod,
+        referenceid
       };
 
       const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/bookservice/`, {
@@ -211,6 +213,18 @@ const BookService = () => {
               required
               inputMode="numeric"
               pattern="[0-9]{10}"
+              className="w-full border p-2 rounded bg-gray-100 text-gray-700"
+            />
+          </div>
+          <div className="mb-4">
+            <label className="block font-medium mb-1">Referral Code: (Optional)</label>
+            <input
+              type="text"
+              name="referenceid"
+              
+              onChange={((e) => setReferenceid(e.target.value))}
+              required
+              placeholder=""
               className="w-full border p-2 rounded bg-gray-100 text-gray-700"
             />
           </div>

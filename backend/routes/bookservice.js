@@ -33,6 +33,7 @@ router.post('/', async (req, res) => {
       paymentMethod,
       address,
       phone_number: phone_number,
+      referenceid: req.body.referenceid || "",
     });
 
     await newBooking.save();
