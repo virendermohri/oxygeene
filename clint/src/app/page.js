@@ -38,7 +38,7 @@ export const metadata = {
   openGraph: {
     title: "Best Home Healthcare Services in India | CareKwik",
     description: "Need home healthcare? Hire trained nurses, caretakers, and physiotherapists easily with CareKwik. Trusted by families across India for safe, affordable care.",
-    url: "https://carekwik.com/services",
+    url: "https://res.cloudinary.com/divlt5fqo/image/upload/v1751259853/og_image_dav7mz.jpg",
     type: "website",
   },
   robots: "index, follow",
