@@ -45,7 +45,7 @@ export const metadata = {
       url: "https://res.cloudinary.com/divlt5fqo/image/upload/v1751259853/og_image_dav7mz.jpg",
       width: 1200,
       height: 630,
-      alt:"CareKwik "
+      alt:"CareKwik"
     }]
   },
   robots: "index, follow",
