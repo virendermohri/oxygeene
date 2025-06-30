@@ -4,7 +4,7 @@ import Services from "@/components/Services";
 import CaretakerProfile from "@/components/CaretakerProfile";
 import RentalEquipment from "@/components/RentalEquipment";
 import Testimonials from "@/components/Testimonials";
-import Opengraphimage from "./Opengraphimage";
+
 import React, { Suspense } from "react";
 import Showcase from "@/components/Showcase";
 async function getData() {
@@ -38,8 +38,15 @@ export const metadata = {
   openGraph: {
     title: "Best Home Healthcare Services in India | CareKwik",
     description: "Need home healthcare? Hire trained nurses, caretakers, and physiotherapists easily with CareKwik. Trusted by families across India for safe, affordable care.",
-    url: "https://res.cloudinary.com/divlt5fqo/image/upload/v1751259853/og_image_dav7mz.jpg",
+    url: "https://carekwik.com/services",
     type: "website",
+    siteName: "CareKwik",
+    images: [{
+      url: "https://res.cloudinary.com/divlt5fqo/image/upload/v1751259853/og_image_dav7mz.jpg",
+      width: 1200,
+      height: 630,
+      alt:"CareKwik "
+    }]
   },
   robots: "index, follow",
 };
@@ -56,7 +63,7 @@ export default async function Home() {
 
       </Suspense>
       <CaretakerProfile />
-      <Showcase/>
+      <Showcase />
       <RentalEquipment />
       <Testimonials />
     </div>
