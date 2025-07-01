@@ -27,7 +27,7 @@ const Showcase = () => {
       </div>
 
       <div className="grid  grid-cols-1   gap-20 max-w-7xl mx-auto">
-       
+
         <div
 
           className=" overflow-hidden flex md:flex-row flex-col justify-between   bg-white "
@@ -46,22 +46,20 @@ const Showcase = () => {
               Elderly care with a personal touch
             </h1>
             <p>
-             At CareKwik, we recognize the imoortance of dignity trut, and comfort in female care. That&lsquo;s why we provide trained female caretakers for  personal assitance, eldely support, and post-surgery care
-
+              At CareKwik, we know that elders need more than just assistance - they need respect, emotional support, and companionship. Our caregivers are trained to provide personalized care that goes beyond the basics.
             </p>
           </div>
         </div>
-         <div
+        <div
 
           className="  overflow-hidden flex  justify-between  md:flex-row flex-col    bg-white "
         >
           <div className="p-3 flex hidden md:block flex-col pl-[5%] gap-5  text-gray-700 font-medium">
             <h1 className="text-xl font-bold">
-             Compassionate Female Care Services
+              Compassionate Female Care Services
             </h1>
             <p>
-              At CareKwik, we know that elders need more than just assistance - they need respect, emotional support, and companionship. Our caregivers are trained to provide personalized care that goes beyond the basics.
-
+              At CareKwik, we recognize the imoortance of dignity trut, and comfort in female care. That&lsquo;s why we provide trained female caretakers for  personal assitance, eldely support, and post-surgery care.
             </p>
           </div>
           <div className="w-full  ">
@@ -75,11 +73,10 @@ const Showcase = () => {
           </div>
           <div className="p-3 flex block md:hidden flex-col pl-[5%] gap-5  text-gray-700 font-medium">
             <h1 className="text-xl font-bold">
-             Compassionate Female Care Services
+              Compassionate Female Care Services
             </h1>
             <p>
-              At CareKwik, we know that elders need more than just assistance - they need respect, emotional support, and companionship. Our caregivers are trained to provide personalized care that goes beyond the basics.
-
+              At CareKwik, we recognize the imoortance of dignity trut, and comfort in female care. That&lsquo;s why we provide trained female caretakers for  personal assitance, eldely support, and post-surgery care.
             </p>
           </div>
           <div className="w-full  ">

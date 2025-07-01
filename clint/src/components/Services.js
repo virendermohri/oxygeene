@@ -66,7 +66,7 @@ export default function Services({ serviceSlug }) {
   }
 
   return (
-    <div className="px-4 bg-gray-50   py-20 ">
+    <div className="px-4 bg-gray-50   md:py-20 py-14 ">
       {selectedService && (
         <div className="mb-10 md:w-[80%] m-auto">
           <div className="flex justify-between items-center mt-8 mb-4">
