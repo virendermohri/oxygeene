@@ -54,12 +54,12 @@ export default async function Home() {
   const { services, caretakers } = await getData();
   return (
     <div className="">
-      <div className="h-38  ">
+      <div className="  ">
 
         <Typewriter />
       </div>
       <Suspense fallback={<div>Loading Services...</div>}>
-        <Services />;
+        <Services/>
 
       </Suspense>
       <CaretakerProfile />

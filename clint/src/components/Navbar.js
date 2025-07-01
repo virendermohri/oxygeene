@@ -30,13 +30,13 @@ export default function Navbar() {
     { name: "Transactions", href: "/history" },
   ];
   return (
-    <nav>
-      <div className={`  bg-white ${pathname == "/" ? " shadow " : ""} top-0 md:px-10 md:py-7 px-3 py-5 flex justify-between items-center`}>
+    <nav className="">
+      <div className={`   bg-black  ${pathname == "/" ? " shadow " : ""}  md:px-10  px-3 py-4 flex justify-between items-center`}>
         <div className={`flex gap-20 items-center w-full ${pathname == "/" ? " justify-around " : ""}`}>
           <div>
          
               <Link href="/">
-                <p className="md:text-3xl text-[#074369] text-2xl md:font-semibold font-bold font-mono">CareKwik</p>
+                <p className="md:text-3xl text-white text-2xl md:font-semibold font-bold font-mono">CareKwik</p>
               </Link>
               
           </div>
@@ -44,7 +44,7 @@ export default function Navbar() {
             <ul className="flex space-x-10">
               {navItems.map((item) => (
                 <li key={item.name}>
-                  <Link href={item.href} className="text-xl font-semibold text-gray-700 hover:text-green-500">
+                  <Link href={item.href} className="text-xl font-semibold text-white hover:text-green-500">
                     {item.name}
                   </Link>
                 </li>
@@ -61,7 +61,7 @@ export default function Navbar() {
 
               </div>
               :
-              <Link href={"/login"}> <button className="bg-black text-white md:px-7 md:py-3 px-5 py-3 hover:bg-[#212121] font-semibold md:text-lg transition duration-300 cursor-pointer ease-in-out">
+              <Link href={"/login"}> <button className="bg-black border text-white md:px-5 md:py-2 px-5 py-2 hover:bg-[#212121] font-semibold md:text-lg transition duration-300 cursor-pointer ease-in-out">
                 Login
               </button></Link>
             }

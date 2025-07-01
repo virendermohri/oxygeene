@@ -1,32 +1,20 @@
-// components/Showcase.js
 import React from "react";
 
 const media = [
+
   {
     type: "image",
-    src: "https://res.cloudinary.com/divlt5fqo/image/upload/v1746254565/IMG-20250503-WA0001_e5f40e.jpg",
-    description: "Setup of home medical equipment by our team",
+    src: "https://res.cloudinary.com/divlt5fqo/image/upload/v1751345302/wmremove-transformed_tu9wum.jpg",
+    title: "Elderly care with a personal touch",
   },
-  {
-    type: "video",
-    src: "https://res.cloudinary.com/divlt5fqo/video/upload/v1746254624/VID-20250503-WA0012_ani51h.mp4",
-    description: "Caregiver assisting an elderly patient at home",
-  },
-  {
-    type: "video",
-    src: "https://res.cloudinary.com/divlt5fqo/video/upload/v1746254623/VID-20250503-WA0004_uknbw6.mp4",
-    description: "Caregiver assisting an elderly patient at home",
-  },
+
   {
     type: "image",
-    src: "https://res.cloudinary.com/divlt5fqo/image/upload/v1746254569/IMG-20250503-WA0002_pkknnt.jpg",
-    description: "In-home nursing care for post-surgery recovery",
+    src: "https://res.cloudinary.com/divlt5fqo/image/upload/v1751345302/wmremove-transformed_1_shyymm.jpg",
+    title: "Compassionate Female Care Services",
+    description: "At CareKwik, we recognize the imoortance of dignity trut, and comfort in female care. That's why we provide trained female caretakers for  personal assitance, eldely support, and post-surgery care",
   },
-  {
-    type: "video",
-    src: "https://res.cloudinary.com/divlt5fqo/video/upload/v1746254625/VID-20250503-WA0011_xjjnsz.mp4",
-    description: "Quick ambulance response for emergency care",
-  },
+
 ];
 const Showcase = () => {
   return (
@@ -38,38 +26,72 @@ const Showcase = () => {
         </p>
       </div>
 
-      <div className="grid  sm:grid-cols-2 md:grid-cols-3  gap-10 max-w-7xl mx-auto">
-        {media.map((item, index) => (
-          <div
-            key={index}
-            className=" overflow-hidden  bg-white "
-          >
-            <div className="w-full  ">
-              {item.type === "image" ? (
-                <img
-                  src={item.src}
-                  alt={`Work ${index + 1}`}
-                  className="w-full h-full object-contain"
-                />
-              ) : (
-                <video
-                  autoPlay
-                  muted
-                  loop
-                  download={false}
-                  playsInline
-                  className="w-full h-full  object-contain"
-                >
-                  <source src={item.src} type="video/mp4" />
-                  Your browser does not support the video tag.
-                </video>
-              )}
-            </div>
-            <div className="p-3 text-sm text-gray-700 font-medium">
-              {item.description}
-            </div>
+      <div className="grid  grid-cols-1   gap-20 max-w-7xl mx-auto">
+       
+        <div
+
+          className=" overflow-hidden flex md:flex-row flex-col justify-between   bg-white "
+        >
+          <div className="w-full  ">
+
+            <img
+              src={"https://res.cloudinary.com/divlt5fqo/image/upload/v1751351239/nurse-is-helping-elderly-man-with-cane_dldepy.jpg"}
+              alt={"Elderly care with a personal touch"}
+              className="w-full h-full object-cover rounded shadow-lg"
+            />
+
           </div>
-        ))}
+          <div className="p-3 flex  flex-col pl-[5%] gap-5  text-gray-700 font-medium">
+            <h1 className="text-xl font-bold">
+              Elderly care with a personal touch
+            </h1>
+            <p>
+             At CareKwik, we recognize the imoortance of dignity trut, and comfort in female care. That's why we provide trained female caretakers for  personal assitance, eldely support, and post-surgery care
+
+            </p>
+          </div>
+        </div>
+         <div
+
+          className="  overflow-hidden flex  justify-between  md:flex-row flex-col    bg-white "
+        >
+          <div className="p-3 flex hidden md:block flex-col pl-[5%] gap-5  text-gray-700 font-medium">
+            <h1 className="text-xl font-bold">
+             Compassionate Female Care Services
+            </h1>
+            <p>
+              At CareKwik, we know that elders need more than just assistance - they need respect, emotional support, and companionship. Our caregivers are trained to provide personalized care that goes beyond the basics.
+
+            </p>
+          </div>
+          <div className="w-full  ">
+
+            <img
+              src={"https://res.cloudinary.com/divlt5fqo/image/upload/v1751345302/wmremove-transformed_tu9wum.jpg"}
+              alt={"Elderly care with a personal touch"}
+              className="w-full h-full object-cover  md:hidden block  rounded shadow-lg"
+            />
+
+          </div>
+          <div className="p-3 flex block md:hidden flex-col pl-[5%] gap-5  text-gray-700 font-medium">
+            <h1 className="text-xl font-bold">
+             Compassionate Female Care Services
+            </h1>
+            <p>
+              At CareKwik, we know that elders need more than just assistance - they need respect, emotional support, and companionship. Our caregivers are trained to provide personalized care that goes beyond the basics.
+
+            </p>
+          </div>
+          <div className="w-full  ">
+
+            <img
+              src={"https://res.cloudinary.com/divlt5fqo/image/upload/v1751345302/wmremove-transformed_tu9wum.jpg"}
+              alt={"Elderly care with a personal touch"}
+              className="w-full h-full object-cover hidden md:block  rounded shadow-lg"
+            />
+
+          </div>
+        </div>
       </div>
     </section>
   );

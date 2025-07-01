@@ -27,8 +27,8 @@ const CaretakerProfile = (loading) => {
     return (
         <>
               
-        <div className="md:px-10  px-4 py-8  mb-10 md:mb-20">
-            <h2 className="text-2xl font-bold text-center mb-6 text-green-700">Meet Our Caretakers</h2>
+        <div className="md:px-10 bg-white px-4 py-10   md:mb-20">
+            <h2 className="text-2xl font-bold text-center mt-5 mb-6 text-green-700">Meet Our Caretakers</h2>
             <div className="flex  w-auto overflow-auto gap-4 caretakerbox" >
                 {caretakers && caretakers.map((caretaker, idx) => (
                     <div
