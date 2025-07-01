@@ -46,7 +46,7 @@ const Showcase = () => {
               Elderly care with a personal touch
             </h1>
             <p>
-             At CareKwik, we recognize the imoortance of dignity trut, and comfort in female care. That's why we provide trained female caretakers for  personal assitance, eldely support, and post-surgery care
+             At CareKwik, we recognize the imoortance of dignity trut, and comfort in female care. That&lsquo;s why we provide trained female caretakers for  personal assitance, eldely support, and post-surgery care
 
             </p>
           </div>
