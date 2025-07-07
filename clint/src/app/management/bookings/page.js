@@ -1,7 +1,7 @@
 "use client"
 import React, { useEffect,useState } from 'react'
 
-const page = () => {
+const Page = () => {
     const [bookings, setBookings] = useState([]);
     const [loading, setLoading] = useState(true);
     const status = 'allbookings'; // or 'pending', 'successful', 'canceled' based on your requirement
@@ -36,6 +36,7 @@ const page = () => {
             return null;
         }
     }, [])
+    
     return (
         <div className='max-w-5xl mx-auto px-4 py-8'>
             <h1 className='text-xl mb-10'>Management</h1>
@@ -91,4 +92,4 @@ const page = () => {
     )
 }
 
-export default page
+export default Page
