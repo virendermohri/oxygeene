@@ -1,52 +1,30 @@
 import React from 'react';
 const metadata = {
-  title: "About CareKwik | Home Healthcare Services", 
+  title: "About CareKwik | Home Healthcare Services",
   description: "Learn about CareKwik, India's emerging health super app connecting families with trusted caretakers and medical help. Discover our mission to redefine home healthcare.",
   keywords: "CareKwik, home healthcare, health super app, trusted caretakers, medical help, elder care, nursing care, physiotherapy, post-surgery support",
-  
+
   robots: "index, follow",
 };
 const AboutPage = () => {
   return (
-    <div className="max-w-5xl mx-auto px-4 py-10 text-gray-800">
-      <h1 className="text-4xl font-bold text-center text-blue-700 mb-6">
-        About CareKwik
-      </h1>
-
-      <p className="text-lg mb-6 leading-relaxed text-gray-700 text-center max-w-2xl mx-auto">
-        CareKwik is India’s emerging health super app — built to connect families with trusted, verified caretakers and medical help, anytime, anywhere. From elder care and nursing to physiotherapy and post-surgery support, we bring personalized care right to your doorstep.
-      </p>
-
-      <div className="grid md:grid-cols-2 gap-8 mt-12">
-        <div>
-          <h2 className="text-2xl font-semibold mb-4">🚀 Our Mission</h2>
-          <p className="text-gray-700 leading-relaxed">
-            To redefine home healthcare in India through technology, compassion, and accessibility. We’re on a mission to empower families in Tier-2 and Tier-3 cities with fast, reliable, and affordable health services at home.
-          </p>
-        </div>
-
-        <div>
-          <h2 className="text-2xl font-semibold mb-4">🔍 Why CareKwik?</h2>
-          <ul className="list-disc list-inside space-y-2 text-gray-700">
-            <li>100% Verified & Skilled Caretakers</li>
-            <li>Choose by budget, experience, language & location</li>
-            <li>Fast bookings with hospital & doctor partnerships</li>
-            <li>24/7 customer care & emergency support</li>
-            <li>Transparent pricing, real-time updates</li>
-          </ul>
-        </div>
-      </div>
-
-      <div className="mt-12">
-        <h2 className="text-2xl font-semibold mb-4">💡 Why We Started</h2>
-        <p className="text-gray-700 leading-relaxed">
-          CareKwik was born from a real family need — and that need turned into a vision. We aim to bridge the healthcare gap with a platform that puts families first. With tech at its core and care at its heart, CareKwik is designed to be India’s most human healthtech brand.
-        </p>
-      </div>
-
-      <div className="mt-10 text-center">
-        <p className="text-gray-600 italic">“Instant care, anytime, anywhere — powered by CareKwik.”</p>
-      </div>
+  
+    <div className="max-w-5xl mt-10 md:mt-20 flex items-start flex-col mx-auto mb-10 px-4 md:mb-20">
+      <h1 className='text-2xl font-bold mb-5'>About Carekwik</h1>
+      <p className='font-bold text-xl my-5'>Our mission</p>
+      <p className='text-gray-700'> At  CareKwik, our mission is to improve the health and well-being of individuals and communities by providing access to high-quality, affordable healthcare services.
+        We are committed to delivering compassionate care, promoting wellness, and empowering people to live healthier lives.</p>
+      <p className='font-bold text-xl my-5'>Our vission</p>
+      <p className='text-gray-700'> Our core values guide everything we do at  CareKwik. We believe in integrity, respect, and collaboration. We are dedicated to continuous improvement, innovation, and
+        excellence in all aspects of our work. Our patients are at the center of everything we do, and we strive to exceed their expectations.</p>
+      <p className='font-bold text-xl my-5'>Our team</p>
+      <p className='text-gray-700'>  Our team of healthcare professionals is comprised of experienced doctors, nurses, therapists, and support staff who are passionate about providing exceptional care.
+        We foster a culture of teamwork, professional development, and mutual support to ensure the best possible outcomes for our patients.</p>
+     
+      <p className='font-bold text-xl my-5'>Our commitment</p>
+      <p className='text-gray-700'>  We are committed to providing personalized care that meets the unique needs of each patient. We believe in building long-term relationships with our patients and
+        their families, and we are dedicated to being a trusted partner in their health journey. We continuously seek ways to enhance our services and improve the patient
+        experience.</p>
     </div>
   );
 };

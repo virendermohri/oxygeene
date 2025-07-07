@@ -32,56 +32,37 @@ export default function Footer() {
   </ul>
 
   return (
-    <footer className="pb-20 text-gray-700  py-10 mt-10">
-      
-      <div className="max-w-7xl px-6 mx-auto grid md:grid-cols-4 gap-8 text-sm">
-        {/* Logo & Tagline */}
-        <div>
-
-          <h2 className="text-xl font-bold text-green-700">CareKwik</h2>
-          <p className="mt-2 text-gray-600">Caring begins here. Homecare you can trust.</p>
-        </div>
-
-        {/* Quick Links */}
-        <div>
-          <h3 className="font-semibold mb-3 text-gray-800">Quick Links</h3>
-          <ul className="space-y-2">
-            <li><Link target="_blank" href="/" className="hover:text-green-600">Home</Link></li>
-            <li><Link target="_blank" href="/medicale-quipment" className="hover:text-green-600">Rent & Buy</Link></li>
-            <li><Link target="_blank" href="/history" className="hover:text-green-600">Transactions</Link></li>
-            <li><Link target="_blank" href="/about" className="hover:text-green-600">About Us</Link></li>
-            <li><Link target="_blank" href="/career" className="hover:text-green-600">Join as Care Taker</Link></li>
-          </ul>
-        </div>
-
-        {/* Services */}
-        <div>
-          <h3 className="font-semibold mb-3 text-gray-800">Services</h3>
-          <ul className="space-y-2">
-            {services.map(service => (
-              <li key={service}>
-                <Link target="_blank" href={`/services/${slugify(service)}`} className="hover:text-green-600">
-                  {service}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        {/* Contact & Social */}
-        <div>
-          <h3 className="font-semibold mb-3 text-gray-800">Contact</h3>
-          <p>Phone: +91-8307190216</p>
-          <div className="flex gap-4 mt-4 text-green-700 text-xl">
-            <Link target="_blank" href="https://instagram.com/getcarekwik" ><FaInstagram /></Link>
-            <Link target="_blank" href="https://instagram.com/oxygeene_"><FaFacebookF /></Link>
-            <Link target="_blank" href="https://instagram.com/oxygeene_"><FaTwitter /></Link>
-            <Link target="_blank" href="https://instagram.com/oxygeene_"><FaLinkedin /></Link>
-          </div>
-        </div>
+    <footer className="md:max-w-4xl  w-full mx-auto md:px-4 px-2 mb-14 md:mb-1  py-8 ">
+      <div className="flex gap-5 flex-wrap  md:mb-10 mb-4 items-center md:justify-between justify-center ">
+        <Link href={"/about"} className=" font-medium text-gray-500 hover:text-blue-600">
+          About Us
+        </Link>
+        <Link href={"/contact"} className=" font-medium text-gray-500 hover:text-blue-600">
+          Contact
+        </Link>
+        <Link href={"/privacy"} className=" font-medium text-gray-500 hover:text-blue-600">
+          privacy
+        </Link>
+        <Link href={"/terms"} className=" font-medium text-gray-500 hover:text-blue-600">
+          Terms of Service
+        </Link>
+      </div>
+      <div className="flex items-center justify-center  ">
+        <Link href="https://www.instagram.com/getcarekwik/" target="_blank" className="mx-2 text-gray-500 hover:text-blue-600">
+          <FaInstagram size={24} />
+        </Link>
+        <Link href="https://www.facebook.com/carekwik" target="_blank" className="mx-2 text-gray-500 hover:text-blue-600">
+          <FaFacebookF size={24} />
+        </Link>
+        <Link href="https://twitter.com/carekwik" target="_blank" className="mx-2 text-gray-500 hover:text-blue-600">
+          <FaTwitter size={24} />
+        </Link>
+        <Link href="https://www.linkedin.com/company/carekwik" target="_blank" className="mx-2 text-gray-500 hover:text-blue-600">
+          <FaLinkedin size={24} />
+        </Link>
       </div>
 
-      <div className="border-t mt-8 pt-4 text-center text-xs text-gray-500">
+      <div className=" pt-4 text-center  text-gray-500 md:mt-5">
         © {new Date().getFullYear()} CareKwik. All rights reserved.
       </div>
     </footer>

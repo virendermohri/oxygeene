@@ -2,7 +2,7 @@ export async function GET() {
   const content = `
 User-agent: *
 Allow: /
-
+Disallow: /management/bookings
 Sitemap: https://carekwik.com/sitemap.xml
 `;
 

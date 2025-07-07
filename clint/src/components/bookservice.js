@@ -5,114 +5,48 @@ import { useEffect, useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Image from "next/image";
-import BookingSuccessModal from "./BookingSuccessModal";
-const services = {
-  "Elder Care": {
-    durations: ["Daily", "Weekly", "Monthly"],
-    price: { Daily: 600, Weekly: 4500, Monthly: 15000 },
+const services = [
+  {
+    title: "Physiotherapy",
+    description: "Expert physiotherapy for recorey and pain management.",
+    image_url: "https://res.cloudinary.com/divlt5fqo/image/upload/v1751540191/unnamed_jpwwlk.png",
+
   },
-  "Nursing Care": {
-    durations: ["Daily", "Monthly"],
-    price: { Daily: 800, Monthly: 20000 },
+  {
+    title: "Elder Care",
+    description: "Compassionate care for seniors in the comfort of their home.",
+    image_url: "https://res.cloudinary.com/divlt5fqo/image/upload/v1751464805/unnamed_o3gcdc.png"
   },
-  "Physiotherapy": {
-    durations: ["Session"],
-    price: { Session: 1200 },
+  {
+    title: "Mother & Baby Care",
+    description: "Spacialized care for new mothers and infants.",
+    image_url: "https://res.cloudinary.com/divlt5fqo/image/upload/v1751464831/unnamed_aem8be.png"
   },
-  "Doctor Consultation": {
-    durations: ["30 mins"],
-    price: { "30 mins": 500 },
+  {
+    title: "Vaccination",
+    description: "Safe and convenient vaccination services.",
+    image_url: "https://res.cloudinary.com/divlt5fqo/image/upload/v1751464886/unnamed_ijrmau.png"
   },
-  "Mother Baby Care": {
-    durations: ["Weekly", "Monthly"],
-    price: { Weekly: 6000, Monthly: 18000 },
+  {
+    title: "ICU at Home",
+    description: "Advanced ICU setup and care at home.",
+    image_url: "https://res.cloudinary.com/divlt5fqo/image/upload/v1751541246/unnamed_pmleda.png"
   },
-};
+  {
+    title: "Consulations",
+    description: "Connect with experienced doctors for online consultations.",
+    image_url: "https://res.cloudinary.com/divlt5fqo/image/upload/v1751541271/unnamed_rt3tw7.png"
+  },
+
+]
 
 const BookService = () => {
   const searchParam = useSearchParams();
-  const serviceParam = searchParam.get("service") || "";
-  const caretakerParam = searchParam.get("caretaker");
-
-  const serviceKey = Object.keys(services).find(
-    (key) => key.toLowerCase() === serviceParam.toLowerCase()
-  );
-  const selectedService = serviceKey
-    ? { name: serviceKey, ...services[serviceKey] }
-    : null;
-
-  const [paymentMethod, setPaymentMethod] = useState("online");
-  const [address, setAddress] = useState("");
-  const [phone_number, SetPN] = useState();
-  const [scheduleDateTime, setScheduleDateTime] = useState("");
-  const [duration, setDuration] = useState("");
-  const [price, setPrice] = useState(0);
-  const [caretaker, setCaretaker] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const[ismoadalOpen, setIsModalOpen] = useState(false);
-  const[referenceid, setReferenceid] = useState("");
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      const user = JSON.parse(localStorage.getItem("user"));
-      if (user?.address) setAddress(user.address);
-    
-    }
-    const res = fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/caretaker/${caretakerParam}`, {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-        "auth-token": localStorage.getItem("auth-token"),
-      },
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        setCaretaker(data);
-        setLoading(false);
-      })
-      .catch((error) => {
-        console.error("Error fetching caretaker:", error);
-      });
-
-  }, []);
-
-  useEffect(() => {
-    if (selectedService && selectedService.durations.length > 0) {
-      setDuration(selectedService.durations[0]);
-    }
-  }, [selectedService]);
-
-  useEffect(() => {
-    if (selectedService && duration && selectedService.price?.[duration]) {
-      setPrice(selectedService.price[duration]);
-    }
-  }, [selectedService, duration]);
-
-  if (!selectedService) {
-    return (
-      <div className="p-6 text-center text-red-500 font-semibold">
-        Invalid service selected.
-      </div>
-    );
-  }
-
-  const handleAddressChange = (e) => {
-    setAddress(e.target.value);
-    localStorage.setItem("userAddress", e.target.value);
-  };
+  const serviceParam = searchParam.get("service");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const data = {
-        address,
-        scheduleDateTime,
-        serviceName: selectedService.name,
-        price,
-        duration,
-        phone_number,
-        paymentMethod,
-        referenceid
-      };
 
       const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/bookservice/`, {
         method: "POST",
@@ -120,12 +54,12 @@ const BookService = () => {
           "Content-Type": "application/json",
           "auth-token": localStorage.getItem("auth-token"),
         },
-        body: JSON.stringify(data),
+        body: JSON.stringify(({...form,serviceName:unslugifyService(serviceParam)})),
       });
 
       const response = await res.json();
       if (res.ok) {
-        setIsModalOpen(true);
+        toast.success(response.message)
         setTimeout(() => (window.location.href = "/"), 5000);
       } else {
         toast.error(response.error || "Something went wrong.");
@@ -136,114 +70,206 @@ const BookService = () => {
     }
   };
 
+  const unslugifyService = (slug) => {
+    return slug
+      .split('-')                            // split by hyphen
+      .map(word => {
+        if (word === 'and') return '&';      // replace 'and' with '&'
+        return word.charAt(0).toUpperCase() + word.slice(1); // capitalize first letter
+      })
+      .join(' ');
+  };
+  const [form, setForm] = useState({
+    caretakerType: "",
+    location: "",
+    schedule: "",
+    address: "",
+    phone: "",
+    duration: "",
+    price:null
+  });
+
+
+
+  const getToday = () => new Date().toISOString().split('T')[0];
+  const handleSelect = (val) => {
+    setForm({ ...form, schedule: val });
+
+  };
+  const locationPriceRanges = {
+    Chandigarh: { min: 500, max: 1000 },
+    Mohali: { min: 450, max: 950 },
+    Ambala: { min: 400, max: 900 },
+    Panchkula: { min: 550, max: 1050 },
+  };
+
+  const [price, setPrice] = useState(null)
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+
+    setForm({ ...form, [name]: value });
+
+  };
+  const computePriceRange = () => {
+    const range = locationPriceRanges[form.location];
+    if (!range) return null;
+
+    const femaleCharge = form.caretakerType === "Female" ? 200 : 0;
+
+    return {
+      min: range.min + femaleCharge,
+      max: range.max + femaleCharge,
+    };
+  };
+
+  useEffect(() => {
+    if (form.caretakerType && form.location) {
+      const pricerange = computePriceRange()
+      setForm({ ...form, price: pricerange })
+
+    }
+
+  }, [form.location, form.caretakerType])
   return (
     <>
       <ToastContainer position="top-right" autoClose={2000} />
-      <BookingSuccessModal isOpen={ismoadalOpen} onClose={(()=>{setIsModalOpen(false)})}/>
-      {loading ? (
-        <div className="flex items-center justify-center h-screen bg-white">
-          <h1 className="text-xl font-semibold text-gray-600">Loading...</h1>
-        </div>):
 
-      <div className="max-w-3xl m-auto p-10 md:mb-20 bg-gray-100  md:h-screen mt-10 rounded">
-        <div className="flex justify-between mb-6">
+      <div className="max-w-5xl mx-auto md:mt-10 mt-5 mb-20  p-4">
+        <h1 className="md:text-2xl font-bold mb-6 flex gap-2"><p className="text-gray-500">Service Name</p> : {unslugifyService(serviceParam)}</h1>
+        <div className="">
+          <Image width={100} height={100} src={services.find(service => service.title.toLowerCase() === unslugifyService(serviceParam).toLowerCase())?.image_url || "https://res.cloudinary.com/divlt5fqo/image/upload/v1751460739/wmremove-transformed_2_sxrfa6.jpg"}
+            className=' w-full md:h-[450px]  object-cover border-1 border-gray-100 md:rounded-lg'
+            alt="" />
 
-          <h1 className=" text-2xl font-bold text-green-700">
-            {selectedService.name}
-          </h1>
-          <div className="flex justify-center items-center gap-4 text-gray-600 mb-4">
-            <Image
-              width={100}
-              height={100}
-              src={caretaker.photo}
-              alt={caretaker.name}
-              className="w-10 h-10 md:w-15 md:h-15 rounded-full object-cover  shadow-md "
-            />
-             {caretaker?.name || "Caretaker"}
-          </div>
         </div>
 
-        <form>
-          <div className="mb-4">
-            <label className="block font-medium mb-1">Select Duration:</label>
-            <select
-              onChange={(e) => setDuration(e.target.value)}
-              name="duration"
-              required
-              className="w-full border p-2 rounded"
-            >
-              {selectedService.durations.map((d) => (
-                <option key={d} value={d}>
-                  {d} - ₹{selectedService.price[d]}
-                </option>
-              ))}
-            </select>
+        <form onSubmit={handleSubmit} className="space-y-5 mt-10 ">
+
+          {/* Caretaker Type */}
+          <div className="grid md:grid-cols-2 gap-5 md:gap-10 items-center md:justify-between">
+
+            <div className="mb-1">
+              <label className="block text-sm font-medium text-gray-700 mb-1">Caretaker Gender</label>
+              <select
+                name="caretakerType"
+                value={form.caretakerType}
+                onChange={handleChange}
+                required
+                className="w-full border border-gray-300 rounded-md px-4 py-2"
+              >
+                <option value="">Select Gender</option>
+                <option value="Female">Female</option>
+                <option value="Male">Male</option>
+              </select>
+            </div>
+            <div className="mb-1">
+              <label className="block text-sm font-medium text-gray-700 mb-1">Schedule</label>
+              <div className="flex gap-10 ">
+                <button onClick={() => {
+                  handleSelect(getToday());
+                }} type="button" className="border border-1 cursor-pointer border-gray-200 px-5 py-1 rounded-md">Today</button>
+
+                <input
+                  type="date"
+                  name="schedule"
+                  value={form.schedule}
+                  onChange={handleChange}
+                  required
+                  className="w-full border border-gray-300 rounded-md px-4 py-2"
+                />
+              </div>
+            </div>
+            {/* Location */}
           </div>
 
-          <div className="mb-4">
-            <label className="block font-medium mb-1">
-              Schedule Date & Time:
-            </label>
-            <input
-              type="datetime-local"
-              name="schedule"
-              value={scheduleDateTime}
-              onChange={(e) => setScheduleDateTime(e.target.value)}
-              required
-              className="w-full border p-2 rounded"
-            />
+          <div className="grid md:grid-cols-2 gap-5 md:gap-10 items-center md:justify-between ">
+            <div className="mb-1">
+              <label className="block text-sm font-medium text-gray-700 mb-1">
+                Select Location
+              </label>
+              <select
+                name="location"
+                value={form.location}
+                onChange={handleChange}
+                className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              >
+                <option value="" >Select your city</option>
+                <option value="Chandigarh">Chandigarh</option>
+                <option value="Mohali">Mohali</option>
+                <option value="Ambala">Ambala</option>
+                <option value="Panchkula">Panchkula</option>
+              </select>
+            </div>
+            <div className="mb-1">
+
+              <label className="block text-sm font-medium text-gray-700 mb-1">Full Address</label>
+              <textarea
+                name="address"
+                value={form.address}
+                onChange={handleChange}
+                required
+                placeholder="Street, City, Zip Code"
+                rows="2"
+                className="w-full border border-gray-300 rounded-md px-4 py-2"
+              />
+            </div>
+          </div>
+          <div className="grid md:grid-cols-2 gap-5 md:gap-10 items-center md:justify-between ">
+
+            <div className="mb-1">
+              <label className="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
+              <input
+                type="tel"
+                name="phone"
+                value={form.phone}
+                onChange={handleChange}
+                required
+                placeholder="e.g. 9876543210"
+                className="w-full border border-gray-300 rounded-md px-4 py-2"
+              />
+            </div>
+            <div className="mb-1">
+              <label className="block text-sm font-medium text-gray-700 mb-1">Duration</label>
+              <select
+                name="duration"
+                value={form.duration}
+                onChange={handleChange}
+                required
+                className="w-full border border-gray-300 rounded-md px-4 py-2"
+              >
+                <option value="">Select Duration</option>
+                <option value="1 Day">1 Day</option>
+                <option value="3 Days">3 Days</option>
+                <option value="1 Week">1 Week</option>
+                <option value="2 Weeks">2 Weeks</option>
+                <option value="1 Month">1 Month</option>
+              </select>
+            </div>
           </div>
 
-          <div className="mb-4">
-            <label className="block font-medium mb-1">Address:</label>
-            <textarea
-              name="address"
-              value={address}
-              onChange={handleAddressChange}
-              className="w-full border p-2 rounded bg-gray-100 text-gray-700"
-            />
-          </div>
-          <div className="mb-4">
-            <label className="block font-medium mb-1">Phone:</label>
-            <input
-              type="tel"
-              name="phone_number"
-              
-              onChange={((e) => SetPN(e.target.value))}
-              required
-              inputMode="numeric"
-              pattern="[0-9]{10}"
-              className="w-full border p-2 rounded bg-gray-100 text-gray-700"
-            />
-          </div>
-          <div className="mb-4">
-            <label className="block font-medium mb-1">Referral Code: (Optional)</label>
-            <input
-              type="text"
-              name="referenceid"
-              
-              onChange={((e) => setReferenceid(e.target.value))}
-              required
-              placeholder=""
-              className="w-full border p-2 rounded bg-gray-100 text-gray-700"
-            />
-          </div>
 
-          <div className="mb-4">
-            <label className="block font-medium mb-1">Payment Method:</label>
+          {form.price !== null  && form.address && form.phone && form.duration && (
 
-            <p className="p-2 bg-white rounded ">Cash on Service</p>
-          </div>
+            <div className="text-green-600 font-semibold mt-2">
+             Base Price (per day) : ₹{form.price.min} - ₹{form.price.max}
+              {form.caretakerType === "Female" && (
+                <p className="text-sm text-blue-600 mt-1">
+                  ₹200 additional charge for selecting a female caretaker.
+                </p>
+              )}
+            </div>
+          )}
 
+          {/* Submit Button */}
           <button
-            type="button"
-            onClick={handleSubmit}
-            className="w-full cursor-pointer bg-green-600 text-white py-2 rounded hover:bg-green-700"
+            type="submit"
+            className="w-full bg-blue-600 text-white font-medium py-2 px-4 rounded-md hover:bg-blue-700 transition"
           >
             Confirm Booking
           </button>
         </form>
-      </div>}
+      </div >
+
     </>
   );
 };

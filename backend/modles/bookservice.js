@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 const bookServiceSchema = new mongoose.Schema({
- 
+
   serviceName: {
     type: String,
     required: true,
@@ -11,19 +11,22 @@ const bookServiceSchema = new mongoose.Schema({
     required: true,
   },
   price: {
-    type: Number,
+    type: Object,
     required: true,
   },
-  scheduleDateTime: {
+  schedule: {
     type: Date,
     required: true,
   },
-  paymentMethod: {
+  caretakerType: {
     type: String,
-    enum: ['online', 'cash'],
-    required: true,
+    required: true
   },
   address: {
+    type: String,
+    required: true,
+  },
+  location: {
     type: String,
     required: true,
   },
@@ -32,14 +35,19 @@ const bookServiceSchema = new mongoose.Schema({
     enum: ['pending', 'confirmed', 'completed', 'cancelled'],
     default: 'pending',
   },
-  phone_number: {
+  phone: {
     type: String,
     required: true,
   },
-  referenceid:{
+  referenceid: {
     type: String,
-
+    
   },
+  // paymentMethod: {
+  //   type: String,
+  //   enum: ['online', 'cash'],
+  //   required: true,
+  // },
   createdAt: {
     type: Date,
     default: Date.now,

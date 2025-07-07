@@ -2,35 +2,9 @@ import Typewriter from "@/components/Typewriter";
 import "./globals.css";
 import Services from "@/components/Services";
 import CaretakerProfile from "@/components/CaretakerProfile";
-import RentalEquipment from "@/components/RentalEquipment";
 import Testimonials from "@/components/Testimonials";
 
-import React, { Suspense } from "react";
-import Showcase from "@/components/Showcase";
-async function getData() {
-  const services = [
-    { name: "Elder Care", icon: "FaUserShield" },
-    { name: "Mother & Baby Care", icon: "FaBaby" },
-    { name: "Nursing Care", icon: "FaUserNurse" },
-    { name: "Physiotherapy", icon: "FaDumbbell" },
-    { name: "Doctor Consultation", icon: "FaStethoscope" },
-    { name: "Critical Care", icon: "FaHeartbeat" },
-    { name: "Vaccination", icon: "FaSyringe" },
-    { name: "Lab Tests", icon: "FaVial" },
-    { name: "Counselling", icon: "FaHeadset" },
-  ];
 
-
-  const caretakers = [
-    { name: "John", service: "Nursing Care" },
-    { name: "Asha", service: "Elder Care" },
-    { name: "Maya", service: "Physiotherapy" },
-    { name: "Arun", service: "Mother & Baby Care" },
-    { name: "Dr. Kapoor", service: "Doctor Consultation" },
-  ];
-
-  return { services, caretakers };
-}
 export const metadata = {
   title: "Home Healthcare Services | Trained Caretakers at Your Doorstep | CareKwik",
   description: "Find verified nurses, elder care, physiotherapists, and home caretakers near you. CareKwik delivers professional healthcare services instantly at your home across India.",
@@ -51,20 +25,17 @@ export const metadata = {
   robots: "index, follow",
 };
 export default async function Home() {
-  const { services, caretakers } = await getData();
+ 
   return (
     <div className="">
       <div className="  ">
 
         <Typewriter />
       </div>
-      <Suspense fallback={<div>Loading Services...</div>}>
         <Services/>
 
-      </Suspense>
       <CaretakerProfile />
-      <Showcase />
-      <RentalEquipment />
+     
       <Testimonials />
     </div>
   );

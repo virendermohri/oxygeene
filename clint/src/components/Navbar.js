@@ -1,18 +1,14 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { FaFire, FaSearch, FaClipboardList,FaBriefcaseMedical, FaHeart, FaRegUserCircle,FaHistory ,FaUserCircle} from "react-icons/fa";
-import { AiFillHome } from "react-icons/ai";
-import { AiOutlineHome } from "react-icons/ai";
-import { MdOutlineSell,MdSell } from "react-icons/md";
-import { LuClipboardList ,LuBriefcaseMedical} from "react-icons/lu";
-import { IoHomeOutline, IoHomeSharp, IoNotificationsCircle } from "react-icons/io5";
-import { MdOutlineShoppingCart, MdOutlineMedicalServices, MdMedicalServices, MdShoppingCart } from "react-icons/md";
-import { RiAccountCircleLine, RiAccountCircleFill } from "react-icons/ri";
-import { BsClockHistory } from "react-icons/bs";
+import { FaRegHeart, FaHeart } from "react-icons/fa";
+import { AiFillHome ,AiOutlineHome} from "react-icons/ai";
+import { CgShoppingBag } from "react-icons/cg";
+import { PiShoppingBagFill } from "react-icons/pi";
+import { IoNotificationsCircle } from "react-icons/io5";
+import { RiAccountCircleLine,RiUser3Fill,RiUser3Line, RiAccountCircleFill } from "react-icons/ri";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import { IoIosArrowBack } from "react-icons/io";
 export default function Navbar() {
   const pathname = usePathname();
   const isHome = pathname === "/";
@@ -25,115 +21,109 @@ export default function Navbar() {
   }, [])
   const navItems = [
     { name: "Home", href: "/" },
-    { name: "Rent & Buy", href: "/medicale-equipment" },
     { name: "Services", href: "/services" },
-    { name: "Transactions", href: "/history" },
+    { name: "Medical Equipment", href: "/medical-equipment" },
+    { name: "Bookings", href: "/history" },
+    { name: "About Us", href: "/about" },
+    { name: "Contact", href: "/contact" },
   ];
   return (
     <nav className="">
-      <div className={`   bg-black  ${pathname == "/" ? " shadow " : ""}  md:px-10  px-3 py-4 flex justify-between items-center`}>
-        <div className={`flex gap-20 items-center w-full ${pathname == "/" ? " justify-around " : ""}`}>
+      <div className={` bg-white  shadow py-3 flex justify-between   items-center`}>
+        <div className={`flex gap-20 items-center w-full md:justify-around justify-between px-5 `}>
           <div>
-         
-              <Link href="/">
-                <p className="md:text-3xl text-white text-2xl md:font-semibold font-bold font-mono">CareKwik</p>
-              </Link>
-              
-          </div>
-          <div className="hidden md:block">
-            <ul className="flex space-x-10">
-              {navItems.map((item) => (
-                <li key={item.name}>
-                  <Link href={item.href} className="text-xl font-semibold text-white hover:text-green-500">
-                    {item.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div className={`${pathname != "/" ? " hidden " : ""}`}>
-            {CSR && user ?
-              <div className=" flex gap-5 items-center">
-                <Link href={"/history"}> <IoNotificationsCircle className="text-4xl cursor-pointer" /></Link>
-                <Link className="hidden md:block" href="/my-account">
-                  {pathname === "/my-account" ? <div className="flex gap-5 text-white bg-black  border cursor-pointer px-5 py-3"> <RiAccountCircleFill className="text-3xl " /> <p>My Account</p></div> : <div className="flex gap-5 border cursor-pointer px-5 py-3"><RiAccountCircleLine className="text-3xl" /><p>My Account</p></div>}
-                </Link>
 
-              </div>
-              :
-              <Link href={"/login"}> <button className="bg-black border text-white md:px-5 md:py-2 px-5 py-2 hover:bg-[#212121] font-semibold md:text-lg transition duration-300 cursor-pointer ease-in-out">
-                Login
-              </button></Link>
-            }
+            <Link href="/">
+              <p className="  text-2xl md:font-bold font-bold ">CareKwik</p>
+            </Link>
+
+          </div>
+          <div className="flex justify-between gap-10  items-center ">
+
+            <div className="hidden  md:block">
+              <ul className="flex space-x-10">
+                {navItems.map((item) => (
+                  <li key={item.name}>
+                    <Link href={item.href} className=" font-semibold  hover:text-[#607AFB]">
+                      {item.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className={`${pathname != "/" ? "  " : ""}`}>
+              {CSR && user ?
+                <div className=" flex gap-5 items-center">
+                  <Link href={"/history"}> <IoNotificationsCircle className="text-4xl cursor-pointer" /></Link>
+                  <Link className="hidden md:block" href="/my-account">
+                    {pathname === "/my-account" ? <div className="flex gap-5 text-white bg-black  border cursor-pointer px-5 py-3"> <RiAccountCircleFill className="text-3xl " /> <p>My Account</p></div> : <div className="flex gap-5 border cursor-pointer px-5 py-3"><RiAccountCircleLine className="text-3xl" /><p>My Account</p></div>}
+                  </Link>
+
+                </div>
+                :
+                <Link href={"/login"}> <button className="bg-[#607AFB] border rounded-full text-white md:px-5 md:py-2 px-5 py-2 hover:bg-[#212121] font-semibold md:text-lg transition duration-300 cursor-pointer ease-in-out">
+                  Login
+                </button></Link>
+              }
+            </div>
           </div>
         </div>
       </div>
 
-      
-      <div className="fixed bottom-0 left-0 bg-white right-0 z-50  text-white shadow-inner  md:hidden flex justify-around py-2 border-t-1border-gray-700">
-                <Link href="/" className="flex flex-col  items-center gap-2 text-xs mt-1">
-                    {pathname == "/" ?
 
-                        <AiFillHome className={`text-xl text-black`} /> :
-                        <AiOutlineHome className={`text-xl text-gray-500`} />
+      <div className="fixed bottom-0 font-medium left-0 bg-white right-0 z-50  text-white shadow-inner  md:hidden flex justify-around  p-3 border-t-1 border-gray-200">
+        <Link href="/" className="flex flex-col  items-center gap-2 text-xs mt-1">
+          {pathname == "/" ?
 
-                    }
-                    {pathname == "/" ?
-                        <p className="text-black">Home</p> :
-                        <p className="text-gray-500">Home</p>
-                    }
-                </Link>
-                <Link href="/medicale-equipment" className="flex flex-col  items-center gap-2 text-xs mt-1">
-                    {pathname == "/medicale-equipment" ?
+            <AiFillHome className={`text-xl text-black`} /> :
+            <AiOutlineHome className={`text-xl text-gray-500`} />
 
-                        <FaBriefcaseMedical className={`text-xl text-black`} /> :
-                        <LuBriefcaseMedical className={`text-xl text-gray-500`} />
+          }
+          {pathname == "/" ?
+            <p className="text-black">Home</p> :
+            <p className="text-gray-500 font-medium">Home</p>
+          }
+        </Link>
+        <Link href="/services" className="flex flex-col  items-center gap-2 text-xs mt-1">
+          {pathname == "/services" ?
 
-                    }
-                    {pathname == "/medicale-equipment" ?
-                        <p className="text-black">Equipment</p> :
-                        <p className="text-gray-500">Equipment</p>
-                    }
-                </Link>
-                <Link href="/services" className="flex flex-col  items-center gap-2 text-xs mt-1">
-                    {pathname == "/services" ?
+            <FaHeart className={`text-xl text-black`} /> :
+            <FaRegHeart className={`text-xl text-gray-500`} />
 
-                        <FaClipboardList className={`text-xl text-black`} /> :
-                        <LuClipboardList className={`text-xl text-gray-500`} />
+          }
+          {pathname == "/services" ?
+            <p className="text-black">Services</p> :
+            <p className="text-gray-500 font-medium">Services</p>
+          }
+        </Link>
+        <Link href="/medical-equipment" className="flex flex-col  items-center gap-2 text-xs mt-1">
+          {pathname == "/medical-equipment" ?
 
-                    }
-                    {pathname == "/services" ?
-                        <p className="text-black">Services</p> :
-                        <p className="text-gray-500">Services</p>
-                    }
-                </Link>
-                <Link href="/history" className="flex flex-col  items-center gap-2 text-xs mt-1">
-                    {pathname == "/history" ?
+            <PiShoppingBagFill className={`text-xl text-black`} /> :
+            <CgShoppingBag className={`text-xl text-gray-500`} />
 
-                        <FaHistory className={`text-xl text-black`} /> :
-                        <FaHistory className={`text-xl text-gray-500`} />
+          }
+          {pathname == "/medical-equipment" ?
+            <p className="text-black">Equipment</p> :
+            <p className="text-gray-500 font-medium">Equipment</p>
+          }
+        </Link>
+       
+        <Link href="/my-account" className="flex flex-col  items-center gap-2 text-xs mt-1">
+          {pathname == "/my-account" ?
 
-                    }
-                    {pathname == "/history" ?
-                        <p className="text-black">History</p> :
-                        <p className="text-gray-500">History</p>
-                    }
-                </Link>
-                <Link href="/my-account" className="flex flex-col  items-center gap-2 text-xs mt-1">
-                    {pathname == "/my-account" ?
+            <RiUser3Fill className={`text-xl text-black`} /> :
+            <RiUser3Line className={`text-xl text-gray-500`} />
 
-                        <FaUserCircle className={`text-xl text-black`} /> :
-                        <FaRegUserCircle className={`text-xl text-gray-500`} />
+          }
+          {pathname == "/my-account" ?
+            <p className="text-black">My Account</p> :
+            <p className="text-gray-500 font-medium">My Account</p>
+          }
+        </Link>
 
-                    }
-                    {pathname == "/my-account" ?
-                        <p className="text-black">My Account</p> :
-                        <p className="text-gray-500">My Account</p>
-                    }
-                </Link>
-                
 
-            </div>
+      </div>
     </nav>
   );
 }
