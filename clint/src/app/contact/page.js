@@ -4,7 +4,7 @@ const page = () => {
   return (
     <div className='max-w-5xl mx-auto mt-10 px-4 md:mt-20 mb-10 md:mb-20'>
      <h1 className='text-2xl font-bold mb-3'>Contact Us</h1>
-     <p className='text-gray-600 mb-10'>We're here to help. Reach out to us with any questions or concerns.</p>
+     <p className='text-gray-600 mb-10'>We&apos;re here to help. Reach out to us with any questions or concerns.</p>
      <p className='font-medium text-xl'>Contact information</p>
      <div className="p-5 border-t  border-b border-gray-200 mt-5 flex -items-center justify-between">
         <p className='text-gray-600 '>Phone</p>
