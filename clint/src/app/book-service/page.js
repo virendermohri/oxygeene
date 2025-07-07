@@ -1,10 +1,11 @@
 import BookService from '@/components/bookservice'
-import React from 'react'
+import React, { Suspense } from 'react'
 const page = () => {
   return (
     <div>
-
-      <BookService/>
+      <Suspense fallback={<div className='text-center mt-20'>Loading...</div>}>
+        <BookService />
+      </Suspense>
     </div>
   )
 }
