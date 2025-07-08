@@ -24,6 +24,10 @@ const userSchema = new mongoose.Schema({
     unique: true,
     lowercase: true,
   },
+  referral_code: {
+    type: String,
+    unique: true,
+  },
   
 });
 module.exports = mongoose.model("User", userSchema);  

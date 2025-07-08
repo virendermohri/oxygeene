@@ -43,7 +43,8 @@ const services = [
 const BookService = () => {
   const searchParam = useSearchParams();
   const serviceParam = searchParam.get("service");
-
+  const [coupon, setCoupon] = useState(false)
+  const [referral, setReferral] = useState(false)
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -54,7 +55,7 @@ const BookService = () => {
           "Content-Type": "application/json",
           "auth-token": localStorage.getItem("auth-token"),
         },
-        body: JSON.stringify(({...form,serviceName:unslugifyService(serviceParam)})),
+        body: JSON.stringify(({ ...form, serviceName: unslugifyService(serviceParam) })),
       });
 
       const response = await res.json();
@@ -86,7 +87,8 @@ const BookService = () => {
     address: "",
     phone: "",
     duration: "",
-    price:null
+    price: null,
+    referenceid: ""
   });
 
 
@@ -103,7 +105,6 @@ const BookService = () => {
     Panchkula: { min: 550, max: 1050 },
   };
 
-  const [price, setPrice] = useState(null)
   const handleChange = (e) => {
     const { name, value } = e.target;
 
@@ -130,6 +131,29 @@ const BookService = () => {
     }
 
   }, [form.location, form.caretakerType])
+  const handlecoupancode = async () => {
+    try {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/referral/verify`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "auth-token": localStorage.getItem("auth-token"),
+        },
+        body: JSON.stringify({ referral: form.referenceid }),
+      });
+
+      const response = await res.json();
+      if (res.ok) {
+        toast.success(response.message);
+        setReferral(true)
+      } else {
+        toast.error(response.error || "Invalid coupon code.");
+      }
+    } catch (error) {
+      console.log(error);
+      toast.error("Failed to apply coupon code.");
+    }
+  };
   return (
     <>
       <ToastContainer position="top-right" autoClose={2000} />
@@ -246,12 +270,30 @@ const BookService = () => {
               </select>
             </div>
           </div>
-
-
-          {form.price !== null  && form.address && form.phone && form.duration && (
+          <div className="mb-2">
+            <button type="button" onClick={(() => { setCoupon(true) })} className="text-blue-700 cursor-pointer font-medium">Have a coupon code?</button>
+            {coupon && <div className="flex items-center justify-between">
+              <input
+                type="text"
+                name="referenceid"
+                onChange={(e) => setForm({ ...form, referenceid: e.target.value })}
+                placeholder="Enter coupon code"
+                className="w-full border border-gray-300 rounded-md px-4 py-2 mt-2"
+              />
+              <button type="button" onClick={handlecoupancode} className="bg-blue-600 text-white font-medium py-2 px-4 rounded-md hover:bg-blue-700 transition ml-2">
+                Apply
+              </button>
+            </div>}
+          </div>
+          { referral && (
+            <div className="font-semibold mt-2"> 
+              Referral code applied successfully! You will receive a discount on your booking.
+            </div>
+            )}
+          {form.price !== null && form.address && form.phone && form.duration && (
 
             <div className="text-green-600 font-semibold mt-2">
-             Base Price (per day) : ₹{form.price.min} - ₹{form.price.max}
+              Base Price (per day) : ₹{form.price.min} - ₹{form.price.max}
               {form.caretakerType === "Female" && (
                 <p className="text-sm text-blue-600 mt-1">
                   ₹200 additional charge for selecting a female caretaker.

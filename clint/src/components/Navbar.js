@@ -2,13 +2,14 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { FaRegHeart, FaHeart } from "react-icons/fa";
-import { AiFillHome ,AiOutlineHome} from "react-icons/ai";
+import { AiFillHome, AiOutlineHome } from "react-icons/ai";
 import { CgShoppingBag } from "react-icons/cg";
 import { PiShoppingBagFill } from "react-icons/pi";
 import { IoNotificationsCircle } from "react-icons/io5";
-import { RiAccountCircleLine,RiUser3Fill,RiUser3Line, RiAccountCircleFill } from "react-icons/ri";
+import { RiAccountCircleLine, RiUser3Fill, RiUser3Line, RiAccountCircleFill } from "react-icons/ri";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 export default function Navbar() {
   const pathname = usePathname();
   const isHome = pathname === "/";
@@ -54,13 +55,12 @@ export default function Navbar() {
             <div className={`${pathname != "/" ? "  " : ""}`}>
               {CSR && user ?
                 <div className=" flex gap-5 items-center">
-                  <Link href={"/history"}> <IoNotificationsCircle className="text-4xl cursor-pointer" /></Link>
-                  <Link className="hidden md:block" href="/my-account">
-                    {pathname === "/my-account" ? <div className="flex gap-5 text-white bg-black  border cursor-pointer px-5 py-3"> <RiAccountCircleFill className="text-3xl " /> <p>My Account</p></div> : <div className="flex gap-5 border cursor-pointer px-5 py-3"><RiAccountCircleLine className="text-3xl" /><p>My Account</p></div>}
+                  <Link href={"/my-account"}>
+                    <Image alt="My Account" className="h-10 w-10  rounded-full cursur-pointer" src={"https://res.cloudinary.com/divlt5fqo/image/upload/v1751954811/unnamed_dvjv2x.png"} height={100} width={100} />
                   </Link>
-
                 </div>
                 :
+
                 <Link href={"/login"}> <button className="bg-[#607AFB] border rounded-full text-white md:px-5 md:py-2 px-5 py-2 hover:bg-[#212121] font-semibold md:text-lg transition duration-300 cursor-pointer ease-in-out">
                   Login
                 </button></Link>
@@ -108,7 +108,7 @@ export default function Navbar() {
             <p className="text-gray-500 font-medium">Equipment</p>
           }
         </Link>
-       
+
         <Link href="/my-account" className="flex flex-col  items-center gap-2 text-xs mt-1">
           {pathname == "/my-account" ?
 

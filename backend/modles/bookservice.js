@@ -1,7 +1,10 @@
 const mongoose = require("mongoose");
 
 const bookServiceSchema = new mongoose.Schema({
-
+ userId: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User', // assuming your user model is named 'User'
+  },
   serviceName: {
     type: String,
     required: true,

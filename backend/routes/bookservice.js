@@ -106,5 +106,26 @@ router.get('/allbookings/canceled', async (req, res) => {
     res.status(500).json({ error: 'Failed to fetch canceled bookings' });
   }
 });
+// PUT /api/bookings/:id/status
+router.put('/bookings/:id/status', async (req, res) => {
+  const { id } = req.params;
+  const { status } = req.body;
+  try {
+    const updatedBooking = await BookService.findByIdAndUpdate(
+      id,
+      { status },
+      { new: true }
+    );
+
+    if (!updatedBooking) {
+      return res.status(404).json({ error: 'Booking not found' });
+    }
+
+    res.status(200).json({ message: 'Booking status updated', booking: updatedBooking });
+  } catch (error) {
+    console.error('Error updating status:', error);
+    res.status(500).json({ error: 'Server error while updating booking status' });
+  }
+});
 
 module.exports = router;
