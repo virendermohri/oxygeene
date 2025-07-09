@@ -74,8 +74,8 @@ const History = () => {
             transactions.map((t, i) => (
               <div key={i} className="p-4 border rounded-lg shadow-sm bg-white">
                 <p><strong>Service:</strong> {t.serviceName}</p>
-                <p><strong>Price:</strong> ₹{t.price}</p>
-                <p><strong>Scheduled:</strong> {new Date(t.scheduleDateTime).toLocaleString()}</p>
+                <p><strong>Price:</strong> ₹{t.price.max}</p>
+                <p><strong>Scheduled:</strong> {new Date(t.schedule).toLocaleString()}</p>
               </div>
             ))
           )}
