@@ -11,7 +11,7 @@ const RentAndBuyWithCart = () => {
   const [showCart, setShowCart] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [filterType, setFilterType] = useState('all');
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const fetchProducts = async () => {
     const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/product`, {
       method: "GET",
@@ -29,9 +29,9 @@ const RentAndBuyWithCart = () => {
 
 
   };
-  useEffect(() => {
-    fetchProducts()
-  }, [])
+  // useEffect(() => {
+  //   fetchProducts()
+  // }, [])
   const addToCart = (product, mode) => {
     const existing = cart.find(item => item.id === product.id && item.mode === mode);
     if (existing) {
@@ -63,11 +63,11 @@ const RentAndBuyWithCart = () => {
 
   const total = cart.reduce((sum, item) => sum + item.qty * item.unitPrice, 0);
 
-  const filteredProducts = products.filter(p =>
-    (p.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      p.category.toLowerCase().includes(searchQuery.toLowerCase())) &&
-    (filterType === 'all' || filterType === 'buy' || filterType === 'rent')
-  );
+  // const filteredProducts = products.filter(p =>
+  //   (p.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+  //     p.category.toLowerCase().includes(searchQuery.toLowerCase())) &&
+  //   (filterType === 'all' || filterType === 'buy' || filterType === 'rent')
+  // );
   const medicalEquipment = [
     {
       productname: "Wheelchairs",

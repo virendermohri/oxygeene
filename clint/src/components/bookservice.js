@@ -248,6 +248,7 @@ const BookService = () => {
                 value={form.phone}
                 onChange={handleChange}
                 required
+                maxLength={10}
                 placeholder="e.g. 9876543210"
                 className="w-full border border-gray-300 rounded-md px-4 py-2"
               />
