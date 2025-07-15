@@ -8,7 +8,7 @@ const page = () => {
      <p className='font-medium text-xl'>Contact information</p>
      <div className="p-5 border-t  border-b border-gray-200 mt-5 flex -items-center justify-between">
         <p className='text-gray-600 '>Phone</p>
-        <p className='w-1/2'>+91 8307190216</p>
+        <p className='w-1/2'>+91 7015875541</p>
      </div>
      <div className="p-5 border-gray-200  flex -items-center justify-between">
         <p className='text-gray-600 '>Email</p>

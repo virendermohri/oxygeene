@@ -7,7 +7,7 @@ const Page = () => {
     const [status, setStatus] = useState('allbookings'); // default status
     const [selectedRow, setSelectedRow] = useState(null);
     const [complaints, setComplaints] = useState([])
-    const[bookingdata, setBookingData] = useState(true)
+    const [bookingdata, setBookingData] = useState(true)
     const fetchBookings = async () => {
         try {
             setLoading(true);
@@ -53,7 +53,7 @@ const Page = () => {
         }
     }, [])
     useEffect(() => {
-        
+
         fetchBookings()
     }, [status])
     const handleStatusChange = async (bookingId, newStatus) => {
@@ -81,31 +81,31 @@ const Page = () => {
             console.error(err);
         }
     };
-const handleComplaintStatusChange = async (complaintId, newStatus) => {
-    try {
-        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/complaint/${complaintId}/status`, {
-            method: "PUT",
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ status: newStatus }),
-        });
+    const handleComplaintStatusChange = async (complaintId, newStatus) => {
+        try {
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/complaint/${complaintId}/status`, {
+                method: "PUT",
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ status: newStatus }),
+            });
 
-        if (res.ok) {
-            const updated = await res.json();
-            // Optionally: refetch complaints or update state
-            setComplaints(prev =>
-                prev.map(c => (c._id === complaintId ? { ...c, status: newStatus } : c))
-            );
-            setSelectedRow(null); // close dropdown
-        } else {
-            console.error("Failed to update complaint status");
+            if (res.ok) {
+                const updated = await res.json();
+                // Optionally: refetch complaints or update state
+                setComplaints(prev =>
+                    prev.map(c => (c._id === complaintId ? { ...c, status: newStatus } : c))
+                );
+                setSelectedRow(null); // close dropdown
+            } else {
+                console.error("Failed to update complaint status");
+            }
+        }
+        catch (err) {
+            console.error(err);
         }
     }
-    catch (err) {
-        console.error(err);
-    }   
-}
     return (
         <div className='max-w-7xl h-screen mx-auto px-4 py-8'>
             <h1 className='text-2xl mb-10'>Management</h1>
@@ -127,7 +127,7 @@ const handleComplaintStatusChange = async (complaintId, newStatus) => {
                     setStatus("allbookings/canceled")
                 })} className='px-4 py-2 border border-1 cursor-pointer border-gray-200 rounded'>Canceled</button>
                 <button onClick={(() => {
-                   setBookingData(false)
+                    setBookingData(false)
                     fetchComplaints()
                 })} className='px-4 py-2 border border-1 cursor-pointer border-gray-200 rounded'>Complaints</button>
             </div>
@@ -190,13 +190,13 @@ const handleComplaintStatusChange = async (complaintId, newStatus) => {
 
                             <td className='py-2 px-4 border-b'>{booking.phone}</td>
                             <td className="py-2 px-4 border-b">₹{booking.price.max}-₹{booking.price.min}</td>
-                            <td className="py-2 px-4 border-b">{booking.referenceid===""?"NA":booking.referenceid}</td>
+                            <td className="py-2 px-4 border-b">{booking.referenceid === "" ? "NA" : booking.referenceid}</td>
                         </tr>
 
                     ))}
                 </tbody>
             </table>}
-            {complaints.length == 0 && !loading && !bookingdata&& <div className="text-center mt-20">Not found</div>}
+            {complaints.length == 0 && !loading && !bookingdata && <div className="text-center mt-20">Not found</div>}
             {!loading && !complaints.length == 0 && !bookingdata && <table className="min-w-full mt-20 bg-white border border-gray-200  rounded-lg overflow-hidden">
                 <thead className="text-gray-700 text-left">
                     <tr>
@@ -225,7 +225,7 @@ const handleComplaintStatusChange = async (complaintId, newStatus) => {
                             </td>
                             {/* <td className="py-2 px-4 border-b truncate ">{complaint.responseText?complaint.responseText:"No"}</td> */}
                             <td className="py-2 px-4 border-b capitalize">
-                               {selectedRow === complaint._id ? (
+                                {selectedRow === complaint._id ? (
                                     <select
                                         className="text-sm border px-2 py-1 rounded w-full"
                                         value={complaint.status}
@@ -250,7 +250,7 @@ const handleComplaintStatusChange = async (complaintId, newStatus) => {
                                         {complaint.status}
                                     </span>
                                 )}
-                               
+
                             </td>
                         </tr>
                     ))}

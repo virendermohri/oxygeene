@@ -181,7 +181,7 @@ const MyAccount = () => {
             </select>
           </div>
 
-          <textarea name='message' onChange={handleChange} className='w-full h-32 p-2 border border-gray-300 rounded' placeholder='Write your complaint here...'></textarea>
+          <textarea name='message' onChange={handleChange} className='w-full h-32 p-2 border border-gray-300 rounded' placeholder='Write your complaint here ...'></textarea>
           <button onClick={handlecomplaint} className="px-4 mt-2 w-full cursor-pointer py-2 border border-1 font-medium hover:bg-gray-100 text-gray-600 border-gray-200 rounded  w-full sm:w-auto">Submit Complaint</button>
         </div>}
       </div>
