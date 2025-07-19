@@ -27,7 +27,7 @@ const bookServiceSchema = new mongoose.Schema({
   },
   address: {
     type: String,
-    required: true,
+    
   },
   location: {
     type: String,
@@ -46,11 +46,7 @@ const bookServiceSchema = new mongoose.Schema({
     type: String,
     
   },
-  // paymentMethod: {
-  //   type: String,
-  //   enum: ['online', 'cash'],
-  //   required: true,
-  // },
+
   createdAt: {
     type: Date,
     default: Date.now,

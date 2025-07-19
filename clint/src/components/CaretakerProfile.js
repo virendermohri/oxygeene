@@ -72,22 +72,22 @@ const CaretakerProfile = () => {
 
     ]
     const [caretakers, setCaretaker] = useState(null);
-    useEffect(() => {
-        getdata()
-    }, [])
-    const getdata = async () => {
-        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/caretaker`, {
-            method: "GET",
-            headers: {
-                "Content-Type": "application/json",
-            },
-        });
-        if (!res.ok) {
-            throw new Error("Failed to fetch caretaker data");
-        }
-        const caretakerData = await res.json();
-        setCaretaker(caretakerData)
-    }
+    // useEffect(() => {
+    //     getdata()
+    // }, [])
+    // const getdata = async () => {
+    //     const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/caretaker`, {
+    //         method: "GET",
+    //         headers: {
+    //             "Content-Type": "application/json",
+    //         },
+    //     });
+    //     if (!res.ok) {
+    //         throw new Error("Failed to fetch caretaker data");
+    //     }
+    //     const caretakerData = await res.json();
+    //     setCaretaker(caretakerData)
+    // }
     return (
         <>
 

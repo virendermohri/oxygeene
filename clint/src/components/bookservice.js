@@ -4,6 +4,7 @@ import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { FaCheckCircle } from "react-icons/fa";
 import Image from "next/image";
 const services = [
   {
@@ -45,6 +46,7 @@ const BookService = () => {
   const serviceParam = searchParam.get("service");
   const [coupon, setCoupon] = useState(false)
   const [referral, setReferral] = useState(false)
+  const [showModal, setShowModal] = useState(false);
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -60,7 +62,8 @@ const BookService = () => {
 
       const response = await res.json();
       if (res.ok) {
-        toast.success(response.message)
+        setShowModal(true);
+        // toast.success(response.message)
         setTimeout(() => (window.location.href = "/"), 5000);
       } else {
         toast.error(response.error || "Something went wrong.");
@@ -90,19 +93,11 @@ const BookService = () => {
     price: null,
     referenceid: ""
   });
-
-
-
-  const getToday = () => new Date().toISOString().split('T')[0];
-  const handleSelect = (val) => {
-    setForm({ ...form, schedule: val });
-
-  };
   const locationPriceRanges = {
-    Chandigarh: { min: 500, max: 1000 },
-    Mohali: { min: 450, max: 950 },
-    Ambala: { min: 400, max: 900 },
-    Panchkula: { min: 550, max: 1050 },
+    Chandigarh: { min: 800, max: 1000 },
+    Mohali: { min: 650, max: 950 },
+    Ambala: { min: 500, max: 900 },
+    Panchkula: { min: 500, max: 1050 },
   };
 
   const handleChange = (e) => {
@@ -159,63 +154,69 @@ const BookService = () => {
       <ToastContainer position="top-right" autoClose={2000} />
 
       <div className="max-w-5xl mx-auto md:mt-10 mt-5 mb-20  p-4">
-        <h1 className="md:text-2xl font-bold mb-6 flex gap-2"><p className="text-gray-500">Service Name</p> : {unslugifyService(serviceParam)}</h1>
+        
+        <h1 className="text-2xl font-bold mb-6 flex gap-2"><p className="text-gray-500">Service Name</p> : {unslugifyService(serviceParam)}</h1>
         <div className="">
           <Image width={100} height={100} src={services.find(service => service.title.toLowerCase() === unslugifyService(serviceParam).toLowerCase())?.image_url || "https://res.cloudinary.com/divlt5fqo/image/upload/v1751460739/wmremove-transformed_2_sxrfa6.jpg"}
-            className=' w-full md:h-[450px]  object-cover border-1 border-gray-100 md:rounded-lg'
+            className=' w-full   rounded md:h-[450px]  object-cover border-1 border-gray-100 md:rounded-lg'
             alt="" />
 
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-5 mt-10 ">
 
-          {/* Caretaker Type */}
           <div className="grid md:grid-cols-2 gap-5 md:gap-10 items-center md:justify-between">
 
             <div className="mb-1">
-              <label className="block text-sm font-medium text-gray-700 mb-1">Caretaker Gender</label>
-              <select
-                name="caretakerType"
-                value={form.caretakerType}
-                onChange={handleChange}
-                required
-                className="w-full border border-gray-300 rounded-md px-4 py-2"
-              >
-                <option value="">Select Gender</option>
-                <option value="Female">Female</option>
-                <option value="Male">Male</option>
-              </select>
+              <label className="block  text-xl font-bold text-gray-700 mb-3">Caretaker Gender</label>
+              
+              <div className="flex flex-wrap gap-3 ">
+                <label
+                  className="text-sm font-medium leading-normal flex items-center justify-center rounded-xl border border-[#dde1e4] px-4 h-11 text-[#121517] has-[:checked]:border-[3px] has-[:checked]:px-3.5 has-[:checked]:border-[#318fcd] relative cursor-pointer"
+                >
+                  Male
+                  <input type="radio"  onChange={handleChange} className="invisible absolute" name="caretakerType" value="Male" />
+                </label>
+                <label
+                  className="text-sm font-medium leading-normal flex items-center justify-center rounded-xl border border-[#dde1e4] px-4 h-11 text-[#121517] has-[:checked]:border-[3px] has-[:checked]:px-3.5 has-[:checked]:border-[#318fcd] relative cursor-pointer"
+                >
+                  Female
+                  <input type="radio"  onChange={handleChange} className="invisible absolute" name="caretakerType" value="Female" />
+                </label>
+                <label
+                  className="text-sm font-medium leading-normal flex items-center justify-center rounded-xl border border-[#dde1e4] px-4 h-11 text-[#121517] has-[:checked]:border-[3px] has-[:checked]:px-3.5 has-[:checked]:border-[#318fcd] relative cursor-pointer"
+                >
+                  Any
+                  <input type="radio"  onChange={handleChange} className="invisible absolute" name="caretakerType" value="Other" />
+                </label>
+              </div>
             </div>
             <div className="mb-1">
-              <label className="block text-sm font-medium text-gray-700 mb-1">Schedule</label>
+              <label className="block  text-xl font-bold text-gray-700 mb-3">Schedule</label>
               <div className="flex gap-10 ">
-                <button onClick={() => {
-                  handleSelect(getToday());
-                }} type="button" className="border border-1 cursor-pointer border-gray-200 px-5 py-1 rounded-md">Today</button>
-
+                
                 <input
                   type="date"
                   name="schedule"
                   value={form.schedule}
                   onChange={handleChange}
                   required
-                  className="w-full border border-gray-300 rounded-md px-4 py-2"
+                  className="w-full text-sm font-medium  border border-gray-300 rounded-md px-4 py-3"
                 />
               </div>
             </div>
-            {/* Location */}
           </div>
 
           <div className="grid md:grid-cols-2 gap-5 md:gap-10 items-center md:justify-between ">
             <div className="mb-1">
-              <label className="block text-sm font-medium text-gray-700 mb-1">
+              <label className="block   text-xl font-bold text-gray-700 mb-3">
                 Select Location
               </label>
               <select
                 name="location"
                 value={form.location}
                 onChange={handleChange}
-                className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full p-3 text-sm font-medium border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
               >
                 <option value="" >Select your city</option>
                 <option value="Chandigarh">Chandigarh</option>
@@ -224,43 +225,18 @@ const BookService = () => {
                 <option value="Panchkula">Panchkula</option>
               </select>
             </div>
-            <div className="mb-1">
-
-              <label className="block text-sm font-medium text-gray-700 mb-1">Full Address</label>
-              <textarea
-                name="address"
-                value={form.address}
-                onChange={handleChange}
-                required
-                placeholder="Street, City, Zip Code"
-                rows="2"
-                className="w-full border border-gray-300 rounded-md px-4 py-2"
-              />
-            </div>
+           
           </div>
           <div className="grid md:grid-cols-2 gap-5 md:gap-10 items-center md:justify-between ">
 
             <div className="mb-1">
-              <label className="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
-              <input
-                type="tel"
-                name="phone"
-                value={form.phone}
-                onChange={handleChange}
-                required
-                maxLength={10}
-                placeholder="e.g. 9876543210"
-                className="w-full border border-gray-300 rounded-md px-4 py-2"
-              />
-            </div>
-            <div className="mb-1">
-              <label className="block text-sm font-medium text-gray-700 mb-1">Duration</label>
+              <label className="block  text-xl font-bold text-gray-700 mb-3">Duration</label>
               <select
                 name="duration"
                 value={form.duration}
                 onChange={handleChange}
                 required
-                className="w-full border border-gray-300 rounded-md px-4 py-2"
+                className="w-full text-sm font-medium border border-gray-300 rounded-md px-4 py-3"
               >
                 <option value="">Select Duration</option>
                 <option value="1 Day">1 Day</option>
@@ -269,6 +245,20 @@ const BookService = () => {
                 <option value="2 Weeks">2 Weeks</option>
                 <option value="1 Month">1 Month</option>
               </select>
+            </div>
+            <div className="mb-1">
+              <label className="block  text-xl font-bold text-gray-700 mb-3">Phone Number</label>
+              
+              <input
+                type="tel"
+                name="phone"
+                value={form.phone}
+                onChange={handleChange}
+                required
+                maxLength={10}
+                placeholder="Phone Number"
+                className="w-full text-sm font-medium border border-gray-300 rounded-md px-4 py-3"
+              />
             </div>
           </div>
           <div className="mb-2">
@@ -279,18 +269,18 @@ const BookService = () => {
                 name="referenceid"
                 onChange={(e) => setForm({ ...form, referenceid: e.target.value })}
                 placeholder="Enter coupon code"
-                className="w-full border border-gray-300 rounded-md px-4 py-2 mt-2"
+                className="w-full border border-gray-300 rounded-md px-4 py-3 mt-2"
               />
               <button type="button" onClick={handlecoupancode} className="bg-blue-600 text-white font-medium py-2 px-4 rounded-md hover:bg-blue-700 transition ml-2">
                 Apply
               </button>
             </div>}
           </div>
-          { referral && (
-            <div className="font-semibold mt-2"> 
+          {referral && (
+            <div className="font-semibold mt-2">
               Referral code applied successfully! You will receive a discount on your booking.
             </div>
-            )}
+          )}
           {form.price !== null && form.address && form.phone && form.duration && (
 
             <div className="text-green-600 font-semibold mt-2">
@@ -311,6 +301,30 @@ const BookService = () => {
             Confirm Booking
           </button>
         </form>
+        {showModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center  bg-opacity-50 backdrop-blur-sm transition-opacity">
+          <div className="bg-white rounded-2xl shadow-2xl p-6 w-full max-w-sm mx-4 animate-fade-in relative">
+            <button
+              onClick={() => setShowModal(false)}
+              className="absolute top-2 right-3 text-gray-400 hover:text-gray-600 text-2xl"
+            >
+              &times;
+            </button>
+            <div className="flex flex-col items-center text-center">
+              <FaCheckCircle className="text-green-600 w-10 h-10 mb-2" />
+              <h2 className="text-xl font-bold text-green-700">Booking Confirmed!</h2>
+              <p className="text-gray-600 mt-1">
+                Thank you for choosing <span className="font-semibold">CareKwik</span>.
+                <br />
+                Our team will contact you shortly to confirm your booking.
+              </p>
+              <p className="text-sm text-gray-400 mt-3 italic">
+                “Because every care request deserves a real human response.” 💙
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
       </div >
 
     </>

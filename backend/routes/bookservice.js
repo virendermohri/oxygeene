@@ -12,7 +12,7 @@ router.post('/', async (req, res) => {
       price,
       schedule,
       caretakerType,
-      address,
+      
       location,
       phone,
     } = req.body;
@@ -20,7 +20,7 @@ router.post('/', async (req, res) => {
     // Validate fields
     if (
       !serviceName || !duration  || !phone ||
-      !schedule || !address || !caretakerType || !location
+      !schedule  || !caretakerType || !location
     ) {
       return res.status(400).json({ error: 'All fields are required',res:req.body });
     }
@@ -31,7 +31,7 @@ router.post('/', async (req, res) => {
       price,
       schedule,
       caretakerType,
-      address,
+      
       location,
       phone,
       referenceid: req.body.referenceid || "",
