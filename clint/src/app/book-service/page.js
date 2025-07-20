@@ -40,7 +40,7 @@ const page = () => {
         <section className="max-w-5xl md:text-lg mx-auto md:mt-10 mt-5 mb-10  p-4  text-gray-600">
           <h2 className="text-2xl font-semibold mb-5">Home Care Services in Chandigarh, Mohali & Panchkula</h2>
           <p>
-            CareKwik offers trusted at-home healthcare services including Elder Care, ICU at Home, Baby Care, and Physiotherapy. Whether you're in <strong>Chandigarh</strong>, <strong>Mohali</strong>, <strong>Panchkula</strong> or <strong>Ambala</strong>, book trained and verified caretakers today. We ensure 100% safe, affordable, and flexible home care.
+            CareKwik offers trusted at-home healthcare services including Elder Care, ICU at Home, Baby Care, and Physiotherapy. Whether you&apos;re in <strong>Chandigarh</strong>, <strong>Mohali</strong>, <strong>Panchkula</strong> or <strong>Ambala</strong>, book trained and verified caretakers today. We ensure 100% safe, affordable, and flexible home care.
           </p>
           <p className="mt-2">
             Popular Services:
