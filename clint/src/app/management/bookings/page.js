@@ -107,7 +107,7 @@ const Page = () => {
         }
     }
     return (
-        <div className='max-w-7xl h-screen mx-auto px-4 py-8'>
+        <div className='max-w-7xl min-h-screen mx-auto px-4 py-8'>
             <h1 className='text-2xl mb-10'>Management</h1>
             <div className="flex gap-10 items-center">
                 <button onClick={(() => {

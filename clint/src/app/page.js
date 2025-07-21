@@ -6,12 +6,12 @@ import Testimonials from "@/components/Testimonials";
 
 
 export const metadata = {
-  title: "Home Healthcare Services | Trained Caretakers at Your Doorstep | CareKwik",
-  description: "Find verified nurses, elder care, physiotherapists, and home caretakers near you. CareKwik delivers professional healthcare services instantly at your home across India.",
-  keywords: "Home healthcare services, nurse at home, elder care India, physiotherapy services, CareKwik caretakers, healthcare at home, best homecare India, trusted homecare services, book caretaker online, post surgery care at home, home nursing services, physiotherapy at home, doctor consultation at home, vaccination services, lab tests at home, counselling services home care near me, icu care at home, critical care services, home healthcare solutions, trained nurses near me, physiotherapists near me, elder care services, home healthcare providers",
+  title: "Home Care Services in Chandigarh & Mohali | Book Trusted Caretakers - CareKwik",
+  description: "Get trusted home care services in Chandigarh and Mohali with CareKwik. Book verified caretakers for Elder Care, ICU at Home, Baby Care & Physiotherapy. Safe, reliable & affordable.",
+  keywords: "home care in chandigarh, home care mohali, elder care chandigarh, elder care mohali, icu at home chandigarh, icu at home mohali, physiotherapy at home chandigarh, home nurse mohali, patient care mohali, baby care mohali, elderly care chandigarh, home attendant chandigarh, caretaker in mohali, home visit nurse chandigarh, nursing service mohali, 24x7 home care mohali, medical equipment chandigarh, wheelchair rental mohali, oxygen cylinder mohali, mohali health care, chandigarh patient care, home health services chandigarh, carekwik chandigarh mohali",
   openGraph: {
-    title: "Best Home Healthcare Services in India | CareKwik",
-    description: "Need home healthcare? Hire trained nurses, caretakers, and physiotherapists easily with CareKwik. Trusted by families across India for safe, affordable care.",
+    title: "Top Home Care in Chandigarh & Mohali | CareKwik",
+    description: "Book verified home care services in Chandigarh & Mohali. CareKwik connects you directly to trained caretakers – no agents, no extra charges.",
     url: "https://carekwik.com",
     type: "website",
     siteName: "CareKwik",
