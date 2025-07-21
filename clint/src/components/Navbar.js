@@ -26,7 +26,7 @@ export default function Navbar() {
     { name: "Medical Equipment", href: "/medical-equipment" },
     { name: "Bookings", href: "/history" },
     { name: "About Us", href: "/about" },
-    { name: "Contact", href: "/contact" },
+    { name: "Contact Us", href: "/contact-us" },
   ];
   return (
     <nav className="">
