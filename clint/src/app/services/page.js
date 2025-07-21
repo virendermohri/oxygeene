@@ -2,25 +2,10 @@ import Services from "@/components/Services";
 import React, { Suspense } from 'react';
 
 export const metadata = {
-  title: 'Our Healthcare Services | CareKwik',
-  description: 'Explore a wide range of healthcare services at CareKwik including elder care, nursing care, physiotherapy, doctor consultation, ICU at home, lab tests, and more — all at your doorstep.',
+  title: 'Our Home Care Services in Chandigarh & Mohali | Elder Care, ICU, Nurses',
+  description: "Explore CareKwik's trusted home care services in Chandigarh & Mohali. From ICU setups to home nurses, elder care to physiotherapy – verified & trained staff.",
   keywords: `
-    healthcare services at home,
-    elder care services at home,
-    nursing care for elderly at home,
-    home physiotherapy service,
-    doctor consultation at home,
-    ICU setup at home,
-    critical care at home,
-    baby care services at home,
-    mother and baby care at home,
-    vaccination at home,
-    lab tests home sample collection,
-    counselling services online,
-    home medical equipment rental,
-    trusted healthcare services in India,
-    affordable home healthcare services,
-    CareKwik healthcare solutions
+    home care services chandigarh, mohali home nursing, patient care at home, elder care mohali, icu at home chandigarh, physiotherapy at home, baby care at home chandigarh, home care packages mohali, caretaker services chandigarh, verified nurses mohali
   `,
   openGraph: {
     title: 'Our Healthcare Services | CareKwik',
