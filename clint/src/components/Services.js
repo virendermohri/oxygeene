@@ -50,7 +50,7 @@ const slugifyServices = (servicename) => {
 };
 export default function Services({  }) {
   return (
-    <div id='services' className="px-4 md:mb-20 md:h-screen md:h-auto md:max-w-5xl  w-full mx-auto  py-8  ">
+    <div id='services' className=" border px-4 md:mb-20 md:h-screen md:h-auto md:max-w-5xl  w-full mx-auto  py-8  ">
       <div className="flex flex-col">
         <h1 className='font-bold text-2xl mb-10'>Our Services</h1>
         <div className="grid md:grid-cols-5 grid-cols-3 justify-center md:gap-10 gap-6 ">

@@ -6,17 +6,17 @@ import { IoIosSearch } from "react-icons/io";
 const CaretakerProfile = () => {
     const doctors = [
         {
-            name: "Dr. Ethan Walker",
+            name: "Dr. Rahul Kumar",
             role: 'Cardiologist | Available: Mon-Fri | Rating: 4.8',
             image_url: "https://res.cloudinary.com/divlt5fqo/image/upload/v1751541686/unnamed_tqoo8o.png"
         },
         {
-            name: "Dr. Olivia Hayes",
+            name: "Dr. Monika",
             role: 'Pediatrician | Available: Tue-Sat | Rating: 4.9',
             image_url: "https://res.cloudinary.com/divlt5fqo/image/upload/v1751541718/unnamed_ieldlh.png"
         },
         {
-            name: "Dr. Naah Bennett",
+            name: "Dr. Nikhil",
             role: 'Dermatologist | Available: Mon-Tue | Rating: 4.7',
             image_url: "https://res.cloudinary.com/divlt5fqo/image/upload/v1751541735/unnamed_xgbzpn.png"
         },

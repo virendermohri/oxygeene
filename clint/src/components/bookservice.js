@@ -41,9 +41,7 @@ const services = [
 
 ]
 
-const BookService = () => {
-  const searchParam = useSearchParams();
-  const serviceParam = searchParam.get("service");
+const BookService = ({servicename}) => {
   const [coupon, setCoupon] = useState(false)
   const [referral, setReferral] = useState(false)
   const [showModal, setShowModal] = useState(false);
@@ -57,7 +55,7 @@ const BookService = () => {
           "Content-Type": "application/json",
           "auth-token": localStorage.getItem("auth-token"),
         },
-        body: JSON.stringify(({ ...form, serviceName: unslugifyService(serviceParam) })),
+        body: JSON.stringify(({ ...form, serviceName:servicename  })),
       });
 
       const response = await res.json();
@@ -74,15 +72,7 @@ const BookService = () => {
     }
   };
 
-  const unslugifyService = (slug) => {
-    return slug
-      .split('-')                            // split by hyphen
-      .map(word => {
-        if (word === 'and') return '&';      // replace 'and' with '&'
-        return word.charAt(0).toUpperCase() + word.slice(1); // capitalize first letter
-      })
-      .join(' ');
-  };
+
   const [form, setForm] = useState({
     caretakerType: "",
     location: "",
@@ -127,6 +117,7 @@ const BookService = () => {
 
   }, [form.location, form.caretakerType])
   const handlecoupancode = async () => {
+    console.log(form)
     try {
       const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/referral/verify`, {
         method: "POST",
@@ -153,22 +144,15 @@ const BookService = () => {
     <>
       <ToastContainer position="top-right" autoClose={2000} />
 
-      <div className="max-w-5xl mx-auto md:mt-10 mt-5 mb-20  p-4">
+      <div className="">
         
-        <h1 className="text-2xl font-bold mb-6 flex gap-2"><p className="text-gray-500">Service Name</p> : {unslugifyService(serviceParam)}</h1>
-        <div className="">
-          <Image width={100} height={100} src={services.find(service => service.title.toLowerCase() === unslugifyService(serviceParam).toLowerCase())?.image_url || "https://res.cloudinary.com/divlt5fqo/image/upload/v1751460739/wmremove-transformed_2_sxrfa6.jpg"}
-            className=' w-full   rounded md:h-[450px]  object-cover border-1 border-gray-100 md:rounded-lg'
-            alt="" />
+        
+        <form onSubmit={handleSubmit} className="space-y-5  ">
 
-        </div>
+          <div className="flex flex-col gap-2">
 
-        <form onSubmit={handleSubmit} className="space-y-5 mt-10 ">
-
-          <div className="grid md:grid-cols-2 gap-5 md:gap-10 items-center md:justify-between">
-
-            <div className="mb-1">
-              <label className="block  text-xl font-bold text-gray-700 mb-3">Caretaker Gender</label>
+            <div className="mb-1 ">
+              <label className="block  text-base font-bold text-gray-700 mb-3">Caretaker Gender</label>
               
               <div className="flex flex-wrap gap-3 ">
                 <label
@@ -192,7 +176,7 @@ const BookService = () => {
               </div>
             </div>
             <div className="mb-1">
-              <label className="block  text-xl font-bold text-gray-700 mb-3">Schedule</label>
+              <label className="block  text-base font-bold text-gray-700 mb-3">Schedule</label>
               <div className="flex gap-10 ">
                 
                 <input
@@ -209,7 +193,7 @@ const BookService = () => {
 
           <div className="grid md:grid-cols-2 gap-5 md:gap-10 items-center md:justify-between ">
             <div className="mb-1">
-              <label className="block   text-xl font-bold text-gray-700 mb-3">
+              <label className="block   text-base font-bold text-gray-700 mb-3">
                 Select Location
               </label>
               <select
@@ -230,7 +214,7 @@ const BookService = () => {
           <div className="grid md:grid-cols-2 gap-5 md:gap-10 items-center md:justify-between ">
 
             <div className="mb-1">
-              <label className="block  text-xl font-bold text-gray-700 mb-3">Duration</label>
+              <label className="block  text-base font-bold text-gray-700 mb-3">Duration</label>
               <select
                 name="duration"
                 value={form.duration}
@@ -247,7 +231,7 @@ const BookService = () => {
               </select>
             </div>
             <div className="mb-1">
-              <label className="block  text-xl font-bold text-gray-700 mb-3">Phone Number</label>
+              <label className="block  text-base font-bold text-gray-700 mb-3">Phone Number</label>
               
               <input
                 type="tel"
@@ -312,7 +296,7 @@ const BookService = () => {
             </button>
             <div className="flex flex-col items-center text-center">
               <FaCheckCircle className="text-green-600 w-10 h-10 mb-2" />
-              <h2 className="text-xl font-bold text-green-700">Booking Confirmed!</h2>
+              <h2 className="text-base font-bold text-green-700">Booking Confirmed!</h2>
               <p className="text-gray-600 mt-1">
                 Thank you for choosing <span className="font-semibold">CareKwik</span>.
                 <br />
