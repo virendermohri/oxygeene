@@ -66,7 +66,7 @@ export default function ChandigarhPage() {
         <h1 className="text-2xl font-bold mt-10 mb-4">Home Physiotherapy in Chandigarh – Care That Comes to You</h1>
         <p className="mb-4 md:text-lg text-gray-700">
           Recover faster and safer in the comfort of your home with CareKwik’s certified physiotherapists in Chandigarh.
-          Whether it's stroke recovery, post-surgical rehab, or chronic pain like back and joint issues—our experts
+          Whether it&lsquo;s stroke recovery, post-surgical rehab, or chronic pain like back and joint issues—our experts
           deliver personalized sessions at your doorstep. No hospital queues. No travel stress.
         </p>
 

@@ -133,7 +133,7 @@ export default function MotherBabyCareChandigarhPage() {
                             </div>
                             <div>
                                 <strong>Q: Can I get day or night shift attendants?</strong>
-                                <p>A: Yes, both shifts are available depending on your preference and baby's needs.</p>
+                                <p>A: Yes, both shifts are available depending on your preference and baby&lsquo;s needs.</p>
                             </div>
                             <div>
                                 <strong>Q: Do you serve homes in outer sectors or suburbs of Chandigarh?</strong>

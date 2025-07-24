@@ -122,7 +122,7 @@ export default function PhysiotherapyPage() {
           </p>
 
           <p className="mb-4 md:text-lg text-gray-700">
-            Whether you're recovering from surgery, facing mobility challenges, or need long-term neuro rehab,
+            Whether you&lsquo;re recovering from surgery, facing mobility challenges, or need long-term neuro rehab,
             our expert physios are here to help — serving <strong>Chandigarh, Mohali, Panchkula</strong> & nearby areas.
           </p>
 
