@@ -138,7 +138,7 @@ export default function ElderCareChandigarhPage() {
                             </div>
                             <div>
                                 <strong>Q: Can I request a female caregiver for my mother?</strong>
-                                <p>Yes, you can choose a male or female caregiver based on your family's preference.</p>
+                                <p>Yes, you can choose a male or female caregiver based on your family&lsquo;s preference.</p>
                             </div>
                             <div>
                                 <strong>Q: Are your attendants medically trained?</strong>

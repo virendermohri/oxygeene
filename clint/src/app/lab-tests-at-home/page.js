@@ -117,7 +117,7 @@ export default function LabTestsPage() {
 
           <p className="mb-4 text-gray-700 text-lg">
             CareKwik offers safe, accurate, and affordable lab test services right at your doorstep.
-            Whether it's blood tests, urine tests, or a complete body checkup, our certified technicians
+            Whether it&lsquo;s blood tests, urine tests, or a complete body checkup, our certified technicians
             ensure hygienic and professional home sample collection.
           </p>
 

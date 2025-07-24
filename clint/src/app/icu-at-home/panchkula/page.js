@@ -62,7 +62,7 @@ export default function ICUHomePanchkula() {
               ICU at Home in Panchkula – 24/7 Nursing & Equipment
             </h1>
             <p className="text-lg text-gray-700 mb-4">
-              If your loved one needs intensive care but you'd prefer to avoid hospital stays, CareKwik offers
+              If your loved one needs intensive care but you&lsquo;d prefer to avoid hospital stays, CareKwik offers
               full ICU setup at home in Panchkula. We install ICU beds, oxygen support, ventilators, and monitoring
               equipment along with 24/7 nursing.
             </p>

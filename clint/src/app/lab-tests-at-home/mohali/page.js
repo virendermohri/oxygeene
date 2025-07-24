@@ -65,7 +65,7 @@ export default function LabTestsMohali() {
       </h1>
 
       <p className="mb-4 text-gray-700 md:text-lg">
-        CareKwik offers reliable and hygienic <strong>lab tests at home in Mohali</strong>, eliminating the need to visit a diagnostic center. Whether you're managing a chronic illness, doing a routine checkup, or just want a quick blood report—our certified phlebotomists visit your home, collect samples safely, and deliver fast results.
+        CareKwik offers reliable and hygienic <strong>lab tests at home in Mohali</strong>, eliminating the need to visit a diagnostic center. Whether you&lsquo;re managing a chronic illness, doing a routine checkup, or just want a quick blood report—our certified phlebotomists visit your home, collect samples safely, and deliver fast results.
       </p>
 
       <p className="mb-8 text-gray-700 md:text-lg">
