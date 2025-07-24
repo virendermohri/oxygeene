@@ -1,28 +1,71 @@
-// app/sitemap/route.js
-
 export async function GET() {
+  const baseUrl = 'https://carekwik.com';
+
   const staticUrls = [
     '/',
-    '/services',
     '/about',
     '/contact-us',
     '/signup',
     '/login',
     '/medical-equipment',
     '/privacy-policy',
-    '/terms'
-  ].map(path => `
+    '/terms',
+  ];
+
+  const dynamicUrls = [
+    // Physiotherapy
+    '/physiotherapy-at-home',
+    '/physiotherapy-at-home/chandigarh',
+    '/physiotherapy-at-home/mohali',
+    '/physiotherapy-at-home/panchkula',
+
+    // Elder Care
+    '/elder-care-at-home',
+    '/elder-care-at-home/chandigarh',
+    '/elder-care-at-home/mohali',
+    '/elder-care-at-home/panchkula',
+
+
+    // Mother & Baby Care
+    '/mother-baby-care',
+    '/mother-baby-care/chandigarh',
+    '/mother-baby-care/mohali',
+    '/mother-baby-care/panchkula',
+
+    // ICU at Home
+    '/icu-at-home',
+    '/icu-at-home/chandigarh',
+    '/icu-at-home/mohali',
+    '/icu-at-home/panchkula',
+
+    // Lab Test
+    '/lab-test-at-home',
+    '/lab-test-at-home/chandigarh',
+    '/lab-test-at-home/mohali',
+    '/lab-test-at-home/panchkula',
+    
+    //Nursing at home
+    '/nursing-at-home',
+    '/nursing-at-home/chandigarh',
+    '/nursing-at-home/mohali',
+    '/nursing-at-home/panchkula',
+  ];
+
+  const urls = [...staticUrls, ...dynamicUrls]
+    .map(
+      path => `
     <url>
-      <loc>https://carekwik.com${path}</loc>
+      <loc>${baseUrl}${path}</loc>
       <changefreq>monthly</changefreq>
-      <priority>0.7</priority>
-    </url>
-  `).join('');
+      <priority>0.8</priority>
+    </url>`
+    )
+    .join('');
 
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
-    <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-      ${staticUrls}
-    </urlset>`;
+  <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    ${urls}
+  </urlset>`;
 
   return new Response(sitemap, {
     headers: {
