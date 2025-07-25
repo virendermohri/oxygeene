@@ -2,34 +2,6 @@
 import Link from 'next/link';
 import { FaInstagram, FaFacebookF, FaTwitter, FaLinkedin } from 'react-icons/fa';
 export default function Footer() {
-  const slugify = (text) => {
-    return text
-      .toLowerCase()
-      .replace(/[^a-z0-9\s]/g, '') // remove special characters
-      .replace(/\s+/g, '-')         // replace spaces with -
-      .trim();
-  }
-  const services = [
-    'Elder Care',
-    'Mother & Baby Care',
-    'Nursing Care',
-    'ICU at Home, Critical Care',
-    'Physiotherapy',
-    'Doctor Consultation',
-    'Vaccination',
-    'Lab Tests',
-    'Counselling',
-  ];
-
-  <ul>
-    {services.map(service => (
-      <li key={service}>
-        <Link target="_blank" href={`/services/${slugify(service)}`} className="hover:text-green-600">
-          {service}
-        </Link>
-      </li>
-    ))}
-  </ul>
 
   return (
     <footer className="md:max-w-4xl  w-full mx-auto md:px-4 px-2 mb-14 md:mb-1  py-8 ">

@@ -1,24 +1,24 @@
 // app/physiotherapy-at-home/page.tsx
 import BookService from '@/components/bookservice';
 import Image from 'next/image';
+import Link from 'next/link';
 import Script from 'next/script';
-
 export const metadata = {
   title: 'Physiotherapy at Home in Chandigarh & Mohali | CareKwik',
   description:
     'Get expert physiotherapy at home in Chandigarh, Mohali & Panchkula. Hire certified physiotherapists for back pain, paralysis, stroke recovery & ortho rehab.',
   keywords: [
-  'physiotherapy at home',
-  'home physiotherapy services',
-  'certified physiotherapist at home',
-  'post-surgery rehabilitation at home',
-  'stroke recovery physiotherapy',
-  'paralysis physiotherapy home visit',
-  'female physiotherapist at home',
-  'elderly physiotherapy care',
-  'back and neck pain physio at home',
-  'orthopedic home physiotherapy',
-],
+    'physiotherapy at home',
+    'home physiotherapy services',
+    'certified physiotherapist at home',
+    'post-surgery rehabilitation at home',
+    'stroke recovery physiotherapy',
+    'paralysis physiotherapy home visit',
+    'female physiotherapist at home',
+    'elderly physiotherapy care',
+    'back and neck pain physio at home',
+    'orthopedic home physiotherapy',
+  ],
   alternates: {
     canonical: 'https://carekwik.com/physiotherapy-at-home',
   },
@@ -135,6 +135,14 @@ export default function PhysiotherapyPage() {
             <li><strong>Post-Surgery Physio</strong> – After knee/hip replacement, spine surgery, or trauma.</li>
             <li><strong>Female Physiotherapists</strong> – Available for home visits on request.</li>
           </ul>
+          <div className=" py-8 px-4 rounded-lg  bg-gray-50 mt-10">
+            <h2 className="text-2xl font-bold text-gray-800 mb-4">Physiotherapy at Home in Other Cities</h2>
+            <ul className="list-disc list-inside text-blue-700 space-y-2">
+              <li><Link href="/physiotherapy-at-home/chandigarh" className="hover:underline">Physiotherapy at Home in Chandigarh</Link></li>
+              <li><Link href="/physiotherapy-at-home/mohali" className="hover:underline">Physiotherapy at Home in Mohali</Link></li>
+              <li><Link href="/physiotherapy-at-home/panchkula" className="hover:underline">Physiotherapy at Home in Panchkula</Link></li>
+            </ul>
+          </div>
 
           <div className="mt-14">
             <h2 className="text-2xl font-semibold text-gray-800 mb-4">Frequently Asked Questions</h2>

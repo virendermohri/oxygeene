@@ -48,7 +48,8 @@ export default function ChandigarhPage() {
         })}
       </Script>
 
-      <div className="p-4 md:p-10  mx-auto">
+      <div className="mx-auto md:p-10 p-4">
+        {/* Hero Section */}
         <div className="flex md:gap-10 flex-col md:flex-row justify-between ">
           <Image
              src="https://res.cloudinary.com/divlt5fqo/image/upload/v1751465176/wmremove-transformed_4_eemrcj.jpg"
@@ -62,6 +63,7 @@ export default function ChandigarhPage() {
             <BookService servicename="Physiotherapy" />
           </div>
         </div>
+      <div className="max-w-6xl mx-auto md:p-6">
 
         <h1 className="text-2xl font-bold mt-10 mb-4">Home Physiotherapy in Chandigarh – Care That Comes to You</h1>
         <p className="mb-4 md:text-lg text-gray-700">
@@ -111,6 +113,7 @@ export default function ChandigarhPage() {
           <p className="text-lg font-semibold">Call us now to schedule a session in Chandigarh.</p>
           <p className="text-sm text-gray-600">Your recovery, our care.</p>
         </div>
+      </div>
       </div>
     </>
   );

@@ -89,7 +89,7 @@ export default function ElderCareChandigarhPage() {
                 })}
             </Script>
 
-            <div className="mx-auto md:p-10 p-4">
+           <div className=" mx-auto md:p-10 md:p-10 p-4">
                 {/* Hero Section */}
                 <div className="flex flex-col md:flex-row gap-10 justify-between">
                     <Image
@@ -106,7 +106,7 @@ export default function ElderCareChandigarhPage() {
                 </div>
 
                 {/* Content */}
-                <div className="max-w-6xl mx-auto md:p-6">
+                <div className="max-w-6xl mx-auto  md:p-6">
                     <h1 className="text-3xl mt-10 font-bold text-gray-800 mb-4">
                         Elder Care at Home in Chandigarh – Safe, Verified, Affordable
                     </h1>

@@ -1,8 +1,8 @@
 // app/elder-care-at-home/page.tsx
 import BookService from '@/components/bookservice';
 import Image from 'next/image';
+import Link from 'next/link';
 import Script from 'next/script';
-
 export const metadata = {
   title: 'Elder Care at Home in Chandigarh & Mohali | CareKwik',
   description: 'Trusted elder care services at home in Chandigarh, Mohali, and nearby areas. Hire trained, background-verified caretakers. Safe, affordable, and flexible options available.',
@@ -50,7 +50,7 @@ export default function ElderCarePage() {
         })}
       </Script>
 
-      <Script id="ld-faq"  type="application/ld+json">
+      <Script id="ld-faq" type="application/ld+json">
         {JSON.stringify({
           "@context": "https://schema.org",
           "@type": "FAQPage",
@@ -144,6 +144,19 @@ export default function ElderCarePage() {
               <li><strong>Old Age Caretaker</strong> – Daily support for seniors who require help with basic tasks and companionship.</li>
             </ul>
           </div>
+         <div className=" py-8 px-4 rounded-lg  bg-gray-50 mt-10">
+  <h2 className="text-2xl font-bold text-gray-800 mb-4">Elder Care at Home in Other Cities</h2>
+  <ul className="list-disc list-inside text-blue-700 space-y-2">
+    <li><Link href="/elder-care-at-home/chandigarh" className="hover:underline">Elder Care at Home in Chandigarh</Link></li>
+    <li><Link href="/elder-care-at-home/mohali" className="hover:underline">Elder Care at Home in Mohali</Link></li>
+    <li><Link href="/elder-care-at-home/panchkula" className="hover:underline">Elder Care at Home in Panchkula</Link></li>
+    {/* <li><Link href="/elder-care-at-home/ambala" className="hover:underline">Elder Care at Home in Ambala</Link></li> */}
+    {/* <li><Link href="/elder-care-at-home/zirakpur" className="hover:underline">Elder Care at Home in Zirakpur</Link></li> */}
+    {/* <li><Link href="/elder-care-at-home/derabassi" className="hover:underline">Elder Care at Home in Dera Bassi</Link></li> */}
+    {/* <li><Link href="/elder-care-at-home/kharar" className="hover:underline">Elder Care at Home in Kharar</Link></li> */}
+    {/* <li><Link href="/elder-care-at-home/baddi" className="hover:underline">Elder Care at Home in Baddi</Link></li> */}
+  </ul>
+</div>
 
 
           {/* FAQ Section */}

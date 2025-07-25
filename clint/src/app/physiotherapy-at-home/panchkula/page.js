@@ -62,7 +62,7 @@ export default function PanchkulaPage() {
             <BookService servicename="Physiotherapy" />
           </div>
         </div>
-
+        <div className="max-w-6xl mx-auto md:p-6">
         <h1 className="text-2xl font-bold mt-10 mb-4">Physiotherapy at Home in Panchkula – Professional & Affordable</h1>
         <p className="mb-4 md:text-lg text-gray-700">
           Get hospital-quality physiotherapy sessions at home in Panchkula with CareKwik. From joint pain
@@ -109,6 +109,7 @@ export default function PanchkulaPage() {
           <p className="text-lg font-semibold">Call today and get your first session within 24 hours in Panchkula.</p>
           <p className="text-sm text-gray-600">CareKwik – Your trusted recovery partner at home.</p>
         </div>
+      </div>
       </div>
     </>
   );

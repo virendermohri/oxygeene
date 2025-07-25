@@ -2,7 +2,7 @@
 import Image from 'next/image';
 import Script from 'next/script';
 import BookService from '@/components/bookservice';
-
+import Link from 'next/link';
 export const metadata = {
     title: 'ICU Setup at Home in Chandigarh, Mohali & Panchkula | CareKwik',
     description:
@@ -90,24 +90,25 @@ export default function ICUatHomePage() {
                 })}
             </Script>
 
-            <div className=" p-4 md:p-10">
-                {/* Hero Section */}
-                <div className="flex flex-col md:flex-row md:gap-10">
+            <div className=" mx-auto md:p-10 md:p-10 p-4">
+                {/* Hero Image */}
+                <div className="flex md:gap-10 flex-col md:flex-row justify-between   ">
                     <Image
                         src="https://res.cloudinary.com/divlt5fqo/image/upload/v1751540954/wmremove-transformed_5_rcxaud.jpg"
                         alt="ICU setup at home"
                         width={480}
                         height={450}
-                        className="rounded-2xl border shadow-md object-cover md:w-[60%]"
-                    />
-                    <div className="md:w-1/3 md:p-5 shadow-md mt-6 md:mt-0">
+                        className="rounded-2xl   shadow-md mb-8 border md:w-[60%] object-cover"
+          />
+          <div className="md:w-1/3 md:p-5 md:shadow-md">
                         <p className="text-xl font-bold mb-4">Book ICU Care at Home</p>
                         <BookService servicename="ICU at Home" />
                     </div>
                 </div>
 
                 {/* Description */}
-                <div className=" mt-10">
+                <div className="max-w-6xl mx-auto  md:p-6  ">
+
                     <h1 className="text-2xl font-bold text-gray-800 mb-4">
                         ICU Setup at Home in Chandigarh, Mohali & Panchkula
                     </h1>
@@ -133,6 +134,14 @@ export default function ICUatHomePage() {
                         <li>24x7 ICU-trained nurse & caregiver</li>
                         <li>Emergency doctor on-call (optional)</li>
                     </ul>
+                    <div className="bg-gray-50 py-8 px-4 rounded-lg  mt-10">
+                        <h2 className="text-2xl font-bold text-gray-800 mb-4">ICU Setup at Home in Other Cities</h2>
+                        <ul className="list-disc list-inside text-blue-700 space-y-2">
+                            <li><Link href="/icu-at-home/chandigarh" className="hover:underline">ICU at Home in Chandigarh</Link></li>
+                            <li><Link href="/icu-at-home/mohali" className="hover:underline">ICU at Home in Mohali</Link></li>
+                            <li><Link href="/icu-at-home/panchkula" className="hover:underline">ICU at Home in Panchkula</Link></li>
+                        </ul>
+                    </div>
 
                     {/* FAQs */}
                     <div className="mt-14">

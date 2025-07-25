@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { FaRegHeart, FaHeart } from "react-icons/fa";
+import { FaRegHeart, FaHeart, FaChevronDown,FaPhoneAlt } from "react-icons/fa";
 import { AiFillHome, AiOutlineHome } from "react-icons/ai";
 import { CgShoppingBag } from "react-icons/cg";
 import { PiShoppingBagFill } from "react-icons/pi";
@@ -21,12 +21,19 @@ export default function Navbar() {
     setUser(JSON.parse(localStorage.getItem("user")))
   }, [])
   const navItems = [
-    { name: "Home", href: "/" },
-    { name: "Services", href: "/services" },
     { name: "Medical Equipment", href: "/medical-equipment" },
-    { name: "Bookings", href: "/history" },
     { name: "About Us", href: "/about" },
     { name: "Contact Us", href: "/contact-us" },
+  ];
+  const [open, setOpen] = useState(false);
+
+  const services = [
+    { title: 'Elder Care at Home', path: '/elder-care-at-home' },
+    { title: 'Physiotherapy at Home', path: '/physiotherapy-at-home' },
+    { title: 'Mother & Baby Care', path: '/mother-baby-care' },
+    { title: 'Nursing Care at Home', path: '/nursing-care-at-home' },
+    { title: 'ICU at Home', path: '/icu-at-home' },
+    { title: 'Lab Test at Home', path: '/lab-test-at-home' },
   ];
   return (
     <nav className="">
@@ -40,7 +47,32 @@ export default function Navbar() {
 
           </div>
           <div className="flex justify-between gap-10  items-center ">
+            <div className="relative group hidden md:block">
+              <button
+                onClick={() => setOpen(!open)}
+                className="flex cursor-pointer items-center gap-1 text-gray-800 hover:text-blue-600 font-medium"
+              >
+                Our Services <FaChevronDown size={18} />
+              </button>
 
+              <div
+                className={`absolute z-50 top-10 left-0 w-64 bg-white  rounded-lg shadow-lg transition-all duration-200 ease-in-out ${open ? 'block' : 'hidden'
+                  } group-hover:block`}
+              >
+                <ul className="p-4 space-y-2">
+                  {services.map((service) => (
+                    <li key={service.title}>
+                      <Link
+                        href={service.path}
+                        className="block text-gray-700 hover:text-blue-600 hover:underline"
+                      >
+                        {service.title}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
             <div className="hidden  md:block">
               <ul className="flex space-x-10">
                 {navItems.map((item) => (
@@ -52,19 +84,16 @@ export default function Navbar() {
                 ))}
               </ul>
             </div>
-            <div className={`${pathname != "/" ? "  " : ""}`}>
-              {CSR && user ?
-                <div className=" flex gap-5 items-center">
-                  <Link href={"/my-account"}>
-                    <Image alt="My Account" className="h-10 w-10  rounded-full cursur-pointer" src={"https://res.cloudinary.com/divlt5fqo/image/upload/v1751954811/unnamed_dvjv2x.png"} height={100} width={100} />
-                  </Link>
-                </div>
-                :
+            <div className={""}>
 
-                <Link href={"/login"}> <button className="bg-[#607AFB] border rounded-full text-white md:px-5 md:py-2 px-5 py-2 hover:bg-[#212121] font-semibold md:text-lg transition duration-300 cursor-pointer ease-in-out">
-                  Login
-                </button></Link>
-              }
+
+              <a
+                href="tel:+919876543210" // Replace with your number
+                className=" bg-blue-600 text-white px-4 py-3 rounded-full shadow flex items-center gap-2 hover:bg-blue-700 transition "
+              >
+                <FaPhoneAlt size={16} />
+                <span className="md:text-base text-sm">Call Now</span>
+              </a>
             </div>
           </div>
         </div>
@@ -84,14 +113,14 @@ export default function Navbar() {
             <p className="text-gray-500 font-medium">Home</p>
           }
         </Link>
-        <Link href="/services" className="flex flex-col  items-center gap-2 text-xs mt-1">
-          {pathname == "/services" ?
+        <Link href="/#services" className="flex flex-col  items-center gap-2 text-xs mt-1">
+          {pathname == "/#services" ?
 
             <FaHeart className={`text-xl text-black`} /> :
             <FaRegHeart className={`text-xl text-gray-500`} />
 
           }
-          {pathname == "/services" ?
+          {pathname == "/#services" ?
             <p className="text-black">Services</p> :
             <p className="text-gray-500 font-medium">Services</p>
           }

@@ -1,7 +1,7 @@
 import BookService from '@/components/bookservice';
 import Image from 'next/image';
+import Link from 'next/link';
 import Script from 'next/script';
-
 export const metadata = {
     title: 'Nursing Care at Home in Chandigarh, Mohali & Panchkula | CareKwik',
     description: 'Professional nursing care services at home by trained nurses. Get post-operative care, injections, wound dressing, elderly support, and more.',
@@ -125,6 +125,14 @@ export default function NursingCareAtHome() {
                         <li>Vital signs monitoring and medication administration</li>
                         <li>Elderly nursing care and mobility support</li>
                     </ul>
+<div className="bg-gray-50 py-8 px-4 rounded-lg  mt-10">
+  <h2 className="text-2xl font-bold text-gray-800 mb-4">Nursing Care at Home in Other Cities</h2>
+  <ul className="list-disc list-inside text-blue-700 space-y-2">
+    <li><Link href="/nursing-care-at-home/chandigarh" className="hover:underline">Nursing Care at Home in Chandigarh</Link></li>
+    <li><Link href="/nursing-care-at-home/mohali" className="hover:underline">Nursing Care at Home in Mohali</Link></li>
+    <li><Link href="/nursing-care-at-home/panchkula" className="hover:underline">Nursing Care at Home in Panchkula</Link></li>
+  </ul>
+</div>
 
                     <div className="mt-12">
                         <h2 className="text-2xl font-semibold mb-4 text-gray-800">Frequently Asked Questions</h2>

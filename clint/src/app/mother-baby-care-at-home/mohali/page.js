@@ -93,6 +93,7 @@ export default function MotherBabyCareMohali() {
                         <BookService servicename="Mother Baby Care" />
                     </div>
                 </div>
+<div className="max-w-6xl mx-auto md:p-6">
 
                 
                 <h1 className="text-2xl mt-10 font-bold text-gray-800 mb-4">
@@ -123,6 +124,7 @@ export default function MotherBabyCareMohali() {
                             <p>A: We usually assign a caregiver within 24 hours of booking confirmation.</p>
                         </div>
                     </div>
+                </div>
                 </div>
             </div>
         </>

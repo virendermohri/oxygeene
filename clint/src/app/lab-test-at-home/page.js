@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import Script from 'next/script';
 import BookService from '@/components/bookservice';
-
+import Link from 'next/link';
 export const metadata = {
   title: 'Lab Tests at Home in Chandigarh, Mohali & Panchkula | CareKwik',
   description:
@@ -136,6 +136,14 @@ export default function LabTestsPage() {
             <li>Lipid Profile / Cholesterol</li>
             <li>Full Body Health Packages</li>
           </ul>
+<div className="bg-gray-50 py-8 px-4 rounded-lg  mt-10">
+  <h2 className="text-2xl font-bold text-gray-800 mb-4">Lab Test at Home in Other Cities</h2>
+  <ul className="list-disc list-inside text-blue-700 space-y-2">
+    <li><Link href="/lab-test-at-home/chandigarh" className="hover:underline">Lab Test at Home in Chandigarh</Link></li>
+    <li><Link href="/lab-test-at-home/mohali" className="hover:underline">Lab Test at Home in Mohali</Link></li>
+    <li><Link href="/lab-test-at-home/panchkula" className="hover:underline">Lab Test at Home in Panchkula</Link></li>
+  </ul>
+</div>
 
           <h2 className="text-xl font-semibold mt-10 mb-4">Frequently Asked Questions</h2>
           <div className="space-y-4 text-gray-700 text-lg">

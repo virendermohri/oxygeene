@@ -1,8 +1,8 @@
 // app/mother-baby-care-at-home/page.tsx
 import BookService from '@/components/bookservice';
 import Image from 'next/image';
+import Link from 'next/link';
 import Script from 'next/script';
-
 export const metadata = {
     title: 'Mother and Baby Care at Home in Chandigarh, Mohali & Panchkula | CareKwik',
     description:
@@ -124,6 +124,14 @@ export default function MotherBabyCarePage() {
                         <li>Japa maid service for traditional post-delivery routines</li>
                         <li>Flexible part-time or full-time booking options</li>
                     </ul>
+                    <div className="bg-gray-50 py-8 px-4 rounded-lg  mt-10">
+                        <h2 className="text-2xl font-bold text-gray-800 mb-4">Mother & Baby Care in Other Cities</h2>
+                        <ul className="list-disc list-inside text-blue-700 space-y-2">
+                            <li><Link href="/mother-baby-care-at-home/chandigarh" className="hover:underline">Mother & Baby Care in Chandigarh</Link></li>
+                            <li><Link href="/mother-baby-care-at-home/mohali" className="hover:underline">Mother & Baby Care in Mohali</Link></li>
+                            <li><Link href="/mother-baby-care-at-home/panchkula" className="hover:underline">Mother & Baby Care in Panchkula</Link></li>
+                        </ul>
+                    </div>
 
                     {/* FAQ Section */}
                     <div className="mt-14">
