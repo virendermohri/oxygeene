@@ -88,7 +88,7 @@ export default function Navbar() {
 
 
               <a
-                href="tel:+919876543210" // Replace with your number
+                href="tel:+918307190216" // Replace with your number
                 className=" bg-blue-600 text-white px-4 py-3 rounded-full shadow flex items-center gap-2 hover:bg-blue-700 transition "
               >
                 <FaPhoneAlt size={16} />
