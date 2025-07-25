@@ -30,7 +30,7 @@ export default function Navbar() {
   const services = [
     { title: 'Elder Care at Home', path: '/elder-care-at-home' },
     { title: 'Physiotherapy at Home', path: '/physiotherapy-at-home' },
-    { title: 'Mother & Baby Care', path: '/mother-baby-care' },
+    { title: 'Mother and Baby Care at Home', path: '/mother-baby-care' },
     { title: 'Nursing Care at Home', path: '/nursing-care-at-home' },
     { title: 'ICU at Home', path: '/icu-at-home' },
     { title: 'Lab Test at Home', path: '/lab-test-at-home' },
