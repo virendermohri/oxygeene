@@ -7,7 +7,7 @@ import Link from "next/link";
 import Image from "next/image";
 export const metadata = {
   title: "Home Care Services in Chandigarh & Mohali | CareKwik",
-  description: "CareKwik offers expert home healthcare services in Chandigarh, Mohali & Panchkula. Book trained caregivers for Elder Care, ICU at Home, Baby Care, Nursing, Physiotherapy & more—safe, verified, and affordable solutions for your loved ones.",
+  description: "CareKwik provides trusted home healthcare in Chandigarh, Mohali & Panchkula. Book trained caregivers for Elder Care, ICU at Home, Nursing & more—safe, affordable care.",
 
   keywords: "home care in chandigarh, home care mohali, elder care chandigarh, elder care mohali, icu at home chandigarh, icu at home mohali, physiotherapy at home chandigarh, home nurse mohali, patient care mohali, baby care mohali, elderly care chandigarh, home attendant chandigarh, caretaker in mohali, home visit nurse chandigarh, nursing service mohali, 24x7 home care mohali, medical equipment chandigarh, wheelchair rental mohali, oxygen cylinder mohali, mohali health care, chandigarh patient care, home health services chandigarh, carekwik chandigarh mohali",
   openGraph: {
@@ -95,9 +95,9 @@ export default async function Home() {
 
       <CaretakerProfile />
       <section className="mt-16 bg-gray-50 py-10 px-4 max-w-6xl mx-auto">
-        <h1 className="text-2xl font-bold text-center text-gray-800 mb-8">
-          Explore Our Home care Services in Chandigarh , Mohali & Panchkula
-        </h1>
+        <h2 className="text-2xl font-bold text-center text-gray-800 mb-8">
+          Explore Our Home heal Services in Chandigarh , Mohali & Panchkula
+        </h2>
 
         <div className="grid md:grid-cols-3 gap-6">
           {/* Elder Care */}
@@ -161,10 +161,50 @@ export default async function Home() {
           </div>
         </div>
       </section>
-      <div className="max-w-6xl mx-auto py-5 md:py-10">
-        <h2 className="text-2xl font-bold py-2 md:py-5">Trusted Home Care Services in Chandigarh & Mohali</h2>
-        <p className="text-gray-700">At CareKwik, we specialize in providing compassionate and professional home care services tailored to your family&apos;s needs. Whether you&apos;re seeking elder care at home, ICU setup at home, mother & baby care, or physiotherapy services, our trained caretakers and nurses deliver quality care right at your doorstep. Serving areas like Chandigarh, Mohali, and Panchkula, we ensure comfort, safety, and timely medical support for your loved ones. With 24/7 availability, verified staff, and personalized care plans, CareKwik is your trusted choice for home nursing, post-surgery care, and chronic illness support. Book reliable caregivers today and experience the peace of mind that comes with expert care at home.</p>
+      <div className="px-4 md:px-10 md:py-20 py-8 text-gray-800 max-w-6xl mx-auto leading-relaxed">
+        <h1 className="text-2xl font-bold mb-5 ">
+          Home Care Services in Chandigarh, Mohali & Panchkula – Trusted, Affordable & Safe
+        </h1>
+        <p className="mb-4">
+          <strong>CareKwik</strong> provides trusted and affordable <strong>home care services in Chandigarh, Mohali, and Panchkula</strong>, offering personalized and professional support to patients in the comfort of their homes. Whether you're searching for <strong>elder care at home</strong>, <strong>ICU setup at home</strong>, <strong>mother and baby care</strong>, <strong>in-home physiotherapy</strong>, or <strong>trained nursing attendants</strong>, we have a complete solution designed to meet your family’s healthcare needs.
+        </p>
+        <p className="mb-4">
+          Our goal is to bring <strong>hospital-quality healthcare to your doorstep</strong>, backed by trained, background-verified, and compassionate caregivers. With rising healthcare needs and the desire for in-home support, our services allow patients to heal, recover, and stay safe in familiar surroundings. Whether it’s an <strong>old age patient in Chandigarh</strong>, a <strong>paralytic patient in Mohali</strong>, or <strong>postnatal care for mothers in Panchkula</strong>, CareKwik is just a call away.
+        </p>
+        <p className="mb-4">
+          We specialize in:
+        </p>
+        <ul className="list-disc list-inside mb-4">
+          <li><strong>Elder Care at Home</strong>: Assistance with daily living, medication, companionship & hygiene for seniors.</li>
+          <li><strong>ICU Setup at Home</strong>: Full ICU equipment, monitoring systems, and trained ICU nurses.</li>
+          <li><strong>Mother & Baby Care</strong>: Experienced female caregivers for new mothers and newborns.</li>
+          <li><strong>Physiotherapy at Home</strong>: Stroke rehab, orthopedic physiotherapy, and post-surgery recovery.</li>
+          <li><strong>Nursing Care at Home</strong>: Wound dressing, injections, vitals monitoring, post-operative care.</li>
+          <li><strong>Lab Test at Home</strong>: Book pathology tests and health packages with doorstep sample collection.</li>
+        </ul>
+        <p className="mb-4">
+          Each service is available in <strong>part-time, full-time, and 24x7 formats</strong>, depending on the need and condition of the patient. We also provide <strong>female caretakers</strong>, <strong>male attendants</strong>, and <strong>specialized nurses</strong> based on your preferences.
+        </p>
+        <p className="mb-4">
+          Serving all major sectors and societies including <strong>Sector 15, Sector 22, Sector 35 (Chandigarh)</strong>, <strong>Phase 7, Sector 70, Sector 80 (Mohali)</strong>, and <strong>Sector 20, Sector 8, MDC, Pinjore (Panchkula)</strong> — our local teams ensure fast and reliable service deployment.
+        </p>
+        <p className="mb-4">
+          With CareKwik, families can avoid multiple hospital visits and ensure better hygiene, comfort, and mental peace. Our home care staff is trained to manage patients with <strong>Parkinson’s, Alzheimer’s, dementia, cancer</strong>, and other chronic or post-surgical conditions.
+        </p>
+        <p className="mb-4">
+          We’re trusted by hundreds of families across <strong>Tricity</strong> for delivering:
+        </p>
+        <ul className="list-disc list-inside mb-4">
+          <li>Affordable home healthcare packages</li>
+          <li>Verified and trained medical professionals</li>
+          <li>Prompt bookings and replacements</li>
+          <li>Personalized patient recovery plans</li>
+        </ul>
+        <p>
+          So whether you're looking for <strong>elder care services in Chandigarh</strong>, <strong>nursing care in Mohali</strong>, or <strong>physiotherapy at home in Panchkula</strong>, CareKwik is the name you can trust. We also provide <strong>emergency support</strong>, <strong>short-term caretakers</strong>, and <strong>long-term nursing attendants</strong> for bedridden or recovering patients.
+        </p>
       </div>
+
       <Testimonials />
 
 
