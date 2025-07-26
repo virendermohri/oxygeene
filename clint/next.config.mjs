@@ -1,10 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ['www.pba.edu',
-      "encrypted-tbn0.gstatic.com",
-      "insights.ibx.com",
-      "m.media-amazon.com",
+    domains: [
       "res.cloudinary.com"
 
     ], // Add your image domains here

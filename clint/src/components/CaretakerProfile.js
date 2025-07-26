@@ -76,7 +76,7 @@ const CaretakerProfile = () => {
            
             <div className="md:max-w-5xl  w-full mx-auto px-4  py-8">
                 <div className="flex flex-col ">
-                    <h1 className='font-bold text-2xl mb-10'>Find Doctors & Caretakes</h1>
+                    <p className='font-bold text-2xl mb-10'>Find Doctors & Caretakes</p>
                     <div className="w-full relative ">
 
                         <input type="text" className='bg-gray-100 w-full py-3 px-14  rounded' placeholder='Search for doctors or caretakers' name="" id="" />
@@ -88,7 +88,7 @@ const CaretakerProfile = () => {
                         <button className='py-2 px-3 md:px-5 cursor-pointer bg-gray-100 rounded-full'>Availability</button>
                         <button className='py-2 px-3 md:px-5 cursor-pointer bg-gray-100 rounded-full'>Rating</button>
                     </div>
-                    <h1 className='font-semibold text-2xl mb-10'>Featured Doctors</h1>
+                    <p className='font-semibold text-2xl mb-10'>Featured Doctors</p>
                     <div className="grid md:grid-cols-3 grid-cols-2 md:gap-20 gap-10  ">
                         {doctors.map((doc, index) => {
                             return <div className="flex  flex-col gap-2 " key={doc.name}>
@@ -99,7 +99,7 @@ const CaretakerProfile = () => {
                         })}
 
                     </div>
-                    <h1 className='font-semibold mt-10 text-2xl mb-10'>Featured Caretakers</h1>
+                    <p className='font-semibold mt-10 text-2xl mb-10'>Featured Caretakers</p>
                     <div className="grid md:grid-cols-3 grid-cols-2 md:gap-20 gap-10 ">
                         {caretakersdoc.map((doc, index) => {
                             return <div className="flex  flex-col gap-2 " key={doc.name}>
@@ -112,7 +112,7 @@ const CaretakerProfile = () => {
                     </div>
                     <div className="mt-10">
 
-                        <h1 className='font-bold text-2xl mb-10'>Medical Equipment</h1>
+                        <p className='font-bold text-2xl mb-10'>Medical Equipment</p>
                         <div className="w-full relative ">
 
                             <input type="text" className='bg-gray-100 w-full py-3 px-14  rounded' placeholder='Search for medical equipment' name="" id="" />

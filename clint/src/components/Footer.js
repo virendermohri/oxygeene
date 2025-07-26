@@ -26,12 +26,12 @@ export default function Footer() {
         <Link href="https://www.facebook.com/carekwik" target="_blank" className="mx-2 text-gray-500 hover:text-blue-600">
           <FaFacebookF size={24} />
         </Link>
-        <Link href="https://twitter.com/carekwik" target="_blank" className="mx-2 text-gray-500 hover:text-blue-600">
+        {/* <Link href="https://twitter.com/carekwik" target="_blank" className="mx-2 text-gray-500 hover:text-blue-600">
           <FaTwitter size={24} />
-        </Link>
-        <Link href="https://www.linkedin.com/company/carekwik" target="_blank" className="mx-2 text-gray-500 hover:text-blue-600">
+        </Link> */}
+        {/* <Link href="https://www.linkedin.com/company/carekwik" target="_blank" className="mx-2 text-gray-500 hover:text-blue-600">
           <FaLinkedin size={24} />
-        </Link>
+        </Link> */}
       </div>
 
       <div className=" pt-4 text-center  text-gray-500 md:mt-5">

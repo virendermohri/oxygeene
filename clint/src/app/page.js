@@ -23,6 +23,9 @@ export const metadata = {
       alt: "CareKwik - Home Healthcare Services",
     }]
   },
+  alternates: {
+    canonical: 'https://carekwik.com',
+  },
   robots: "index, follow",
 };
 export default async function Home() {
@@ -134,9 +137,9 @@ export default async function Home() {
           <div className="bg-white p-6 rounded-lg shadow hover:shadow-lg transition-all duration-300">
             <h3 className="text-lg font-semibold text-pink-600 mb-3">Mother & Baby Care</h3>
             <ul className="space-y-2 text-gray-700 list-disc list-inside">
-              <li><Link href="/mother-baby-care/chandigarh" className="hover:text-pink-500">Chandigarh</Link></li>
-              <li><Link href="/mother-baby-care/mohali" className="hover:text-pink-500">Mohali</Link></li>
-              <li><Link href="/mother-baby-care/panchkula" className="hover:text-pink-500">Panchkula</Link></li>
+              <li><Link href="/mother-baby-care-at-home/chandigarh" className="hover:text-pink-500">Chandigarh</Link></li>
+              <li><Link href="/mother-baby-care-at-home/mohali" className="hover:text-pink-500">Mohali</Link></li>
+              <li><Link href="/mother-baby-care-at-home/panchkula" className="hover:text-pink-500">Panchkula</Link></li>
             </ul>
           </div>
 
