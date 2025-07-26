@@ -2,7 +2,7 @@
 import Image from 'next/image';
 import Script from 'next/script';
 import BookService from '@/components/bookservice';
-import MOTHERBABYCARE from "../../../../public/images/MOTHERBABYCARE.jpg"
+
 export const metadata = {
     title: 'Mother & Baby Care at Home in Mohali | CareKwik',
     description:
@@ -82,7 +82,7 @@ export default function MotherBabyCareMohali() {
                 {/* Hero Section */}
                 <div className="flex md:gap-10 flex-col md:flex-row justify-between ">
                     <Image
-                        src={MOTHERBABYCARE}
+                        src="https://res.cloudinary.com/divlt5fqo/image/upload/v1753210013/220-SM681360_vp9gp2.jpg"
                         alt="Mother Baby Care at Home Mohali"
                         width={500}
                         height={450}
@@ -93,38 +93,38 @@ export default function MotherBabyCareMohali() {
                         <BookService servicename="Mother Baby Care" />
                     </div>
                 </div>
-                <div className="max-w-6xl mx-auto md:p-6">
+<div className="max-w-6xl mx-auto md:p-6">
 
+                
+                <h1 className="text-2xl mt-10 font-bold text-gray-800 mb-4">
+                    Mother and Baby Care at Home in Mohali
+                </h1>
+                <p className="mb-4 md:text-lg">
+                    At CareKwik, we understand that both mother and newborn require special attention after delivery. Our expert female caregivers in Mohali provide reliable and gentle in-home care that helps mothers recover while ensuring the baby’s safety, comfort, and hygiene. From baby bathing to massage, diaper changes, feeding support, and sleep routines — we cover it all.
+                </p>
 
-                    <h1 className="text-2xl mt-10 font-bold text-gray-800 mb-4">
-                        Mother and Baby Care at Home in Mohali
-                    </h1>
-                    <p className="mb-4 md:text-lg">
-                        At CareKwik, we understand that both mother and newborn require special attention after delivery. Our expert female caregivers in Mohali provide reliable and gentle in-home care that helps mothers recover while ensuring the baby’s safety, comfort, and hygiene. From baby bathing to massage, diaper changes, feeding support, and sleep routines — we cover it all.
-                    </p>
+                <p className="mb-6 md:text-lg">
+                    Whether you’re in Phase 7, Sector 70, Kharar, or Aerocity, our trained attendants are available across Mohali. We offer full-day, night-only, or 24-hour shifts so your family gets uninterrupted postnatal support — without any stress or agency middlemen.
+                </p>
 
-                    <p className="mb-6 md:text-lg">
-                        Whether you’re in Phase 7, Sector 70, Kharar, or Aerocity, our trained attendants are available across Mohali. We offer full-day, night-only, or 24-hour shifts so your family gets uninterrupted postnatal support — without any stress or agency middlemen.
-                    </p>
-
-                    {/* FAQ Section */}
-                    <div className="mt-14">
-                        <h2 className="text-xl font-semibold text-gray-800 mb-4">FAQs – Mohali Mother Baby Care</h2>
-                        <div className="space-y-4 text-gray-700">
-                            <div>
-                                <strong>Q: Can I book full-time or day care attendants?</strong>
-                                <p>A: Yes, we offer 8-hr, 12-hr, and 24-hr shifts depending on your needs.</p>
-                            </div>
-                            <div>
-                                <strong>Q: Is the staff experienced in handling newborns?</strong>
-                                <p>A: Absolutely. All our attendants are trained in baby hygiene, feeding assistance, and gentle massage.</p>
-                            </div>
-                            <div>
-                                <strong>Q: How soon can I get service in Mohali?</strong>
-                                <p>A: We usually assign a caregiver within 24 hours of booking confirmation.</p>
-                            </div>
+                {/* FAQ Section */}
+                <div className="mt-14">
+                    <h2 className="text-xl font-semibold text-gray-800 mb-4">FAQs – Mohali Mother Baby Care</h2>
+                    <div className="space-y-4 text-gray-700">
+                        <div>
+                            <strong>Q: Can I book full-time or day care attendants?</strong>
+                            <p>A: Yes, we offer 8-hr, 12-hr, and 24-hr shifts depending on your needs.</p>
+                        </div>
+                        <div>
+                            <strong>Q: Is the staff experienced in handling newborns?</strong>
+                            <p>A: Absolutely. All our attendants are trained in baby hygiene, feeding assistance, and gentle massage.</p>
+                        </div>
+                        <div>
+                            <strong>Q: How soon can I get service in Mohali?</strong>
+                            <p>A: We usually assign a caregiver within 24 hours of booking confirmation.</p>
                         </div>
                     </div>
+                </div>
                 </div>
             </div>
         </>

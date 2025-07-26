@@ -3,7 +3,6 @@ import BookService from '@/components/bookservice';
 import Image from 'next/image';
 import Link from 'next/link';
 import Script from 'next/script';
-import MOTHERBABYCARE from "../../../public/images/MOTHERBABYCARE.jpg"
 export const metadata = {
     title: 'Mother and Baby Care at Home in Chandigarh, Mohali & Panchkula | CareKwik',
     description:
@@ -86,7 +85,7 @@ export default function MotherBabyCarePage() {
                 {/* Hero Section */}
                 <div className="flex md:gap-10 flex-col md:flex-row justify-between ">
                     <Image
-                        src={MOTHERBABYCARE}
+                        src="https://res.cloudinary.com/divlt5fqo/image/upload/v1753210013/220-SM681360_vp9gp2.jpg"
                         alt="Mother and baby care attendant in Chandigarh"
                         width={500}
                         height={500}
