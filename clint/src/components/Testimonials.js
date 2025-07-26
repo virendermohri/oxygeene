@@ -9,7 +9,7 @@ const Testimonials = () => {
   return (
   
     <div className="md:max-w-5xl px-2  w-full mx-auto  py-8">
-      <h1 className='text-2xl font-bold mb-10'>Testimonials</h1>
+      <p className='text-2xl font-bold mb-10'>Testimonials</p>
 
       <div className="flex flex-col mb-10">
         <div className="flex gap-5 mb-5">

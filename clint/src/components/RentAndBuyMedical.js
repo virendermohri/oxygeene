@@ -109,13 +109,13 @@ const RentAndBuyWithCart = () => {
         </div>
         :
         <div className="md:max-w-5xl px-4  w-full mx-auto z-1  md:my-20 my-10">
-          <h1 className='text-3xl font-bold mb-10'>Medical Equipment</h1>
+          <p className='text-3xl font-bold mb-10'>Medical Equipment</p>
           <div className="w-full relative  mb-10">
 
             <input type="text" className='bg-gray-100 w-full py-3 px-14  rounded' placeholder='Search for medical equipment' name="" id="" />
             <IoIosSearch className='absolute top-[30%] left-[1%] text-2xl text-gray-500' />
           </div>
-          <h1 className='text-xl font-bold mb-5'>Categories</h1>
+          <p className='text-xl font-bold mb-5'>Categories</p>
           <div className="grid md:grid-cols-4 grid-cols-3 md:text-base text-xs items-center mb-10 mt-5 md:gap-5 gap-4">
             <button className='py-2 md:px-5 px-3  cursor-pointer bg-gray-100 rounded-full'>Mobility Aids</button>
             <button className='py-2 md:px-5 px-3  cursor-pointer bg-gray-100 rounded-full'>Respiratory Devices</button>
@@ -124,7 +124,7 @@ const RentAndBuyWithCart = () => {
             <button className='py-2 md:px-5 px-3  cursor-pointer bg-gray-100 rounded-full'>Home Safety</button>
             <button className='py-2 md:px-5 px-3  cursor-pointer bg-gray-100 rounded-full'>Personal Care</button>
           </div>
-          <h1 className='text-xl font-bold mb-5'>Featured Porducts</h1>
+          <p className='text-xl font-bold mb-5'>Featured Porducts</p>
           <div className="grid md:grid-cols-5 grid-cols-3 gap-5 md:gap-10  ">
             {medicalEquipment.map((equipment, index) => {
               return <div className="flex  flex-col gap-2 " key={equipment.productname}>
@@ -136,7 +136,7 @@ const RentAndBuyWithCart = () => {
             }
             )}
           </div>
-          <h1 className='text-xl font-bold mt-10 mb-10'>Filters</h1>
+          <p className='text-xl font-bold mt-10 mb-10'>Filters</p>
           <div className="flex items-center mb-5 justify-between">
             <p className='font-medium md:text-xl'>Price Range</p>
             <div className="w-1/2 ">
@@ -159,7 +159,7 @@ const RentAndBuyWithCart = () => {
             <button className='px-4 py-2 bg-white border  font-medium rounded-lg  border-1 border-gray-300 cursor-pointer'>Buy</button>
             <button className='px-4 py-2 bg-white border  font-medium rounded-lg  border-1 border-gray-300 cursor-pointer'>Rent</button>
           </div>
-          <h1 className='text-xl font-bold mt-10 mb-10'>Products Listings</h1>
+          <p className='text-xl font-bold mt-10 mb-10'>Products Listings</p>
           <div className="flex flex-col gap-10">
             {
               medicalEquipment.map((equipment, index) => {
@@ -167,7 +167,7 @@ const RentAndBuyWithCart = () => {
                   <div className="flex items-center justify-between  gap-5  p-5 rounded-lg">
                     <Image src={equipment.productimage} className="w-1/4 object-contain rounded-lg shadow" alt={equipment.productname} width={100} height={100} />
                     <div className="flex items-start w-1/2 flex-col gap-2">
-                      <h1 className='md:text-lg md:font-sm'>{equipment.productname}</h1>
+                      <p className='md:text-lg md:font-sm'>{equipment.productname}</p>
                       <p className='text-gray-500 text-xs md:text-base'>{equipment.description}</p>
                       <div className="flex items-center gap-5">
                         <button className='px-4 cursor-pointer md:text-base text-xs py-2 bg-gray-100 rounded-full'>View Deatils</button>

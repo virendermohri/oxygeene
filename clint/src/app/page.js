@@ -6,8 +6,9 @@ import Testimonials from "@/components/Testimonials";
 import Link from "next/link";
 import Image from "next/image";
 export const metadata = {
-  title: "Home Care Services in Chandigarh & Mohali | Book Trusted Caretakers - CareKwik",
-  description: "Get trusted home care services in Chandigarh and Mohali with CareKwik. Book verified caretakers for Elder Care, ICU at Home, Baby Care & Physiotherapy. Safe, reliable & affordable.",
+  title: "Home Care Services in Chandigarh & Mohali | CareKwik",
+  description: "CareKwik offers expert home healthcare services in Chandigarh, Mohali & Panchkula. Book trained caregivers for Elder Care, ICU at Home, Baby Care, Nursing, Physiotherapy & more—safe, verified, and affordable solutions for your loved ones.",
+
   keywords: "home care in chandigarh, home care mohali, elder care chandigarh, elder care mohali, icu at home chandigarh, icu at home mohali, physiotherapy at home chandigarh, home nurse mohali, patient care mohali, baby care mohali, elderly care chandigarh, home attendant chandigarh, caretaker in mohali, home visit nurse chandigarh, nursing service mohali, 24x7 home care mohali, medical equipment chandigarh, wheelchair rental mohali, oxygen cylinder mohali, mohali health care, chandigarh patient care, home health services chandigarh, carekwik chandigarh mohali",
   openGraph: {
     title: "Top Home Care in Chandigarh & Mohali | CareKwik",
@@ -78,7 +79,7 @@ export default async function Home() {
       {/* <Services/> */}
       <div id='services' className="  px-4 md:mb-20 md:h-screen md:h-auto md:max-w-5xl  w-full mx-auto  py-8  ">
         <div className="flex flex-col">
-          <h1 className='font-bold text-2xl mb-10'>Our Home Care Services</h1>
+          <p className='font-bold text-2xl mb-10'>Our Home Care Services</p>
 
           <div className="grid md:grid-cols-3  grid-cols-2 justify-center md:gap-10 gap-6 ">
             {services.map((item, index) => {
@@ -94,9 +95,9 @@ export default async function Home() {
 
       <CaretakerProfile />
       <section className="mt-16 bg-gray-50 py-10 px-4 max-w-6xl mx-auto">
-        <h2 className="text-2xl font-bold text-center text-gray-800 mb-8">
-          Explore Our Home Healthcare Services by City
-        </h2>
+        <h1 className="text-2xl font-bold text-center text-gray-800 mb-8">
+          Explore Our Home care Services in Chandigarh , Mohali & Panchkula
+        </h1>
 
         <div className="grid md:grid-cols-3 gap-6">
           {/* Elder Care */}
@@ -160,7 +161,10 @@ export default async function Home() {
           </div>
         </div>
       </section>
-
+      <div className="max-w-6xl mx-auto py-5 md:py-10">
+        <h2 className="text-2xl font-bold py-2 md:py-5">Trusted Home Care Services in Chandigarh & Mohali</h2>
+        <p className="text-gray-700">At CareKwik, we specialize in providing compassionate and professional home care services tailored to your family's needs. Whether you're seeking elder care at home, ICU setup at home, mother & baby care, or physiotherapy services, our trained caretakers and nurses deliver quality care right at your doorstep. Serving areas like Chandigarh, Mohali, and Panchkula, we ensure comfort, safety, and timely medical support for your loved ones. With 24/7 availability, verified staff, and personalized care plans, CareKwik is your trusted choice for home nursing, post-surgery care, and chronic illness support. Book reliable caregivers today and experience the peace of mind that comes with expert care at home.</p>
+      </div>
       <Testimonials />
 
 
