@@ -163,7 +163,7 @@ export default async function Home() {
       </section>
       <div className="max-w-6xl mx-auto py-5 md:py-10">
         <h2 className="text-2xl font-bold py-2 md:py-5">Trusted Home Care Services in Chandigarh & Mohali</h2>
-        <p className="text-gray-700">At CareKwik, we specialize in providing compassionate and professional home care services tailored to your family's needs. Whether you're seeking elder care at home, ICU setup at home, mother & baby care, or physiotherapy services, our trained caretakers and nurses deliver quality care right at your doorstep. Serving areas like Chandigarh, Mohali, and Panchkula, we ensure comfort, safety, and timely medical support for your loved ones. With 24/7 availability, verified staff, and personalized care plans, CareKwik is your trusted choice for home nursing, post-surgery care, and chronic illness support. Book reliable caregivers today and experience the peace of mind that comes with expert care at home.</p>
+        <p className="text-gray-700">At CareKwik, we specialize in providing compassionate and professional home care services tailored to your family&apos;s needs. Whether you&apos;re seeking elder care at home, ICU setup at home, mother & baby care, or physiotherapy services, our trained caretakers and nurses deliver quality care right at your doorstep. Serving areas like Chandigarh, Mohali, and Panchkula, we ensure comfort, safety, and timely medical support for your loved ones. With 24/7 availability, verified staff, and personalized care plans, CareKwik is your trusted choice for home nursing, post-surgery care, and chronic illness support. Book reliable caregivers today and experience the peace of mind that comes with expert care at home.</p>
       </div>
       <Testimonials />
 
