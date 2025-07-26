@@ -1,9 +1,15 @@
 import Typewriter from "@/components/Typewriter";
 import "./globals.css";
-import Services from "@/components/Services";
 import CaretakerProfile from "@/components/CaretakerProfile";
 import Testimonials from "@/components/Testimonials";
 import Link from "next/link";
+import ICUATHOME from "../../public/images/ICUATHOME.jpg"
+import ELDERCAREATHOME from "../../public/images/ELDERCAREATHOME.jpg"
+import NURSINGATHOME from "../../public/images/NURSINGATHOME.jpg"
+import LABTEST from "../../public/images/LABTEST.jpg"
+import PHYSIOTHERAPY from "../../public/images/PHYSIOTHERAPY.jpg"
+import MOTHERBABYCARE from "../../public/images/MOTHERBABYCARE.jpg"
+
 import Image from "next/image";
 export const metadata = {
   title: "Home Care in Chandigarh, Mohali & Panchkula | CareKwik",
@@ -33,35 +39,35 @@ export default async function Home() {
     {
       title: "Physiotherapy at home",
       description: "Expert physiotherapy for recorey and pain management.",
-      image_url: "https://res.cloudinary.com/divlt5fqo/image/upload/v1751465176/wmremove-transformed_4_eemrcj.jpg",
+      image_url: PHYSIOTHERAPY
 
     },
     {
       title: "Elder Care at Home",
       description: "Compassionate care for seniors in the comfort of their home.",
-      image_url: "https://res.cloudinary.com/divlt5fqo/image/upload/v1753163918/16-SM1104377_lgfnew.jpg"
+      image_url: ELDERCAREATHOME
     },
     {
       title: "ICU at Home",
       description: "Advanced ICU setup and care at home.",
-      image_url: "https://res.cloudinary.com/divlt5fqo/image/upload/v1751540954/wmremove-transformed_5_rcxaud.jpg"
+      image_url: ICUATHOME
     },
     ,
     {
       title: "Nursing Care at Home",
       description: "Skilled nursing care at home for safe recovery.",
-      image_url: "https://res.cloudinary.com/divlt5fqo/image/upload/v1753344614/220-SM987818_woof2x.jpg"
+      image_url: NURSINGATHOME
     },
 
     {
       title: "Mother Baby Care at Home",
       description: "Spacialized care for new mothers and infants.",
-      image_url: "https://res.cloudinary.com/divlt5fqo/image/upload/v1753210013/220-SM681360_vp9gp2.jpg"
+      image_url: MOTHERBABYCARE
     },
     {
       title: "Lab test at Home",
       description: "Spacialized care for new mothers and infants.",
-      image_url: "https://res.cloudinary.com/divlt5fqo/image/upload/v1753345685/20-SM88262_aahocp.jpg"
+      image_url: LABTEST
     }
   ]
   const slugifyServices = (servicename) => {

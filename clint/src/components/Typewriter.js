@@ -1,7 +1,8 @@
 'use client'
 import React from 'react';
-
+import MainImage from "../../public/images/MainImage.jpeg"
 import Link from 'next/link';
+import Image from 'next/image';
 
 const OxyTagline = () => {
  
@@ -10,7 +11,7 @@ const OxyTagline = () => {
 
     <div className= " relative md:max-w-5xl w-full md:mt-10 m-auto ">
 
-      <img src="https://res.cloudinary.com/divlt5fqo/image/upload/v1751460739/wmremove-transformed_2_sxrfa6.jpg"
+      <Image width={700} height={700} src={MainImage}
         className=' w-full md:h-[450px] shadow-lg object-cover border-1 border-gray-100 md:rounded-lg'
         alt="CareKwik" title='carekwik' />
       <div className=" absolute text-white   flex md:top-[65%] top-[45%] w-[80%]  flex-col flex items-start justify-center left-[3%] gap-3">
