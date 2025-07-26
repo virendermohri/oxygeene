@@ -6,7 +6,7 @@ import Testimonials from "@/components/Testimonials";
 import Link from "next/link";
 import Image from "next/image";
 export const metadata = {
-  title: "Home Care Services in Chandigarh & Mohali | CareKwik",
+  title: "Home Care in Chandigarh, Mohali & Panchkula | CareKwik",
   description: "CareKwik provides trusted home healthcare in Chandigarh, Mohali & Panchkula. Book trained caregivers for Elder Care, ICU at Home, Nursing & more—safe, affordable care.",
 
   keywords: "home care in chandigarh, home care mohali, elder care chandigarh, elder care mohali, icu at home chandigarh, icu at home mohali, physiotherapy at home chandigarh, home nurse mohali, patient care mohali, baby care mohali, elderly care chandigarh, home attendant chandigarh, caretaker in mohali, home visit nurse chandigarh, nursing service mohali, 24x7 home care mohali, medical equipment chandigarh, wheelchair rental mohali, oxygen cylinder mohali, mohali health care, chandigarh patient care, home health services chandigarh, carekwik chandigarh mohali",
@@ -166,7 +166,7 @@ export default async function Home() {
       </section>
       <div className="px-4 md:px-10 md:py-20 py-8 text-gray-800 max-w-6xl mx-auto leading-relaxed">
         <h1 className="text-2xl font-bold mb-5 ">
-          Home Care Services in Chandigarh, Mohali & Panchkula – Trusted, Affordable & Safe
+          Home Care in Chandigarh, Mohali & Panchkula | CareKwik
         </h1>
         <p className="mb-4">
           <strong>CareKwik</strong> provides trusted and affordable <strong>home care services in Chandigarh, Mohali, and Panchkula</strong>, offering personalized and professional support to patients in the comfort of their homes. Whether you&apos;re searching for <strong>elder care at home</strong>, <strong>ICU setup at home</strong>, <strong>mother and baby care</strong>, <strong>in-home physiotherapy</strong>, or <strong>trained nursing attendants</strong>, we have a complete solution designed to meet your family’s healthcare needs.
