@@ -166,7 +166,7 @@ export default async function Home() {
       </section>
       <div className="px-4 md:px-10 md:py-20 py-8 text-gray-800 max-w-6xl mx-auto leading-relaxed">
         <h1 className="text-2xl font-bold mb-5 ">
-          Home Care in Chandigarh, Mohali & Panchkula | CareKwik
+         Trusted Home Care Services in Chandigarh, Mohali & Panchkula
         </h1>
         <p className="mb-4">
           <strong>CareKwik</strong> provides trusted and affordable <strong>home care services in Chandigarh, Mohali, and Panchkula</strong>, offering personalized and professional support to patients in the comfort of their homes. Whether you&apos;re searching for <strong>elder care at home</strong>, <strong>ICU setup at home</strong>, <strong>mother and baby care</strong>, <strong>in-home physiotherapy</strong>, or <strong>trained nursing attendants</strong>, we have a complete solution designed to meet your family’s healthcare needs.

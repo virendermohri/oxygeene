@@ -1,10 +1,23 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: [
-      "res.cloudinary.com"
+    domains: ["res.cloudinary.com"],
+  },
 
-    ], // Add your image domains here
+  async redirects() {
+    return [
+      {
+        source: '/:path*',
+        has: [
+          {
+            type: 'host',
+            value: 'www.carekwik.com',
+          },
+        ],
+        destination: 'https://carekwik.com/:path*',
+        permanent: true,
+      },
+    ];
   },
 };
 
