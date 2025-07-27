@@ -6,7 +6,7 @@ import Link from "next/link";
 import Image from "next/image";
 export const metadata = {
   title: "Home Care in Chandigarh, Mohali & Panchkula | CareKwik",
-  description: "CareKwik provides trusted home healthcare in Chandigarh, Mohali & Panchkula. Book trained caregivers for Elder Care, ICU at Home, Nursing & more—safe, affordable care.",
+  description: "CareKwik offers trusted home healthcare in Chandigarh, Mohali & Panchkula. Book trained caregivers for Elder Care, ICU, Nursing & more—safe & affordable.",
 
   keywords: "home care in chandigarh, home care mohali, elder care chandigarh, elder care mohali, icu at home chandigarh, icu at home mohali, physiotherapy at home chandigarh, home nurse mohali, patient care mohali, baby care mohali, elderly care chandigarh, home attendant chandigarh, caretaker in mohali, home visit nurse chandigarh, nursing service mohali, 24x7 home care mohali, medical equipment chandigarh, wheelchair rental mohali, oxygen cylinder mohali, mohali health care, chandigarh patient care, home health services chandigarh, carekwik chandigarh mohali",
   openGraph: {

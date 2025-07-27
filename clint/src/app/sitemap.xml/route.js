@@ -27,10 +27,10 @@ export async function GET() {
 
 
     // Mother & Baby Care
-    '/mother-baby-care',
-    '/mother-baby-care/chandigarh',
-    '/mother-baby-care/mohali',
-    '/mother-baby-care/panchkula',
+    '/mother-baby-care-at-home',
+    '/mother-baby-care-at-home/chandigarh',
+    '/mother-baby-care-at-home/mohali',
+    '/mother-baby-care-at-home/panchkula',
 
     // ICU at Home
     '/icu-at-home',
