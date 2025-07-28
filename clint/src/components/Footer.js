@@ -12,7 +12,7 @@ export default function Footer() {
         <Link href={"/contact-us"} className=" font-medium text-gray-500 hover:text-blue-600">
           Contact Us
         </Link>
-        <Link href={"/privacy-policy"} className=" font-medium text-gray-500 hover:text-blue-600">
+        <Link  href={"/privacy-policy"} className=" font-medium text-gray-500 hover:text-blue-600">
           privacy
         </Link>
         <Link href={"/terms"} className=" font-medium text-gray-500 hover:text-blue-600">

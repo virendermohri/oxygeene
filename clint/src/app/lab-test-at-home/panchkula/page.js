@@ -41,7 +41,55 @@ export default function LabtestPanchkula() {
                     "areaServed": ["Panchkula", "Pinjore", "Zirakpur", "Chandigarh"]
                 })}
             </Script>
+            <Script id="ld-faq-labtest" type="application/ld+json">
+                {JSON.stringify({
 
+                    "@context": "https://schema.org",
+                    "@type": "FAQPage",
+                    "mainEntity": [
+                        {
+                            "@type": "Question",
+                            "name": "What lab tests can I book at home in Panchkula?",
+                            "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "You can book a variety of lab tests including blood tests, urine tests, full body checkups, and specialized tests like thyroid, diabetes, and vitamin profiles."
+                            }
+                        },
+                        {
+                            "@type": "Question",
+                            "name": "How does home sample collection work?",
+                            "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "A trained phlebotomist will visit your home at the scheduled time to collect samples. You can book appointments online or via phone."
+                            }
+                        },
+                        {
+                            "@type": "Question",
+                            "name": "How quickly will I receive my test results?",
+                            "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "Most reports are delivered within 12-24 hours via WhatsApp or email."
+                            }
+                        },
+                        {
+                            "@type": "Question",
+                            "name": "Are the labs accredited?",
+                            "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "Yes, we partner with NABL-accredited labs to ensure quality and reliability."
+                            }
+                        },
+                        {
+                            "@type": "Question",
+                            "name": "Can I book urgent tests?",
+                            "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "Yes, we offer same-day service for most common tests if slots are available."
+                            }
+                        }
+                    ]
+                })}
+            </Script>
             <div className="mx-auto md:p-10 p-4">
                 <div className="flex flex-col md:flex-row md:gap-10">
                     <Image

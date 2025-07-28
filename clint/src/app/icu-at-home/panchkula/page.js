@@ -41,7 +41,59 @@ export default function ICUHomePanchkula() {
           "areaServed": ["Panchkula", "Manimajra", "Kalka", "Pinjore"]
         })}
       </Script>
+      <Script id="ld-faq-icu" type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What services are included in ICU at Home in Panchkula?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "ICU at Home in Panchkula includes ventilator support, cardiac monitoring, oxygen therapy, ICU beds, and 24/7 trained ICU nurses."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How quickly can you set up ICU care at home?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We can set up ICU care within a few hours of your request, depending on equipment availability."
+              }
+            },
 
+            {
+              "@type": "Question",
+              "name": "Is home ICU care safe for critical patients?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, our home ICU services are designed to provide hospital-level care with trained professionals and advanced equipment."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What is the cost of ICU at Home in Panchkula?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The cost varies based on the duration of care and equipment needed. We provide transparent pricing after assessing your requirements."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Is ICU at Home suitable for elderly patients in Panchkula?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, ICU at Home is ideal for elderly patients who need critical care but prefer the comfort of their home. It helps avoid hospital-acquired infections and provides personalized attention."
+              }
+            },
+          ]
+
+
+
+
+        })}
+      </Script>
       <div className=" mx-auto md:p-10 md:p-10 p-4">
         {/* Hero Image */}
         <div className="flex md:gap-10 flex-col md:flex-row justify-between   ">
@@ -58,7 +110,7 @@ export default function ICUHomePanchkula() {
           </div>
         </div>
 
-         <div className="max-w-6xl mx-auto  md:p-6  ">
+        <div className="max-w-6xl mx-auto  md:p-6  ">
           <h1 className="text-2xl font-bold mb-4 text-gray-800">
             ICU at Home in Panchkula – 24/7 Nursing & Equipment
           </h1>

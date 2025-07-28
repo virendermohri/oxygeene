@@ -41,7 +41,46 @@ export default function LabtestMohali() {
           "areaServed": ["Mohali", "Zirakpur", "Kharar", "Chandigarh"]
         })}
       </Script>
-
+<Script id="ld-faq-labtest" type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What lab tests can I book at home in Mohali?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "You can book a wide range of lab tests including blood tests, urine tests, full body checkups, and specialized tests like thyroid, diabetes, and vitamin profiles."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How does home sample collection work?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "After booking your test online or via phone, our trained phlebotomist will visit your home at the scheduled time to collect samples safely and hygienically."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How long does it take to get the test results?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Most test results are delivered within 24 hours via WhatsApp or email. Some specialized tests may take longer."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Are the lab tests conducted by certified labs?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, all tests are processed by NABL-accredited labs ensuring accuracy and reliability of results."
+              }
+            }
+          ]
+        })}
+      </Script>
       <div className="mx-auto md:p-10 p-4">
         <div className="flex flex-col md:flex-row md:gap-10">
           <Image

@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import BookService from '@/components/bookservice';
+import Script from 'next/script';
 
 export const metadata = {
     title: 'Nursing Care at Home in Panchkula | CareKwik',
@@ -22,12 +23,69 @@ export const metadata = {
 export default function NursingCarePanchkula() {
     return (
         <>
+            <Script id="ld-nursing-care-pkl" type="application/ld+json">
+                {JSON.stringify({
+                    "@context": "https://schema.org",
+                    "@type": "MedicalOrganization",
+                    "name": "CareKwik - Nursing Care at Home Panchkula",
+                    "url": "https://carekwik.com/nursing-care-at-home/panchkula",
+                    "logo": "https://res.cloudinary.com/divlt5fqo/image/upload/v1753163918/16-SM1104377_lgfnew.jpg",
+                    "contactPoint": {
+                        "@type": "ContactPoint",
+                        "telephone": "+91-8307190216",
+                        "contactType": "Customer Service"
+                    },
+                    "areaServed": ["Panchkula", "Chandigarh", "Mohali"],
+                    "address": {
+                        "@type": "PostalAddress",
+                        "addressLocality": "Panchkula",
+                        "addressRegion": "Haryana",
+                        "postalCode": "134109",
+                        "addressCountry": "IN"
+                    },
+                    "description":
+                        "CareKwik provides professional nursing care at home in Panchkula. Our trained nurses offer injections, wound care, ICU support, and post-surgical nursing services.",
+                })}
+            </Script>
+            <Script id="ld-faq-nursing-care-pkl" type="application/ld
++json">
+                {JSON.stringify({
+                    "@context": "https://schema.org",
+                    "@type": "FAQPage",
+                    "mainEntity": [
+                        {
+                            "@type": "Question",
+                            "name": "What nursing services do you provide at home in Panchkula?",
+                            "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "We provide a range of nursing services including injections, wound care, ICU-level care, post-operative support, and elderly care."
+                            }
+                        },
+                        {
+                            "@type": "Question",
+                            "name": "Are your nurses qualified and experienced?",
+                            "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "Yes, all our nurses are certified, background-verified, and trained for home healthcare."
+                            }
+                        },
+                        {
+                            "@type": "Question",
+                            "name": "How quickly can I book a nurse for home care?",
+                            "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "You can book a nurse within a few hours of contacting us, based on your specific care needs."
+                            }
+                        }
+                    ]
+                })}
+            </Script>
             {/* Image + Booking */}
             <div className="mx-auto md:p-10 p-4">
                 {/* Hero Section */}
                 <div className="flex md:gap-10 flex-col md:flex-row justify-between ">
                     <Image
-                       src="https://res.cloudinary.com/divlt5fqo/image/upload/v1753344614/220-SM987818_woof2x.jpg"
+                        src="https://res.cloudinary.com/divlt5fqo/image/upload/v1753344614/220-SM987818_woof2x.jpg"
                         alt="Nursing Care at Home in Panchkula"
                         width={600}
                         height={450}
@@ -38,7 +96,7 @@ export default function NursingCarePanchkula() {
                         <BookService servicename="Nursing Care" />
                     </div>
                 </div>
-                 <div className="mt-12 max-w-6xl mx-auto">
+                <div className="mt-12 max-w-6xl mx-auto">
 
                     {/* Content */}
                     <h1 className="text-3xl font-bold text-gray-800 mb-4">Nursing Care at Home in Panchkula</h1>

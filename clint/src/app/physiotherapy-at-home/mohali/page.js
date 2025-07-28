@@ -47,7 +47,54 @@ export default function MohaliPage() {
           "priceRange": "₹₹"
         })}
       </Script>
-
+      <Script id="ld-faq-physio-mohali" type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What types of physiotherapy services are offered at home in Mohali?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "CareKwik offers home physiotherapy services in Mohali for conditions such as stroke recovery, post-operative rehab, orthopedic issues, back and neck pain, sports injuries, and neurological disorders."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can I request a female physiotherapist for home sessions in Mohali?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, CareKwik provides trained and verified female physiotherapists for in-home care in Mohali, ensuring comfort and privacy for female patients."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Is home physiotherapy in Mohali effective?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, physiotherapy at home in Mohali is highly effective as it offers personalized care, saves travel time, and supports recovery in a familiar and relaxed environment."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How much does home physiotherapy cost in Mohali?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The cost of physiotherapy at home in Mohali depends on the condition and duration of the therapy. CareKwik offers affordable and transparent pricing with no hidden charges."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How do I schedule a physiotherapist visit in Mohali?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "You can easily schedule a physiotherapy session at home in Mohali by filling out the booking form on the CareKwik website or calling our support team."
+              }
+            }
+          ]
+        })}
+      </Script>
       <div className="p-4 md:p-10  mx-auto">
         <div className="flex md:gap-10 flex-col md:flex-row justify-between ">
           <Image

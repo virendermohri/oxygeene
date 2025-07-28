@@ -41,15 +41,64 @@ export default function ICUHomeMohali() {
           "areaServed": ["Mohali", "Kharar", "Zirakpur"]
         })}
       </Script>
+      <Script id="ld-faq-icu" type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
 
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What is included in ICU at Home service in Mohali?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "ICU at Home in Mohali includes ventilator, cardiac monitors, suction machines, ICU beds, oxygen support, and 24x7 trained ICU nurses."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How quickly can you set up ICU care at home?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We can set up ICU care at home within 6-12 hours in most Mohali locations."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Is the ICU setup safe for critical patients?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, our ICU setup is designed to provide hospital-level care in the comfort of your home, ensuring patient safety and comfort."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Do you provide trained nurses for ICU care?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, we provide certified ICU nurses with extensive critical care experience."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What areas do you serve in Mohali?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We serve all major areas in Mohali including Kharar, Zirakpur, and surrounding regions."
+              }
+            }
+          ]
+
+        })}
+      </Script>
       <div className="mx-auto p-4 md:p-10">
         <div className="flex flex-col md:flex-row md:gap-10">
           <Image
-             src="https://res.cloudinary.com/divlt5fqo/image/upload/v1751540954/wmremove-transformed_5_rcxaud.jpg"
+            src="https://res.cloudinary.com/divlt5fqo/image/upload/v1751540954/wmremove-transformed_5_rcxaud.jpg"
             alt="ICU setup at home in Mohali"
             width={480}
             height={450}
-                className="rounded-2xl   shadow-md mb-8 border md:w-[60%] object-cover"
+            className="rounded-2xl   shadow-md mb-8 border md:w-[60%] object-cover"
           />
           <div className="md:w-1/3 md:p-5 md:shadow-md">
             <p className="text-xl font-bold mb-4">Book ICU Setup in Mohali</p>
@@ -58,19 +107,19 @@ export default function ICUHomeMohali() {
         </div>
 
         <div className="max-w-6xl mx-auto  md:p-6  ">
-            <h1 className="text-2xl font-bold mb-4 text-gray-800">
-              ICU Setup at Home in Mohali – Critical Care in Comfort
-            </h1>
-            <p className="text-lg text-gray-700 mb-4">
-              CareKwik offers professional ICU setup at home in Mohali for patients who require critical care but
-              prefer the comfort of their own surroundings. Our service includes ICU beds, cardiac monitors,
-              ventilators, oxygen support, suction machines, and 24x7 ICU-trained nurses.
-            </p>
-            <p className="text-lg text-gray-700">
-              Whether it’s a post-operative patient or a long-term critical care case, we ensure hospital-like
-              treatment under expert supervision. With fast setup and medical-grade equipment, families in Mohali
-              can now avoid the stress and cost of prolonged hospital stays.
-            </p>
+          <h1 className="text-2xl font-bold mb-4 text-gray-800">
+            ICU Setup at Home in Mohali – Critical Care in Comfort
+          </h1>
+          <p className="text-lg text-gray-700 mb-4">
+            CareKwik offers professional ICU setup at home in Mohali for patients who require critical care but
+            prefer the comfort of their own surroundings. Our service includes ICU beds, cardiac monitors,
+            ventilators, oxygen support, suction machines, and 24x7 ICU-trained nurses.
+          </p>
+          <p className="text-lg text-gray-700">
+            Whether it’s a post-operative patient or a long-term critical care case, we ensure hospital-like
+            treatment under expert supervision. With fast setup and medical-grade equipment, families in Mohali
+            can now avoid the stress and cost of prolonged hospital stays.
+          </p>
 
           <h2 className="text-2xl font-bold text-gray-800 mt-10 mb-4">Frequently Asked Questions</h2>
           <div className="space-y-4 text-gray-700 md:text-lg">
@@ -94,7 +143,7 @@ export default function ICUHomeMohali() {
               <strong>Q: Do you serve nearby areas like Kharar or Zirakpur?</strong>
               <p>A: Yes, we cover all nearby locations around Mohali.</p>
             </div>
-        </div>
+          </div>
         </div>
       </div>
     </>

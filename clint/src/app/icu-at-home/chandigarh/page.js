@@ -41,7 +41,57 @@ export default function ICUHomeChandigarh() {
           "areaServed": ["Chandigarh", "Manimajra", "Sector 44", "Sector 20"]
         })}
       </Script>
+      <Script id="ld-faq-icu" type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
 
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What is included in ICU at Home service in Chandigarh?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "ICU at Home in Chandigarh includes critical care setup, advanced monitoring, ventilator support, trained ICU nurses, and doctor supervision for patients requiring intensive care at home."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Is ICU at Home safe for critical patients?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, ICU at Home services are designed to replicate hospital-level care with advanced equipment, 24/7 nurse monitoring, and doctor guidance, ensuring safe and effective treatment at home."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How much does ICU at Home cost in Chandigarh?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The cost depends on the level of care and equipment required. Contact CareKwik for a customized quote based on the patient's medical needs."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What equipment is provided in ICU at Home setup?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The setup typically includes a ventilator, cardiac monitor, suction machine, infusion pump, oxygen concentrator, and other essential ICU-grade devices."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can I avail ICU care at home for elderly patients?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, elderly patients who are stable but need continuous critical care can greatly benefit from ICU at Home services in Chandigarh, avoiding the risks of hospital stays."
+              }
+            }
+          ]
+
+
+        })}
+      </Script>
       <div className="mx-auto p-4 md:p-10">
         <div className="flex flex-col md:flex-row md:gap-10">
           <Image
