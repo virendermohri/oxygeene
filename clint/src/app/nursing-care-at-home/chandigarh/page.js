@@ -1,24 +1,25 @@
 import Image from 'next/image';
 import BookService from '@/components/bookservice';
 import Script from 'next/script';
-
 export const metadata = {
-    title: 'Nursing Care at Home in Chandigarh | CareKwik',
-    description:
-        'Get professional nursing care at home in Chandigarh. Book trained nurses for injections, wound care, ICU support, and post-surgical nursing services.',
-    keywords: [
-        'nursing care at home Chandigarh',
-        'home nurse in Chandigarh',
-        'ICU nursing at home Chandigarh',
-        'injection at home Chandigarh',
-        'post-surgical care Chandigarh',
-        'tracheostomy care Chandigarh',
-        'bedridden patient nurse Chandigarh',
-    ],
-    alternates: {
-        canonical: 'https://carekwik.com/nursing-care-at-home/chandigarh',
-    },
+  title: 'Trained Nursing Care at Home in Chandigarh | ICU & Post-Op Nurses',
+  description:
+    'Hire professional home nurses in Chandigarh for injections, wound dressing, ICU care, and post-surgery recovery. Trusted by 500+ families. Book now with CareKwik.',
+  keywords: [
+    'nursing care at home Chandigarh',
+    'home nurse in Chandigarh',
+    'ICU nursing at home Chandigarh',
+    'injection at home Chandigarh',
+    'post-surgical care Chandigarh',
+    'bedridden patient nurse Chandigarh',
+    'tracheostomy care at home Chandigarh',
+    'private nurse at home Chandigarh',
+  ],
+  alternates: {
+    canonical: 'https://carekwik.com/nursing-care-at-home/chandigarh',
+  },
 };
+
 
 export default function NursingCareChandigarh() {
     return (

@@ -5,23 +5,25 @@ import Image from 'next/image';
 import Script from 'next/script';
 
 export const metadata = {
-    title: 'Elder Care at Home in Mohali | Female Attendants & Verified Caregivers – CareKwik',
-    description:
-        'Book trained elder care attendants at home in Mohali. CareKwik provides verified male/female caregivers for seniors – palliative, paralytic, dementia, and old age support.',
-    keywords: [
-        'elder care in Mohali',
-        'home care services Mohali',
-        'female caretaker in Mohali',
-        'palliative care at home Mohali',
-        'old age caretaker Mohali',
-        'senior citizen care Mohali',
-        'home nursing Mohali',
-        'CareKwik elder care',
-    ],
-    alternates: {
-        canonical: 'https://carekwik.com/elder-care-at-home/mohali',
-    },
+  title: 'Elder Care at Home in Mohali | Verified Caregivers – CareKwik',
+  description:
+    'Book reliable elder care at home in Mohali. Trained male/female caregivers for palliative, dementia, and senior care. Safe, affordable support by CareKwik.',
+  keywords: [
+    'elder care in Mohali',
+    'home care Mohali',
+    'female caregiver Mohali',
+    'palliative care Mohali',
+    'senior care Mohali',
+    'old age care at home Mohali',
+    'dementia care Mohali',
+    'home nursing Mohali',
+    'CareKwik elder care Mohali',
+  ],
+  alternates: {
+    canonical: 'https://carekwik.com/elder-care-at-home/mohali',
+  },
 };
+
 
 export default function ElderCareMohaliPage() {
     return (

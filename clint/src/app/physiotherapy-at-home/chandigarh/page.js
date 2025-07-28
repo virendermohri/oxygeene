@@ -3,26 +3,26 @@ import Script from 'next/script';
 import Image from 'next/image';
 
 export const metadata = {
-  title: 'Home Physiotherapy in Chandigarh | Certified Physios | CareKwik',
+  title: 'Physiotherapy at Home in Chandigarh | Certified Physios',
   description:
-    'Get physiotherapy at home in Chandigarh by certified physiotherapists. We treat stroke, paralysis, back pain, ortho injuries, and post-surgery rehab.',
+    'Hire certified physiotherapists at home in Chandigarh for back pain, paralysis, stroke rehab, post-surgery recovery, and ortho care.',
   keywords: [
-    'home physiotherapy in Chandigarh',
-    'physiotherapist at home Chandigarh',
-    'stroke rehabilitation Chandigarh',
-    'paralysis physio at home Chandigarh',
-    'female physiotherapist Chandigarh',
-    'back pain physiotherapy Chandigarh',
+    'physiotherapy at home Chandigarh',
+    'home physiotherapist Chandigarh',
+    'paralysis physiotherapy Chandigarh',
+    'stroke rehab physiotherapist Chandigarh',
+    'female physio at home Chandigarh',
+    'elderly physio care Chandigarh',
     'orthopedic physiotherapy Chandigarh',
-    'post-surgery physio at home Chandigarh',
-    'sports injury physiotherapy Chandigarh',
-    'senior citizen physio care Chandigarh',
-  ]
-  ,
+    'post-surgery physio Chandigarh',
+    'neuro physiotherapy at home Chandigarh',
+    'knee pain physiotherapy Chandigarh',
+  ],
   alternates: {
     canonical: 'https://carekwik.com/physiotherapy-at-home/chandigarh',
   },
 };
+
 
 export default function ChandigarhPage() {
   return (

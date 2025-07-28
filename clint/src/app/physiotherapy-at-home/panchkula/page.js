@@ -3,22 +3,21 @@ import Script from 'next/script';
 import Image from 'next/image';
 
 export const metadata = {
-  title: 'Home Physiotherapy in Panchkula | Neuro & Ortho Rehab | CareKwik',
+  title: 'Physiotherapy at Home in Panchkula | CareKwik',
   description:
-    'Get certified physiotherapists at home in Panchkula for stroke, paralysis, ortho rehab, post-surgery recovery and elderly physio care.',
+    'Hire expert physiotherapists at home in Panchkula for pain relief, ortho recovery, elderly rehab, stroke care, and neurological therapy.',
   keywords: [
-    'home physiotherapy in Panchkula',
-    'physiotherapist at home in Panchkula',
-    'stroke rehabilitation Panchkula',
-    'paralysis physiotherapy at home',
-    'female physiotherapist in Panchkula',
+    'physiotherapy at home Panchkula',
+    'home physiotherapist Panchkula',
+    'paralysis physio Panchkula',
+    'stroke recovery Panchkula',
+    'female physiotherapist Panchkula',
     'orthopedic physiotherapy Panchkula',
-    'back pain physiotherapy Panchkula',
-    'post surgery physio at home',
-    'elderly physiotherapy care Panchkula',
-    'certified physio in Panchkula',
+    'elderly physio care Panchkula',
+    'neuro physio Panchkula',
+    'back pain physio Panchkula',
+    'post-surgery physiotherapy Panchkula',
   ],
-
   alternates: {
     canonical: 'https://carekwik.com/physiotherapy-at-home/panchkula',
   },

@@ -4,18 +4,20 @@ import Image from 'next/image';
 import BookService from '@/components/bookservice';
 
 export const metadata = {
-  title: 'ICU Setup at Home in Mohali | ICU Nurse & Equipment | CareKwik',
+  title: "ICU at Home in Mohali | Nurse, Ventilator & ICU Setup – CareKwik", // 59 characters
   description:
-    'Need ICU at home in Mohali? Get ventilator, monitors, suction, ICU nurse & critical care at your doorstep. Safe & affordable.',
+    "Get hospital-level ICU setup at home in Mohali. Includes ventilator, monitors, ICU nurse & suction. Fast, safe & affordable critical care by CareKwik.", // 158 characters
   keywords: [
-    'ICU setup at home Mohali',
-    'ICU care Mohali',
-    'ICU nurse at home in Mohali',
-    'ventilator at home Mohali',
-    'ICU bed on rent Mohali',
+    "ICU setup at home Mohali",
+    "ICU care at home Mohali",
+    "ICU nurse Mohali",
+    "ventilator at home Mohali",
+    "ICU bed on rent Mohali",
+    "critical care at home Mohali",
+    "CareKwik ICU services Mohali"
   ],
   alternates: {
-    canonical: 'https://carekwik.com/icu-at-home/mohali',
+    canonical: "https://carekwik.com/icu-at-home/mohali",
   },
 };
 

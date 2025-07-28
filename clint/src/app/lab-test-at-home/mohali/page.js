@@ -4,19 +4,22 @@ import Image from 'next/image';
 import Script from 'next/script';
 
 export const metadata = {
-  title: 'Lab test at Home in Mohali | Home Sample Collection – CareKwik',
-  description: 'Get blood test, full body checkups, and diagnostics at home in Mohali. Safe, affordable, and hassle-free lab test with sample collection at your doorstep.',
+  title: 'Lab Tests at Home in Mohali | Blood & Health Checkups – CareKwik',
+  description: 'Book lab tests at home in Mohali with CareKwik. Blood tests, full body checkups, and health diagnostics with home sample collection. Quick, safe & accurate.',
   keywords: [
     'lab test at home Mohali',
-    'blood test at home Mohali',
+    'blood test Mohali',
     'home sample collection Mohali',
-    'diagnostic services Mohali',
-    'full body checkup Mohali'
+    'full body test Mohali',
+    'diagnostic test Mohali',
+    'health checkup Mohali',
+    'CareKwik lab tests Mohali'
   ],
   alternates: {
     canonical: 'https://carekwik.com/lab-test-at-home/mohali',
   },
 };
+
 
 export default function LabtestMohali() {
   return (

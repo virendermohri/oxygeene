@@ -4,23 +4,23 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Script from 'next/script';
 export const metadata = {
-    title: 'Mother & Baby Care at Home | Postnatal & Newborn Care – CareKwik',
-    description:
-        'Book trained postnatal care attendants for new mothers and newborns at home in Chandigarh, Mohali & Panchkula. Trusted, safe, and experienced care services.',
-    keywords: [
-        'mother and baby care at home',
-        'postnatal care Chandigarh',
-        'baby massage caretaker Mohali',
-        'newborn care at home Panchkula',
-        'nanny for infant',
-        'Japa maid service',
-        'new mother care at home',
-        'post pregnancy care',
-        'baby caretaker in Chandigarh',
-    ],
-    alternates: {
-        canonical: 'https://carekwik.com/mother-baby-care-at-home',
-    },
+  title: 'Mother & Baby Care at Home | Postnatal & Infant Care – CareKwik',
+  description:
+    'Book trained caregivers for mother and baby care at home in Chandigarh, Mohali & Panchkula. Postnatal & newborn support, safe and experienced service.',
+  keywords: [
+    'mother and baby care at home',
+    'postnatal care Chandigarh',
+    'baby massage caretaker Mohali',
+    'newborn care at home Panchkula',
+    'nanny for infant',
+    'Japa maid service',
+    'new mother care at home',
+    'post pregnancy care',
+    'baby caretaker in Chandigarh',
+  ],
+  alternates: {
+    canonical: 'https://carekwik.com/mother-baby-care-at-home',
+  },
 };
 
 export default function MotherBabyCarePage() {

@@ -4,20 +4,23 @@ import Image from 'next/image';
 import BookService from '@/components/bookservice';
 
 export const metadata = {
-  title: 'ICU Setup at Home in Chandigarh | 24x7 Nurse & Equipment',
+  title: "ICU at Home in Chandigarh | ICU Setup, Nurse & Equipment – CareKwik", // 59 chars
   description:
-    'Get hospital-level ICU setup at home in Chandigarh. Includes ventilator, oxygen, ICU bed, and ICU nurse. Rapid response.',
+    "Get ICU setup at home in Chandigarh with ventilator, ICU nurse, oxygen support & monitors. 24x7 critical care by CareKwik – fast, safe & trusted.", // 158 chars
   keywords: [
-    'ICU setup Chandigarh',
-    'ICU home care Chandigarh',
-    'ICU nurse at home Chandigarh',
-    'ventilator at home Chandigarh',
-    'ICU bed rental Chandigarh',
+    "ICU setup Chandigarh",
+    "ICU nurse at home Chandigarh",
+    "ICU ventilator at home",
+    "home ICU care Chandigarh",
+    "ICU bed rental Chandigarh",
+    "critical care Chandigarh",
+    "ICU services CareKwik"
   ],
   alternates: {
-    canonical: 'https://carekwik.com/icu-at-home/chandigarh',
+    canonical: "https://carekwik.com/icu-at-home/chandigarh",
   },
 };
+
 
 export default function ICUHomeChandigarh() {
   return (

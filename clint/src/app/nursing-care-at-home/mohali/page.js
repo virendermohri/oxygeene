@@ -5,21 +5,24 @@ import Script from 'next/script';
 import BookService from '@/components/bookservice';
 
 export const metadata = {
-    title: 'Nursing Care at Home in Mohali | CareKwik',
-    description:
-        'Book professional nurses at home in Mohali for injections, ICU care, wound dressing, post-surgical care and more. Trained & verified staff from CareKwik.',
-    keywords: [
-        'nursing care at home Mohali',
-        'home nurse in Mohali',
-        'ICU care Mohali',
-        'injection nurse Mohali',
-        'wound dressing nurse Mohali',
-        'home healthcare Mohali',
-    ],
-    alternates: {
-        canonical: 'https://carekwik.com/nursing-care-at-home/mohali',
-    },
+  title: 'Nursing Care at Home in Mohali | CareKwik',
+  description:
+    'Book trained nurses at home in Mohali for post-surgery, injections, ICU, tracheostomy, and bedridden patient care. Trusted & verified.',
+  keywords: [
+    'nursing care at home Mohali',
+    'home nurse in Mohali',
+    'ICU nurse at home Mohali',
+    'post-surgical care Mohali',
+    'bedridden patient nurse Mohali',
+    'injection at home Mohali',
+    'tracheostomy care Mohali',
+    'private nurse Mohali',
+  ],
+  alternates: {
+    canonical: 'https://carekwik.com/nursing-care-at-home/mohali',
+  },
 };
+
 
 export default function NursingCareMohali() {
     return (

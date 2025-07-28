@@ -4,19 +4,21 @@ import Script from 'next/script';
 import BookService from '@/components/bookservice';
 
 export const metadata = {
-    title: 'Mother & Baby Care at Home in Mohali | CareKwik',
-    description:
-        'Professional postnatal mother and newborn baby care services in Mohali. Book trained female attendants for breastfeeding help, hygiene, massage & nutrition support.',
-    keywords: [
-        'mother baby care Mohali',
-        'postnatal care in Mohali',
-        'home baby care service',
-        'female attendant for mother care',
-        'infant massage at home Mohali',
-    ],
-    alternates: {
-        canonical: 'https://carekwik.com/mother-baby-care-at-home/mohali',
-    },
+  title: 'Mother & Baby Care at Home in Mohali | Trained Postnatal Attendants',
+  description:
+    'Book expert postnatal care for mother and newborn in Mohali. CareKwik provides trained female attendants for baby massage, hygiene, breastfeeding & recovery support.',
+  keywords: [
+    'mother baby care Mohali',
+    'postnatal care at home Mohali',
+    'baby care services Mohali',
+    'female attendant for mother',
+    'newborn care Mohali',
+    'baby massage Mohali',
+    'home care after delivery Mohali',
+  ],
+  alternates: {
+    canonical: 'https://carekwik.com/mother-baby-care-at-home/mohali',
+  },
 };
 
 export default function MotherBabyCareMohali() {

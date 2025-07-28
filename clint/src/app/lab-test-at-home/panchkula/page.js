@@ -4,20 +4,20 @@ import Image from 'next/image';
 import Script from 'next/script';
 
 export const metadata = {
-    title: 'Lab test at Home in Panchkula | Home Blood Test – CareKwik',
-    description: 'Book lab test with home sample collection in Panchkula. Affordable diagnostics, full body checkups, and blood test at your convenience.',
-    keywords: [
-        'lab test at home Panchkula',
-        'blood test at home Panchkula',
-        'home collection lab Panchkula',
-        'diagnostic center Panchkula',
-        'full body test Panchkula'
-    ],
-    alternates: {
-        canonical: 'https://carekwik.com/lab-test-at-home/panchkula',
-    },
+title: 'Home Lab Test in Panchkula – Fast & Trusted | CareKwik',
+description: 'Book lab tests at home in Panchkula with CareKwik. Get blood tests, full body checkups, and diagnostics with home sample collection—safe, fast & affordable.',
+  keywords: [
+    'lab test at home Panchkula',
+    'home blood test Panchkula',
+    'sample collection Panchkula',
+    'diagnostic test Panchkula',
+    'full body health check Panchkula',
+    'CareKwik lab services Panchkula'
+  ],
+  alternates: {
+    canonical: 'https://carekwik.com/lab-test-at-home/panchkula',
+  },
 };
-
 export default function LabtestPanchkula() {
     return (
         <>

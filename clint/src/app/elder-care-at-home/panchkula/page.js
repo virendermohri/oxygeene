@@ -4,22 +4,23 @@ import BookService from '@/components/bookservice';
 import Image from 'next/image';
 import Script from 'next/script';
 export const metadata = {
-    title: 'Elder Care at Home in Panchkula | CareKwik',
-    description:
-        'Hire compassionate elder care attendants in Panchkula. Female/male caregivers for old age care, palliative support & paralytic patients. Trusted home care service by CareKwik.',
-    keywords: [
-        'elder care Panchkula',
-        'home attendant Panchkula',
-        'female caretaker Panchkula',
-        'home care Panchkula',
-        'old age care Panchkula',
-        'dementia care Panchkula',
-        'palliative care Panchkula',
-        'CareKwik elder care Panchkula',
-    ],
-    alternates: {
-        canonical: 'https://carekwik.com/elder-care-at-home/panchkula',
-    },
+  title: 'Elder Care at Home in Panchkula | Verified Caregivers – CareKwik',
+  description:
+    'Book trained elder care attendants in Panchkula. Trusted male/female caregivers for old age, palliative, and dementia care—safe and affordable service.',
+  keywords: [
+    'elder care Panchkula',
+    'elder care home attendant Panchkula',
+    'female caretaker Panchkula',
+    'home care Panchkula',
+    'palliative care Panchkula',
+    'old age care Panchkula',
+    'dementia care Panchkula',
+    'home nursing Panchkula',
+    'CareKwik elder care Panchkula',
+  ],
+  alternates: {
+    canonical: 'https://carekwik.com/elder-care-at-home/panchkula',
+  },
 };
 
 export default function ElderCarePanchkulaPage() {

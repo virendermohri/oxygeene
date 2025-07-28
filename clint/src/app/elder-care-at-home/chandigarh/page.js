@@ -4,22 +4,21 @@ import BookService from '@/components/bookservice';
 import Image from 'next/image';
 import Script from 'next/script';
 export const metadata = {
-    title: 'Elder Care at Home in Chandigarh | Female Caregivers & Verified Attendants – CareKwik',
-    description:
-        'Get trained and verified elder care attendants in Chandigarh. Hire compassionate male/female caregivers for seniors, palliative care, and old age support at home.',
-    keywords: [
-        'elder care in Chandigarh',
-        'home care Chandigarh',
-        'female caretaker Chandigarh',
-        'palliative care Chandigarh',
-        'old age care at home Chandigarh',
-        'dementia care Chandigarh',
-        'senior citizen care Chandigarh',
-        'CareKwik elder care Chandigarh',
-    ],
-    alternates: {
-        canonical: 'https://carekwik.com/elder-care-at-home/chandigarh',
-    },
+  title: 'Elder Care at Home in Chandigarh | Verified Caregivers – CareKwik',
+  description: 'Get trained elder care attendants in Chandigarh. Book safe, affordable senior care at home with verified male/female caregivers from CareKwik.',
+  keywords: [
+    'elder care in Chandigarh',
+    'home care Chandigarh',
+    'female caregiver Chandigarh',
+    'senior care at home Chandigarh',
+    'palliative care Chandigarh',
+    'dementia care at home',
+    'old age care services Chandigarh',
+    'CareKwik Chandigarh elder care',
+  ],
+  alternates: {
+    canonical: 'https://carekwik.com/elder-care-at-home/chandigarh',
+  },
 };
 
 export default function ElderCareChandigarhPage() {

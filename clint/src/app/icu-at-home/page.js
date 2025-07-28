@@ -4,23 +4,25 @@ import Script from 'next/script';
 import BookService from '@/components/bookservice';
 import Link from 'next/link';
 export const metadata = {
-    title: 'ICU Setup at Home in Chandigarh, Mohali & Panchkula | CareKwik',
-    description:
-        'Get ICU setup at home with ventilator, ICU nurse, monitors & more. Serving Chandigarh, Mohali, Panchkula. Trusted critical care at home.',
-    keywords: [
-        'ICU setup at home',
-        'home ICU care',
-        'ICU nurse at home Chandigarh',
-        'ventilator at home Mohali',
-        'critical care Panchkula',
-        'ICU bed home rental',
-        'ICU services at home',
-        'ICU home care Chandigarh',
-    ],
-    alternates: {
-        canonical: 'https://carekwik.com/icu-at-home',
-    },
+  title: "ICU at Home in Chandigarh, Mohali & Panchkula | CareKwik", // 58 characters
+  description:
+    "Get expert ICU setup at home with ventilator, nurse & monitors in Chandigarh, Mohali & Panchkula. Trusted critical care by CareKwik.", // 157 characters
+  keywords: [
+    "ICU at home",
+    "ICU setup Chandigarh",
+    "ICU nurse Mohali",
+    "ICU ventilator Panchkula",
+    "critical care at home",
+    "home ICU services",
+    "ICU bed rental",
+    "emergency care at home"
+  ],
+  alternates: {
+    canonical: "https://carekwik.com/icu-at-home",
+  },
 };
+
+
 
 export default function ICUatHomePage() {
     return (

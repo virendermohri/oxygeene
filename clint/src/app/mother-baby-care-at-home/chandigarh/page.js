@@ -3,19 +3,19 @@ import Image from 'next/image';
 import Script from 'next/script';
 
 export const metadata = {
-    title: 'Mother and Baby Care in Chandigarh at Home | CareKwik',
-    description:
-        'Trained female attendants for postnatal mother and newborn care in Chandigarh. Book in-home mother & baby care services for hygiene, feeding, and recovery.',
-    keywords: [
-        'mother baby care Chandigarh',
-        'postnatal care at home',
-        'newborn baby care Chandigarh',
-        'female attendant for baby',
-        'mother care after delivery Chandigarh',
-    ],
-    alternates: {
-        canonical: 'https://carekwik.com/mother-baby-care-at-home/chandigarh',
-    },
+  title: 'Mother & Baby Care at Home in Chandigarh | Postnatal Support',
+  description:
+    'Book trained female attendants for mother and newborn baby care in Chandigarh. Safe postnatal care, feeding support & hygiene at home.',
+  keywords: [
+    'mother baby care Chandigarh',
+    'postnatal care at home Chandigarh',
+    'newborn baby care Chandigarh',
+    'female attendant for baby',
+    'mother care after delivery Chandigarh',
+  ],
+  alternates: {
+    canonical: 'https://carekwik.com/mother-baby-care-at-home/chandigarh',
+  },
 };
 
 export default function MotherBabyCareChandigarhPage() {

@@ -3,21 +3,22 @@ import BookService from '@/components/bookservice';
 import Script from 'next/script';
 
 export const metadata = {
-    title: 'Nursing Care at Home in Panchkula | CareKwik',
-    description:
-        'Book skilled nursing care at home in Panchkula with CareKwik. Get trained nurses for injections, ICU care, post-operative recovery and more.',
-    keywords: [
-        'nursing care at home Panchkula',
-        'home nurse Panchkula',
-        'ICU nurse Panchkula',
-        'injection nurse Panchkula',
-        'nursing services Panchkula',
-        'post surgery care Panchkula',
-        'bedridden patient nurse Panchkula',
-    ],
-    alternates: {
-        canonical: 'https://carekwik.com/nursing-care-at-home/panchkula',
-    },
+  title: 'Nursing Care at Home in Panchkula | CareKwik',
+  description:
+    'Hire trained nurses at home in Panchkula for elderly care, wound care, ICU, injections, and post-operative support. Affordable & safe.',
+  keywords: [
+    'nursing care at home Panchkula',
+    'home nurse Panchkula',
+    'ICU nurse at home Panchkula',
+    'wound dressing at home',
+    'post-surgery care Panchkula',
+    'injection service at home',
+    'bedridden patient nurse Panchkula',
+    'tracheostomy nursing Panchkula',
+  ],
+  alternates: {
+    canonical: 'https://carekwik.com/nursing-care-at-home/panchkula',
+  },
 };
 
 export default function NursingCarePanchkula() {

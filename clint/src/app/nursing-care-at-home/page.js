@@ -3,22 +3,23 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Script from 'next/script';
 export const metadata = {
-    title: 'Nursing Care at Home in Chandigarh, Mohali & Panchkula | CareKwik',
-    description: 'Professional nursing care services at home by trained nurses. Get post-operative care, injections, wound dressing, elderly support, and more.',
-    keywords: [
-        'home nursing care',
-        'nursing care at home Chandigarh',
-        'female nurse at home',
-        'post surgical nursing care',
-        'elderly nursing services',
-        'injection and dressing at home',
-        'ICU trained nurse at home',
-        'patient care nurse in Mohali',
-        'home care nursing Panchkula',
-    ],
-    alternates: {
-        canonical: 'https://carekwik.com/nursing-care-at-home',
-    },
+  title: 'Home Nursing Care in Chandigarh, Mohali & Panchkula | Trained Nurses',
+  description:
+    'Hire trained nurses for post-surgery care, injections, wound dressing, and elderly nursing at home in Chandigarh, Mohali & Panchkula. Trusted by 500+ families.',
+  keywords: [
+    'nursing care at home Chandigarh',
+    'home nurse Mohali',
+    'patient care Panchkula',
+    'ICU trained nurse at home',
+    'post operative care at home',
+    'elder care nurse Chandigarh',
+    'wound dressing at home',
+    'female nurse for injection Mohali',
+    'home healthcare Panchkula',
+  ],
+  alternates: {
+    canonical: 'https://carekwik.com/nursing-care-at-home',
+  },
 };
 
 export default function NursingCareAtHome() {

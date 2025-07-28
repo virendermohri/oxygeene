@@ -4,20 +4,23 @@ import Image from 'next/image';
 import BookService from '@/components/bookservice';
 
 export const metadata = {
-  title: 'ICU at Home in Panchkula | Ventilator, ICU Nurses | CareKwik',
+  title: "ICU at Home in Panchkula | ICU Nurse & Equipment – CareKwik", // 58 chars
   description:
-    'Get ICU setup at home in Panchkula with ventilator, cardiac monitors, ICU-trained nurses. Trusted critical care at your doorstep.',
+    "Get advanced ICU setup at home in Panchkula with ventilator, cardiac monitor, suction & ICU-trained nurses. Reliable, 24x7 critical care by CareKwik.", // 157 chars
   keywords: [
-    'ICU setup Panchkula',
-    'ICU nurse at home Panchkula',
-    'home ICU care Panchkula',
-    'ventilator rental Panchkula',
-    'ICU equipment Panchkula',
+    "ICU at home Panchkula",
+    "ICU nurse Panchkula",
+    "home ICU care Panchkula",
+    "ventilator rental Panchkula",
+    "ICU setup at home Panchkula",
+    "ICU equipment Panchkula",
+    "CareKwik ICU services Panchkula"
   ],
   alternates: {
-    canonical: 'https://carekwik.com/icu-at-home/panchkula',
+    canonical: "https://carekwik.com/icu-at-home/panchkula",
   },
 };
+
 
 export default function ICUHomePanchkula() {
   return (

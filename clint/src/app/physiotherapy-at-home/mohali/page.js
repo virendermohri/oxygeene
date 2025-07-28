@@ -3,22 +3,21 @@ import Script from 'next/script';
 import Image from 'next/image';
 
 export const metadata = {
-  title: 'Home Physiotherapy in Mohali | Certified Physios | CareKwik',
+  title: 'Physiotherapy at Home in Mohali | CareKwik',
   description:
-    'Book home physiotherapy in Mohali for stroke, paralysis, joint pain, ortho and elderly care. Certified physiotherapists at your doorstep.',
+    'Book home physiotherapy in Mohali for ortho issues, post-op recovery, paralysis care, stroke rehab, and elderly physio support.',
   keywords: [
-    'home physiotherapy in Mohali',
-    'physiotherapist at home Mohali',
-    'stroke rehab at home Mohali',
-    'paralysis physiotherapy Mohali',
-    'female physio at home Mohali',
-    'orthopedic physiotherapist Mohali',
-    'post-surgical rehab Mohali',
-    'back and joint pain physio Mohali',
-    'sports physiotherapy Mohali',
-    'geriatric physiotherapy Mohali',
-  ]
-  ,
+    'physiotherapy at home Mohali',
+    'home physiotherapist Mohali',
+    'stroke rehabilitation Mohali',
+    'paralysis physio Mohali',
+    'female physiotherapist Mohali',
+    'joint pain physiotherapy Mohali',
+    'orthopedic physio Mohali',
+    'neuro physio at home Mohali',
+    'post-operative physiotherapy Mohali',
+    'back pain physiotherapy Mohali',
+  ],
   alternates: {
     canonical: 'https://carekwik.com/physiotherapy-at-home/mohali',
   },

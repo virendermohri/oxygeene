@@ -4,7 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Script from 'next/script';
 export const metadata = {
-  title: 'Physiotherapy at Home in Chandigarh & Mohali | CareKwik',
+  title: 'Physiotherapy at Home in Chandigarh, Mohali & Panchkula | CareKwik',
   description:
     'Get expert physiotherapy at home in Chandigarh, Mohali & Panchkula. Hire certified physiotherapists for back pain, paralysis, stroke recovery & ortho rehab.',
   keywords: [
@@ -23,6 +23,7 @@ export const metadata = {
     canonical: 'https://carekwik.com/physiotherapy-at-home',
   },
 };
+
 
 export default function PhysiotherapyPage() {
   return (

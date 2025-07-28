@@ -5,19 +5,24 @@ import Image from 'next/image';
 import BookService from '@/components/bookservice';
 
 export const metadata = {
-  title: 'Lab test at Home in Chandigarh | Book Blood & Health test',
-  description: 'Book lab test at home in Chandigarh. Blood, thyroid, sugar, and full-body checkups with fast report delivery and doorstep sample collection.',
+  title: 'Home Lab Tests in Chandigarh | Book Blood & Health Checkups',
+  description:
+    'Get lab tests at home in Chandigarh with CareKwik. Book blood, thyroid, sugar, and full body checkups. Doorstep sample collection and fast, accurate reports.',
   keywords: [
     'lab test at home Chandigarh',
     'home blood test Chandigarh',
-    'Chandigarh pathology test at home',
-    'blood sugar test Chandigarh',
+    'Chandigarh health checkup',
+    'thyroid test at home Chandigarh',
+    'full body test Chandigarh',
     'CBC test at home',
+    'doorstep pathology Chandigarh',
+    'CareKwik Chandigarh lab test',
   ],
   alternates: {
     canonical: 'https://carekwik.com/lab-test-at-home/chandigarh',
   },
 };
+
 
 export default function ChandigarhLabTestPage() {
   return (

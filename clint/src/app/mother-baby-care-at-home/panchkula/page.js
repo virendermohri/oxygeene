@@ -3,19 +3,21 @@ import Image from 'next/image';
 import Script from 'next/script';
 
 export const metadata = {
-    title: 'Mother and Baby Care in Panchkula at Home | CareKwik',
-    description:
-        'Hire trained female caregivers in Panchkula for postnatal mother and baby care. Book safe, verified attendants for newborn hygiene, feeding, and mother support.',
-    keywords: [
-        'mother baby care Panchkula',
-        'postnatal care at home Panchkula',
-        'baby care attendant Panchkula',
-        'female caregivers Panchkula',
-        'mother care after delivery Panchkula',
-    ],
-    alternates: {
-        canonical: 'https://carekwik.com/mother-baby-care-at-home/panchkula',
-    },
+  title: 'Mother & Baby Care at Home in Panchkula | Postnatal Attendants',
+  description:
+    'Get trained female attendants for mother and baby care at home in Panchkula. Postnatal recovery, newborn hygiene, massage, and feeding support by CareKwik.',
+  keywords: [
+    'mother baby care Panchkula',
+    'postnatal care at home Panchkula',
+    'baby care attendant Panchkula',
+    'newborn care at home Panchkula',
+    'female caregiver for mother Panchkula',
+    'mother care after delivery Panchkula',
+    'baby massage at home Panchkula',
+  ],
+  alternates: {
+    canonical: 'https://carekwik.com/mother-baby-care-at-home/panchkula',
+  },
 };
 
 export default function MotherBabyCarePanchkulaPage() {
