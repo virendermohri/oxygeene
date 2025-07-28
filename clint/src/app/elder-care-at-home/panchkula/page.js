@@ -4,7 +4,7 @@ import BookService from '@/components/bookservice';
 import Image from 'next/image';
 import Script from 'next/script';
 export const metadata = {
-    title: 'Elder Care at Home in Panchkula | Trained & Compassionate Caregivers – CareKwik',
+    title: 'Elder Care at Home in Panchkula | CareKwik',
     description:
         'Hire compassionate elder care attendants in Panchkula. Female/male caregivers for old age care, palliative support & paralytic patients. Trusted home care service by CareKwik.',
     keywords: [

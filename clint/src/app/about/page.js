@@ -1,5 +1,4 @@
-import React from 'react';
-const metadata = {
+export const metadata = {
   title: "About CareKwik | Trusted Home Healthcare Services",
   description: "Learn more about CareKwik—your trusted partner in home healthcare across Chandigarh, Mohali, and Panchkula. We provide expert elder care, nursing, physiotherapy, and ICU services at home",
  
@@ -9,11 +8,12 @@ const metadata = {
     canonical: 'https://carekwik.com/about',
   },
 };
+import React from 'react';
 const AboutPage = () => {
   return (
   
     <div className="max-w-5xl mt-10 md:mt-20 flex items-start flex-col mx-auto mb-10 px-4 md:mb-20">
-      <h1 className='text-2xl font-bold mb-5'>About CareKwik – Trusted Home Healthcare in Chandigarh, Mohali & Panchkula</h1>
+      <h1 className='text-2xl font-bold mb-5'>About CareKwik – Your Trusted Home Healthcare Partner</h1>
       <p className='font-bold text-xl my-5'>Our mission</p>
       <p className='text-gray-700'> At  CareKwik, our mission is to improve the health and well-being of individuals and communities by providing access to high-quality, affordable healthcare services.
         We are committed to delivering compassionate care, promoting wellness, and empowering people to live healthier lives.</p>

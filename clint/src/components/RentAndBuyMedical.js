@@ -109,7 +109,7 @@ const RentAndBuyWithCart = () => {
         </div>
         :
         <div className="md:max-w-5xl px-4  w-full mx-auto z-1  md:my-20 my-10">
-          <p className='text-3xl font-bold mb-10'>Medical Equipment</p>
+          <h1 className='text-3xl font-bold mb-10'>Buy or Rent Medical Equipment at Home – Safe & Reliable Devices</h1>
           <div className="w-full relative  mb-10">
 
             <input type="text" className='bg-gray-100 w-full py-3 px-14  rounded' placeholder='Search for medical equipment' name="" id="" />

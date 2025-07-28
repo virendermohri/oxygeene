@@ -1,13 +1,13 @@
-// app/lab-tests-at-home/page.tsx
+// app/lab-test-at-home/page.tsx
 
 import Image from 'next/image';
 import Script from 'next/script';
 import BookService from '@/components/bookservice';
 import Link from 'next/link';
 export const metadata = {
-  title: 'Lab Tests at Home in Chandigarh, Mohali & Panchkula | CareKwik',
+  title: 'Lab test at Home in Chandigarh, Mohali & Panchkula | CareKwik',
   description:
-    'Book lab tests at home in Chandigarh, Mohali & Panchkula. Fast sample collection, accurate results, and affordable packages by trusted labs.',
+    'Book lab test at home in Chandigarh, Mohali & Panchkula. Fast sample collection, accurate results, and affordable packages by trusted labs.',
   keywords: [
     'lab test at home',
     'home blood test Chandigarh',
@@ -20,11 +20,11 @@ export const metadata = {
     'full body checkup at home',
   ],
   alternates: {
-    canonical: 'https://carekwik.com/lab-tests-at-home',
+    canonical: 'https://carekwik.com/lab-test-at-home',
   },
 };
 
-export default function LabTestsPage() {
+export default function LabtestPage() {
   return (
     <>
       {/* JSON-LD */}
@@ -32,8 +32,8 @@ export default function LabTestsPage() {
         {JSON.stringify({
           "@context": "https://schema.org",
           "@type": "MedicalOrganization",
-          "name": "CareKwik - Lab Tests at Home",
-          "url": "https://carekwik.com/lab-tests-at-home",
+          "name": "CareKwik - Lab test at Home",
+          "url": "https://carekwik.com/lab-test-at-home",
           "logo": "https://res.cloudinary.com/divlt5fqo/image/upload/v1753163918/16-SM1104377_lgfnew.jpg",
           "contactPoint": {
             "@type": "ContactPoint",
@@ -49,7 +49,7 @@ export default function LabTestsPage() {
             "addressCountry": "IN",
           },
           "description":
-            "Book safe and affordable lab tests at home in Chandigarh, Mohali, and Panchkula. Blood, urine, and diagnostic tests by trusted lab professionals.",
+            "Book safe and affordable lab test at home in Chandigarh, Mohali, and Panchkula. Blood, urine, and diagnostic test by trusted lab professionals.",
         })}
       </Script>
 
@@ -60,7 +60,7 @@ export default function LabTestsPage() {
           "mainEntity": [
             {
               "@type": "Question",
-              "name": "Which lab tests can I book at home?",
+              "name": "Which lab test can I book at home?",
               "acceptedAnswer": {
                 "@type": "Answer",
                 "text": "You can book blood sugar, CBC, thyroid, lipid profile, kidney, liver, and full-body checkups at home.",
@@ -112,12 +112,12 @@ export default function LabTestsPage() {
 
         <div className="max-w-6xl mx-auto mt-10">
           <h1 className="text-2xl font-bold mb-4 text-gray-800">
-            Lab Tests at Home in Chandigarh, Mohali & Panchkula
+            Lab test at Home in Chandigarh, Mohali & Panchkula
           </h1>
 
           <p className="mb-4 text-gray-700 text-lg">
             CareKwik offers safe, accurate, and affordable lab test services right at your doorstep.
-            Whether it&lsquo;s blood tests, urine tests, or a complete body checkup, our certified technicians
+            Whether it&lsquo;s blood test, urine test, or a complete body checkup, our certified technicians
             ensure hygienic and professional home sample collection.
           </p>
 
@@ -126,7 +126,7 @@ export default function LabTestsPage() {
             No more waiting in queues—get reliable health reports from the comfort of your home.
           </p>
 
-          <h2 className="text-xl font-semibold mb-4 mt-10">Popular Lab Tests You Can Book</h2>
+          <h2 className="text-xl font-semibold mb-4 mt-10">Popular Lab test You Can Book</h2>
           <ul className="list-disc pl-6 text-gray-700 text-lg space-y-2">
             <li>Blood Sugar (Fasting/PP)</li>
             <li>Complete Blood Count (CBC)</li>
@@ -152,7 +152,7 @@ export default function LabTestsPage() {
               <p>A: Yes, soft copies are sent via WhatsApp or email within 24–48 hours.</p>
             </div>
             <div>
-              <strong>Q: How do I prepare for fasting tests?</strong>
+              <strong>Q: How do I prepare for fasting test?</strong>
               <p>A: Avoid food for 10–12 hours before your scheduled blood test. Water is allowed.</p>
             </div>
             <div>
