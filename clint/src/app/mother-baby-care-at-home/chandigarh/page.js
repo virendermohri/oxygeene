@@ -14,7 +14,7 @@ export const metadata = {
         'mother care after delivery Chandigarh',
     ],
     alternates: {
-        canonical: 'https://carekwik.com/mother-baby-care/chandigarh',
+        canonical: 'https://carekwik.com/mother-baby-care-at-home/chandigarh',
     },
 };
 

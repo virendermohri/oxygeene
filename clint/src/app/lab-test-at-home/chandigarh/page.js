@@ -1,12 +1,12 @@
-// app/lab-tests-at-home/chandigarh/page.tsx
+// app/lab-test-at-home/chandigarh/page.tsx
 
 import Script from 'next/script';
 import Image from 'next/image';
 import BookService from '@/components/bookservice';
 
 export const metadata = {
-  title: 'Lab Tests at Home in Chandigarh | Book Blood & Health Tests',
-  description: 'Book lab tests at home in Chandigarh. Blood, thyroid, sugar, and full-body checkups with fast report delivery and doorstep sample collection.',
+  title: 'Lab test at Home in Chandigarh | Book Blood & Health test',
+  description: 'Book lab test at home in Chandigarh. Blood, thyroid, sugar, and full-body checkups with fast report delivery and doorstep sample collection.',
   keywords: [
     'lab test at home Chandigarh',
     'home blood test Chandigarh',
@@ -15,7 +15,7 @@ export const metadata = {
     'CBC test at home',
   ],
   alternates: {
-    canonical: 'https://carekwik.com/lab-tests-at-home/chandigarh',
+    canonical: 'https://carekwik.com/lab-test-at-home/chandigarh',
   },
 };
 
@@ -28,7 +28,7 @@ export default function ChandigarhLabTestPage() {
           "@context": "https://schema.org",
           "@type": "MedicalOrganization",
           "name": "CareKwik - Lab Test at Home Chandigarh",
-          "url": "https://carekwik.com/lab-tests-at-home/chandigarh",
+          "url": "https://carekwik.com/lab-test-at-home/chandigarh",
           "address": {
             "@type": "PostalAddress",
             "addressLocality": "Chandigarh",
@@ -38,7 +38,7 @@ export default function ChandigarhLabTestPage() {
           },
           "telephone": "+91-8307190216",
           "areaServed": ["Chandigarh", "Mohali", "Panchkula"],
-          "description": "Trusted lab test collection at home in Chandigarh by certified phlebotomists. Book blood tests, thyroid, CBC and more."
+          "description": "Trusted lab test collection at home in Chandigarh by certified phlebotomists. Book blood test, thyroid, CBC and more."
         })}
       </Script>
 
@@ -53,7 +53,7 @@ export default function ChandigarhLabTestPage() {
               "name": "Can I book a CBC or thyroid test at home?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Yes, CareKwik offers a range of lab tests at home in Chandigarh including CBC, thyroid (T3 T4 TSH), and lipid profile."
+                "text": "Yes, CareKwik offers a range of lab test at home in Chandigarh including CBC, thyroid (T3 T4 TSH), and lipid profile."
               }
             },
             {
@@ -74,10 +74,10 @@ export default function ChandigarhLabTestPage() {
             },
             {
               "@type": "Question",
-              "name": "Are tests done by trusted labs?",
+              "name": "Are test done by trusted labs?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Yes, we partner with NABL-accredited labs for all tests."
+                "text": "Yes, we partner with NABL-accredited labs for all test."
               }
             }
           ]
@@ -101,7 +101,7 @@ export default function ChandigarhLabTestPage() {
 
         <div className="max-w-6xl mx-auto px-4 py-10">
       <h1 className="text-2xl md:text-3xl font-bold text-gray-800 mb-6">
-        Lab Tests at Home in Chandigarh – Trusted Diagnostics at Your Doorstep
+        Lab test at Home in Chandigarh – Trusted Diagnostics at Your Doorstep
       </h1>
 
       <p className="mb-4 text-gray-700 md:text-lg">
@@ -112,13 +112,13 @@ export default function ChandigarhLabTestPage() {
         We collaborate with top diagnostic labs in Chandigarh to ensure fast, reliable, and accurate results—sent digitally to you within hours. No queues, no hassle, just quick health insights from home.
       </p>
 
-      <h2 className="text-xl font-semibold text-gray-800 mb-4">Popular Lab Tests You Can Book</h2>
+      <h2 className="text-xl font-semibold text-gray-800 mb-4">Popular Lab test You Can Book</h2>
       <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-10">
         <li>Complete Blood Count (CBC)</li>
         <li>Fasting / Postprandial Blood Sugar</li>
         <li>Thyroid Profile (TSH, T3, T4)</li>
-        <li>Lipid & Liver Function Tests</li>
-        <li>Vitamin D & B12 Tests</li>
+        <li>Lipid & Liver Function test</li>
+        <li>Vitamin D & B12 test</li>
         <li>Kidney Function Test (KFT)</li>
         <li>Complete Health Checkup Packages</li>
       </ul>

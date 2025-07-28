@@ -1,11 +1,16 @@
 // app/privacy/page.tsx or page.jsx
+export const metadata = {
+  title: "Privacy Policy | CareKwik Home Healthcare",
+  description:
+    "Review CareKwik’s privacy policy to understand how we handle, protect, and use your personal information when you use our home healthcare services in Chandigarh, Mohali, and Panchkula.",
+};
 
 import React from 'react';
 
 const PrivacyPage = () => {
   return (
     <div className="max-w-4xl mx-auto px-4 py-10 text-gray-800">
-      <h1 className="text-3xl font-bold mb-6 ">Privacy Policy</h1>
+      <h1 className="text-3xl font-bold mb-6 ">Privacy Policy – CareKwik Home Healthcare</h1>
 
       <section className="mb-6">
         <h2 className="text-xl font-semibold mb-2">Information We Collect</h2>

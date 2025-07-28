@@ -15,7 +15,7 @@ export const metadata = {
         'infant massage at home Mohali',
     ],
     alternates: {
-        canonical: 'https://carekwik.com/mother-baby-care/mohali',
+        canonical: 'https://carekwik.com/mother-baby-care-at-home/mohali',
     },
 };
 

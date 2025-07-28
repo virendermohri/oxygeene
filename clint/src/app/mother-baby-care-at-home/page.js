@@ -4,7 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Script from 'next/script';
 export const metadata = {
-    title: 'Mother and Baby Care at Home in Chandigarh, Mohali & Panchkula | CareKwik',
+    title: 'Mother & Baby Care at Home | Postnatal & Newborn Care – CareKwik',
     description:
         'Book trained postnatal care attendants for new mothers and newborns at home in Chandigarh, Mohali & Panchkula. Trusted, safe, and experienced care services.',
     keywords: [

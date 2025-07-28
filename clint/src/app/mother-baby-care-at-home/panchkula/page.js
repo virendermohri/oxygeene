@@ -14,7 +14,7 @@ export const metadata = {
         'mother care after delivery Panchkula',
     ],
     alternates: {
-        canonical: 'https://carekwik.com/mother-baby-care/panchkula',
+        canonical: 'https://carekwik.com/mother-baby-care-at-home/panchkula',
     },
 };
 

@@ -1,11 +1,21 @@
 // app/terms/page.tsx or pages/terms.js
 
+export const metadata = {
+  title: 'Terms and Conditions | CareKwik Home Healthcare Services',
+  description:
+    "Read the terms and conditions for using CareKwik's home healthcare services in Chandigarh, Mohali & Panchkula. Learn about user rights, responsibilities, and policies.",
+ 
+  alternates: {
+    canonical: 'https://carekwik.com/terms',
+  },
+};
 import React from 'react';
 
 const TermsPage = () => {
   return (
     <div className="max-w-4xl mx-auto px-4 py-10 text-gray-800">
-      <h1 className="text-3xl font-bold mb-6 ">Terms of Service</h1>
+      <h1 className="text-3xl font-bold mb-6 ">Terms and Conditions for Using CareKwik Services
+</h1>
 
       <section className="mb-6">
         <h2 className="text-xl font-semibold mb-2">1. Introduction</h2>
