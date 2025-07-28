@@ -45,10 +45,10 @@ export async function GET() {
     '/lab-test-at-home/panchkula',
     
     //Nursing at home
-    '/nursing-at-home',
-    '/nursing-at-home/chandigarh',
-    '/nursing-at-home/mohali',
-    '/nursing-at-home/panchkula',
+    '/nursing-care-at-home',
+    '/nursing-care-at-home/chandigarh',
+    '/nursing-care-at-home/mohali',
+    '/nursing-care-at-home/panchkula',
   ];
 
   const urls = [...staticUrls, ...dynamicUrls]
