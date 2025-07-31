@@ -175,10 +175,10 @@ export default async function Home() {
         </h2>
         <div className="text-gray-700 leading-relaxed space-y-4">
           <p>
-            In today's fast-paced world, families often struggle to provide adequate care for their elderly loved ones or patients recovering from medical procedures. <span className="font-bold text-blue-600">Home care service in Chandigarh</span> has emerged as a practical solution, offering professional healthcare services in the comfort of one's own home. The concept of <span className="font-bold text-blue-600">home healthcare Chandigarh</span> has gained tremendous popularity as it combines medical expertise with the emotional comfort of familiar surroundings.
+            In today&apos;s fast-paced world, families often struggle to provide adequate care for their elderly loved ones or patients recovering from medical procedures. <span className="font-bold text-blue-600">Home care service in Chandigarh</span> has emerged as a practical solution, offering professional healthcare services in the comfort of one&apos;s own home. The concept of <span className="font-bold text-blue-600">home healthcare Chandigarh</span> has gained tremendous popularity as it combines medical expertise with the emotional comfort of familiar surroundings.
           </p>
           <p>
-            The demand for <span className="font-bold text-blue-600">Chandigarh home care services</span> has witnessed a significant surge in recent years. This growth can be attributed to the city's aging population, increased awareness about personalized care, and the preference for maintaining independence while receiving medical attention. As families become more nuclear and children often live in different cities for work, <span className="font-bold text-blue-600">at-home care Chandigarh</span> has become an essential service for ensuring loved ones receive the care they deserve.
+            The demand for <span className="font-bold text-blue-600">Chandigarh home care services</span> has witnessed a significant surge in recent years. This growth can be attributed to the city&apos;s aging population, increased awareness about personalized care, and the preference for maintaining independence while receiving medical attention. As families become more nuclear and children often live in different cities for work, <span className="font-bold text-blue-600">at-home care Chandigarh</span> has become an essential service for ensuring loved ones receive the care they deserve.
           </p>
         </div>
       </section>
@@ -196,7 +196,7 @@ export default async function Home() {
             Home care services can be broadly categorized into two types: medical and non-medical care. Medical services include <span className="font-bold text-blue-600">in-home nursing care Chandigarh</span>, medication management, wound care, and post-surgical monitoring. Non-medical services focus on <span className="font-bold text-blue-600">daily living assistance Chandigarh</span>, companionship, housekeeping, and personal care.
           </p>
           <p>
-            Examples of services include <span className="font-bold text-blue-600">elder care services Chandigarh</span>, <span className="font-bold text-blue-600">post-surgical care at home Chandigarh</span>, <span className="font-bold text-blue-600">home physiotherapy Chandigarh</span>, professional nursing assistance, <span className="font-bold text-blue-600">companion care Chandigarh</span>, and specialized care for conditions like dementia and Alzheimer's. These services are delivered by <span className="font-bold text-blue-600">trained caregiver in Chandigarh</span> professionals who understand the unique needs of each patient.
+            Examples of services include <span className="font-bold text-blue-600">elder care services Chandigarh</span>, <span className="font-bold text-blue-600">post-surgical care at home Chandigarh</span>, <span className="font-bold text-blue-600">home physiotherapy Chandigarh</span>, professional nursing assistance, <span className="font-bold text-blue-600">companion care Chandigarh</span>, and specialized care for conditions like dementia and Alzheimer&apos;s. These services are delivered by <span className="font-bold text-blue-600">trained caregiver in Chandigarh</span> professionals who understand the unique needs of each patient.
           </p>
         </div>
       </section>
@@ -238,7 +238,7 @@ export default async function Home() {
               <span className="font-bold text-blue-600">Senior home care services Chandigarh</span> cater specifically to the unique needs of aging adults. These services include <span className="font-bold text-blue-600">geriatric care at home Chandigarh</span>, which focuses on age-related health conditions and mobility issues. <span className="font-bold text-blue-600">Elderly home nurse Chandigarh</span> professionals are specially trained to handle the complex medical and emotional needs of senior citizens.
             </p>
             <p>
-              For families dealing with memory-related conditions, specialized <span className="font-bold text-blue-600">Alzheimer's care at home Chandigarh</span> and <span className="font-bold text-blue-600">dementia care at home Chandigarh</span> services provide expert assistance. These services include memory stimulation activities, safety monitoring, and behavioral management techniques.
+              For families dealing with memory-related conditions, specialized <span className="font-bold text-blue-600">Alzheimer&apos;s care at home Chandigarh</span> and <span className="font-bold text-blue-600">dementia care at home Chandigarh</span> services provide expert assistance. These services include memory stimulation activities, safety monitoring, and behavioral management techniques.
             </p>
             <p>
               <span className="font-bold text-blue-600">Assisted living at home Chandigarh</span> services bridge the gap between complete independence and institutional care, offering <span className="font-bold text-blue-600">daily living assistance for seniors Chandigarh</span> while maintaining their dignity and autonomy.
@@ -256,7 +256,7 @@ export default async function Home() {
               Professional medical care at home includes services from <span className="font-bold text-blue-600">trained nurse at home Chandigarh</span> who can perform various medical procedures. <span className="font-bold text-blue-600">Home injection service Chandigarh</span> ensures patients receive necessary medications and treatments without frequent hospital visits.
             </p>
             <p>
-              Specialized procedures like <span className="font-bold text-blue-600">wound dressing at home Chandigarh</span> and <span className="font-bold text-blue-600">ICU setup at home Chandigarh</span> bring hospital-level care to the patient's residence. For those requiring extensive medical monitoring, <span className="font-bold text-blue-600">ventilator support at home Chandigarh</span> provides life-sustaining equipment with professional oversight.
+              Specialized procedures like <span className="font-bold text-blue-600">wound dressing at home Chandigarh</span> and <span className="font-bold text-blue-600">ICU setup at home Chandigarh</span> bring hospital-level care to the patient&apos;s residence. For those requiring extensive medical monitoring, <span className="font-bold text-blue-600">ventilator support at home Chandigarh</span> provides life-sustaining equipment with professional oversight.
             </p>
             <p>
               <span className="font-bold text-blue-600">Doctor visit at home Chandigarh</span> services ensure regular medical consultations without the stress of traveling to clinics. <span className="font-bold text-blue-600">Palliative care at home Chandigarh</span> offers compassionate end-of-life care, focusing on comfort and quality of life.
@@ -271,7 +271,7 @@ export default async function Home() {
           </h3>
           <div className="text-gray-700 leading-relaxed space-y-4 pl-4 border-l-4 border-purple-300">
             <p>
-              <span className="font-bold text-blue-600">Stroke rehabilitation at home Chandigarh</span> helps patients regain independence through targeted therapy programs. <span className="font-bold text-blue-600">Parkinson's care at home Chandigarh</span> addresses the specific needs of patients with movement disorders, while <span className="font-bold text-blue-600">paralysis patient care at home Chandigarh</span> focuses on preventing complications and maintaining quality of life.
+              <span className="font-bold text-blue-600">Stroke rehabilitation at home Chandigarh</span> helps patients regain independence through targeted therapy programs. <span className="font-bold text-blue-600">Parkinson&apos;s care at home Chandigarh</span> addresses the specific needs of patients with movement disorders, while <span className="font-bold text-blue-600">paralysis patient care at home Chandigarh</span> focuses on preventing complications and maintaining quality of life.
             </p>
             <p>
               <span className="font-bold text-blue-600">Bedridden patient care Chandigarh</span> ensures proper positioning, skin care, and hygiene maintenance for immobile patients. <span className="font-bold text-blue-600">Mobility assistance at home Chandigarh</span> helps patients maintain whatever independence is possible while ensuring safety.
@@ -308,7 +308,7 @@ export default async function Home() {
             Reviews and testimonials from previous clients provide valuable insights into service quality. Look for <span className="font-bold text-blue-600">trusted home caregiver Chandigarh</span> providers with positive feedback and proven track records in delivering reliable care.
           </p>
           <p>
-            The availability of customized care plans is crucial, as every patient's needs are unique. <span className="font-bold text-blue-600">Verified home care professionals Chandigarh</span> should conduct thorough assessments and develop personalized care strategies.
+            The availability of customized care plans is crucial, as every patient&apos;s needs are unique. <span className="font-bold text-blue-600">Verified home care professionals Chandigarh</span> should conduct thorough assessments and develop personalized care strategies.
           </p>
           <p>
             Emergency support and round-the-clock assistance capabilities are essential features. <span className="font-bold text-blue-600">On-demand nursing care Chandigarh</span> services should be available when urgent medical situations arise.
@@ -410,19 +410,19 @@ export default async function Home() {
         <div className="space-y-6">
           <div className="bg-blue-50 p-6 rounded-lg border-l-4 border-blue-500">
             <p className="text-gray-700 italic mb-3">
-              "The <span className="font-bold text-blue-600">elderly home nurse Chandigarh</span> service helped my mother recover from hip surgery in familiar surroundings. The personalized attention she received was exceptional."
+              &apos;The <span className="font-bold text-blue-600">elderly home nurse Chandigarh</span> service helped my mother recover from hip surgery in familiar surroundings. The personalized attention she received was exceptional.&apos;
             </p>
             <p className="text-sm text-gray-600">- Mrs. Sharma, Sector 22</p>
           </div>
           <div className="bg-green-50 p-6 rounded-lg border-l-4 border-green-500">
             <p className="text-gray-700 italic mb-3">
-              "The <span className="font-bold text-blue-600">Parkinson's care at home Chandigarh</span> team understands the unique challenges of the condition. Their support has significantly improved our family's quality of life."
+              &apos;The <span className="font-bold text-blue-600">Parkinson&apos;s care at home Chandigarh</span> team understands the unique challenges of the condition. Their support has significantly improved our family&apos;s quality of life.&apos;
             </p>
             <p className="text-sm text-gray-600">- Mr. Gupta</p>
           </div>
           <div className="bg-pink-50 p-6 rounded-lg border-l-4 border-pink-500">
             <p className="text-gray-700 italic mb-3">
-              "Having professional support during those initial weeks was invaluable. The <span className="font-bold text-blue-600">infant care nurse</span> taught us so much about newborn care."
+              &apos;Having professional support during those initial weeks was invaluable. The <span className="font-bold text-blue-600">infant care nurse</span> taught us so much about newborn care.&apos;
             </p>
             <p className="text-sm text-gray-600">- Young Mother, Mohali</p>
           </div>
@@ -469,7 +469,7 @@ export default async function Home() {
         </h2>
         <div className="text-gray-700 leading-relaxed space-y-4">
           <p>
-            <span className="font-bold text-blue-600">Home care services</span> represent a smart, compassionate choice for families seeking quality healthcare without compromising comfort and independence. The growth of <span className="font-bold text-blue-600">Chandigarh home care services</span> reflects the community's recognition of these benefits and the availability of professional, reliable care options.
+            <span className="font-bold text-blue-600">Home care services</span> represent a smart, compassionate choice for families seeking quality healthcare without compromising comfort and independence. The growth of <span className="font-bold text-blue-600">Chandigarh home care services</span> reflects the community&apos;s recognition of these benefits and the availability of professional, reliable care options.
           </p>
           <p>
             Whether you need <span className="font-bold text-blue-600">senior citizen support Chandigarh</span>, <span className="font-bold text-blue-600">cancer care at home Chandigarh</span>, <span className="font-bold text-blue-600">diabetes care at home Chandigarh</span>, <span className="font-bold text-blue-600">cardiac care at home Chandigarh</span>, or <span className="font-bold text-blue-600">orthopedic patient care Chandigarh</span>, professional home care services provide the expertise and compassion your loved ones deserve.
