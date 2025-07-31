@@ -162,7 +162,7 @@ export default async function Home() {
           </div>
         </div>
       </section>
-    <div className="max-w-5xl mx-auto px-6 py-8 bg-white">
+    <div className="max-w-6xl mx-auto px-6 py-8 bg-white">
       {/* Main Title - H1 */}
       <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-8 leading-tight">
         Home Care Services in Chandigarh: Your Complete Guide to Quality Healthcare at Home
