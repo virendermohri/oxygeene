@@ -542,7 +542,7 @@ export default function ICUatHomePage() {
                             </p>
                             <div className="grid md:grid-cols-2 gap-4 max-w-2xl mx-auto">
                                 <Link
-                                    href="https://wa.me/918307190216?text=Hello%20CareKwik%2C%20I%20would%20like%20to%20know%20more%20about%20your%20services."
+                                    href="https://wa.me/917015875541?text=Hello%20CareKwik%2C%20I%20would%20like%20to%20know%20more%20about%20your%20services."
                                     target="_blank"
                                     rel="noopener noreferrer"
                                 >
