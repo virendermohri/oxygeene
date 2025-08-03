@@ -126,7 +126,7 @@ export default function LabtestPage() {
             <BookService servicename="Lab Test" />
           </div>
         </div>
-<div className="max-w-6xl my-10  mx-auto md:p-6 p-3 bg-white">
+        <div className="max-w-6xl my-10  mx-auto md:p-6 p-3 bg-white">
           {/* Header */}
           <header className="md:text-center mb-8">
             <h1 className="md:text-4xl text-2xl font-bold text-blue-800 mb-4 flex items-center justify-center gap-3">
@@ -550,7 +550,16 @@ export default function LabtestPage() {
               </div>
             </div>
           </section>
-
+          <section>
+            <div className=" py-8 px-4 rounded-lg  mt-10">
+              <h2 className="text-2xl font-bold text-gray-800 mb-4">Lab test at Home in Other Cities</h2>
+              <ul className="list-disc list-inside text-blue-700 space-y-2">
+                <li><Link href="/lab-test-at-home/chandigarh" className="hover:underline">Lab test Home in Chandigarh</Link></li>
+                <li><Link href="/lab-test-at-home/mohali" className="hover:underline">Lab test Home in Mohali</Link></li>
+                <li><Link href="/lab-test-at-home/panchkula" className="hover:underline">Lab test Home in Panchkula</Link></li>
+              </ul>
+            </div>
+          </section>
           {/* Footer */}
           <footer className="bg-gray-800 text-white p-6 rounded-lg text-center">
             <h2 className="text-2xl font-bold mb-4">Ready to Experience Convenient Healthcare?</h2>

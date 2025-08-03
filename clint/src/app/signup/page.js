@@ -58,7 +58,7 @@ export default function SignupPage() {
         <div className="max-w-2xl w-full bg-white p-10  rounded-2xl ">
           <div className="mb-6 text-center">
             <h2 className="text-3xl font-bold text-indigo-700">Create Account</h2>
-            <p className="text-gray-500 mt-2">Start your journey with Oxygeene</p>
+            <p className="text-gray-500 mt-2">Start your journey with CareKwik</p>
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-5">
@@ -71,7 +71,7 @@ export default function SignupPage() {
                   value={formData.name}
                   onChange={handleChange}
                   className="w-full px-4 py-2 mt-1 border rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-300"
-                  placeholder="Virender Kumar"
+                  placeholder=""
                   required
                 />
               </div>
@@ -83,7 +83,7 @@ export default function SignupPage() {
                   value={formData.phone_number}
                   onChange={handleChange}
                   className="w-full px-4 py-2 mt-1 border rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-300"
-                  placeholder="9876543210"
+                  placeholder=""
                   required
                 />
               </div>
@@ -97,7 +97,7 @@ export default function SignupPage() {
                 value={formData.email}
                 onChange={handleChange}
                 className="w-full px-4 py-2 mt-1 border rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-300"
-                placeholder="example@oxygeene.com"
+                placeholder=""
                 required
               />
             </div>
@@ -110,7 +110,7 @@ export default function SignupPage() {
                 value={formData.address}
                 onChange={handleChange}
                 className="w-full px-4 py-2 mt-1 border rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-300"
-                placeholder="Kurukshetra, Haryana"
+                placeholder=""
                 required
               />
             </div>
