@@ -554,9 +554,9 @@ export default function LabtestPage() {
             <div className=" py-8 px-4 rounded-lg  mt-10">
               <h2 className="text-2xl font-bold text-gray-800 mb-4">Lab test at Home in Other Cities</h2>
               <ul className="list-disc list-inside text-blue-700 space-y-2">
-                <li><Link href="/lab-test-at-home/chandigarh" className="hover:underline">Lab test Home in Chandigarh</Link></li>
-                <li><Link href="/lab-test-at-home/mohali" className="hover:underline">Lab test Home in Mohali</Link></li>
-                <li><Link href="/lab-test-at-home/panchkula" className="hover:underline">Lab test Home in Panchkula</Link></li>
+                <li><Link href="/lab-test-at-home/chandigarh" className="hover:underline">Lab test at Home in Chandigarh</Link></li>
+                <li><Link href="/lab-test-at-home/mohali" className="hover:underline">Lab test at Home in Mohali</Link></li>
+                <li><Link href="/lab-test-at-home/panchkula" className="hover:underline">Lab test at Home in Panchkula</Link></li>
               </ul>
             </div>
           </section>

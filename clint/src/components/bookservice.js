@@ -207,6 +207,7 @@ const BookService = ({servicename}) => {
                 <option value="Mohali">Mohali</option>
                 <option value="Ambala">Ambala</option>
                 <option value="Panchkula">Panchkula</option>
+                <option value="Other">Other</option>
               </select>
             </div>
            
