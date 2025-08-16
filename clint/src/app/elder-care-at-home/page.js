@@ -99,7 +99,7 @@ export default function ElderCarePage() {
 
           <Image
             src="https://res.cloudinary.com/divlt5fqo/image/upload/v1753163918/16-SM1104377_lgfnew.jpg"
-            alt="Trained Elder Caretaker at Home in Chandigarh Mohali"
+            alt="Elder Caretaker at Home"
             width={400}
             height={450}
             className="rounded-2xl   shadow-md mb-8 border md:w-[60%] object-cover"
