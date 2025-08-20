@@ -157,11 +157,11 @@ export default function PhysiotherapyPage() {
         
         <div className="prose prose-lg max-w-none">
           <p className="text-gray-700 mb-4">
-            <strong>Physiotherapy at home</strong> represents a revolutionary approach to rehabilitation that brings professional healthcare services directly to patients' residences. This innovative model of care has transformed how individuals access therapeutic treatments, making recovery more accessible and convenient than ever before.
+            <strong>Physiotherapy at home</strong> represents a revolutionary approach to rehabilitation that brings professional healthcare services directly to patients&apos; residences. This innovative model of care has transformed how individuals access therapeutic treatments, making recovery more accessible and convenient than ever before.
           </p>
           
           <p className="text-gray-700 mb-4">
-            The growing demand for <strong>home-based rehabilitation</strong> stems from patients' desire for personalized care in familiar surroundings. Unlike traditional clinic visits, <strong>in-home physiotherapy</strong> eliminates travel barriers and provides treatment in the comfort of one's own environment.
+            The growing demand for <strong>home-based rehabilitation</strong> stems from patients&apos; desire for personalized care in familiar surroundings. Unlike traditional clinic visits, <strong>in-home physiotherapy</strong> eliminates travel barriers and provides treatment in the comfort of one's own environment.
           </p>
           
           <div className="bg-blue-50 md:p-6 p-2 rounded-lg mb-6">
@@ -239,7 +239,7 @@ export default function PhysiotherapyPage() {
           <div className="bg-gradient-to-br from-purple-50 to-purple-100 md:p-6 p-2 rounded-lg">
             <FaWheelchair className="text-2xl text-purple-600 mb-3" />
             <h4 className="font-semibold text-gray-800 mb-2">Neurological Physiotherapy</h4>
-            <p className="text-gray-600 text-sm"><strong>Physiotherapy for stroke patients</strong>, <strong>Parkinson's disease</strong>, multiple sclerosis, and <strong>paralysis recovery</strong> programs.</p>
+            <p className="text-gray-600 text-sm"><strong>Physiotherapy for stroke patients</strong>, <strong>Parkinson&apos;s disease</strong>, multiple sclerosis, and <strong>paralysis recovery</strong> programs.</p>
           </div>
           
           <div className="bg-gradient-to-br from-green-50 to-green-100 md:p-6 p-2 rounded-lg">
@@ -575,7 +575,7 @@ export default function PhysiotherapyPage() {
         </div>
         
         <div className="mt-6 text-center">
-          <p className="text-gray-600 mb-4">Looking for a <strong>physiotherapist near me home visit</strong>? We're expanding our services nationwide!</p>
+          <p className="text-gray-600 mb-4">Looking for a <strong>physiotherapist near me home visit</strong>? We&apos;re expanding our services nationwide!</p>
           <button className="bg-white text-green-600 px-6 py-3 rounded-lg font-semibold hover:bg-green-50 transition-colors">
             <a
             href="https://wa.me/917015875541?text=Hello%20CareKwik%2C%20I%20would%20like%20to%20know%20more%20about%20your%20services."
@@ -606,7 +606,7 @@ export default function PhysiotherapyPage() {
               <FaStar className="text-sm" />
               <FaStar className="text-sm" />
             </div>
-            <p className="text-gray-700 mb-3 italic">"The home physiotherapy service helped me recover completely from my knee replacement surgery. The convenience and personalized care made all the difference."</p>
+            <p className="text-gray-700 mb-3 italic">&quot;The home physiotherapy service helped me recover completely from my knee replacement surgery. The convenience and personalized care made all the difference.&quot;</p>
             <p className="font-semibold text-gray-800">- Mrs. Sharma, Age 68</p>
           </div>
           
@@ -618,7 +618,7 @@ export default function PhysiotherapyPage() {
               <FaStar className="text-sm" />
               <FaStar className="text-sm" />
             </div>
-            <p className="text-gray-700 mb-3 italic">"After my stroke, the physiotherapist's regular visits at home significantly improved my mobility and confidence. Highly recommended!"</p>
+            <p className="text-gray-700 mb-3 italic">&quot;After my stroke, the physiotherapist&apos;s regular visits at home significantly improved my mobility and confidence. Highly recommended!&quot;</p>
             <p className="font-semibold text-gray-800">- Mr. Patel, Age 55</p>
           </div>
           
@@ -630,7 +630,7 @@ export default function PhysiotherapyPage() {
               <FaStar className="text-sm" />
               <FaStar className="text-sm" />
             </div>
-            <p className="text-gray-700 mb-3 italic">"The pediatric physiotherapist was amazing with my daughter. Her developmental progress has been remarkable since starting home therapy."</p>
+            <p className="text-gray-700 mb-3 italic">&quot;The pediatric physiotherapist was amazing with my daughter. Her developmental progress has been remarkable since starting home therapy.&quot;</p>
             <p className="font-semibold text-gray-800">- Ms. Singh, Mother</p>
           </div>
         </div>
