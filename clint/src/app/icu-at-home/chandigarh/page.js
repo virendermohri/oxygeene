@@ -118,7 +118,7 @@ export default function ICUHomeChandigarh() {
         <div className="flex items-center gap-3 mb-4">
           <FaHeart size={40} className="hidden md:block" />
           <div>
-            <h1 className="md:text-4xl text-2xl  font-bold"> ICU Setup at Home in Chandigarh – 24/7 Critical Care</h1>
+            <h1 className="md:text-4xl text-2xl  font-bold">ICU care at Home in Chandigarh</h1>
             <div className="flex items-center gap-2 mt-2">
               <FaMapMarkerAlt className="hidden md:block" />
               <span className="md:text-xl text-base ">Premium Critical Care Services in Chandigarh, Mohali & Panchkula</span>

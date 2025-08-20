@@ -146,7 +146,7 @@ export default function MotherBabyCarePage() {
                         <div className="bg-pink-50 md:p-6 p-3 rounded-lg">
                             <p className="text-lg leading-relaxed mb-4">
                                 The postpartum period is one of the most crucial phases in a woman&apos;s life, requiring specialized attention
-                                and care for both mother and newborn. <strong className="text-pink-600">Home care for new mothers and infants</strong>
+                                and care for both mother and newborn. <strong className="text-pink-600">Home care for new mothers and infants </strong>
                                 has emerged as an ideal solution that provides comfort, safety, and professional support in familiar surroundings.
                             </p>
                             <p className="text-lg leading-relaxed mb-4">

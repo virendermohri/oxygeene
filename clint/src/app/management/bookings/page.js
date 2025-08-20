@@ -144,7 +144,7 @@ const Page = () => {
                         <th className="py-3 px-4 border-b">Caretaker</th>
                         <th className="py-3 px-4 border-b">Status</th>
                         <th className="py-3 px-4 border-b">Phone</th>
-                        <th className="py-3 px-4 border-b">price</th>
+                        <th className="py-3 px-4 border-b">Price</th>
                         <th className="py-3 px-4 border-b">Referral</th>
                     </tr>
                 </thead>

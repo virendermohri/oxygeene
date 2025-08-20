@@ -119,7 +119,7 @@ export default function ICUatHomePage() {
                     <div className="  p-3 md:p-8">
                         <div className="flex items-center gap-3 mb-4">
                             <FaHeart size={40} className="hidden md:block" />
-                            <h1 className="md:text-4xl text-2xl font-bold"> ICU Setup at Home in Chandigarh, Mohali & Panchkula </h1>
+                            <h1 className="md:text-4xl text-2xl font-bold"> ICU Setup at Home </h1>
                         </div>
                         <p className="md:text-xl ">Bringing Hospital-Level Critical Care to Your Doorstep</p>
                     </div>

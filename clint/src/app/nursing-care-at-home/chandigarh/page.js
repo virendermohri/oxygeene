@@ -74,8 +74,7 @@ export default function NursingCareChandigarh() {
                 })}
 
             </Script>
-            <Script id="ld-faq-nursing-care" type="application/ld+json
-">
+            <Script id="ld-faq-nursing-care" type="application/ld+json">
                 {JSON.stringify({
                     "@context": "https://schema.org",
                     "@type": "FAQPage",
