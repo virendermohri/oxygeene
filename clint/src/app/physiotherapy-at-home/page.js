@@ -161,7 +161,7 @@ export default function PhysiotherapyPage() {
           </p>
           
           <p className="text-gray-700 mb-4">
-            The growing demand for <strong>home-based rehabilitation</strong> stems from patients&apos; desire for personalized care in familiar surroundings. Unlike traditional clinic visits, <strong>in-home physiotherapy</strong> eliminates travel barriers and provides treatment in the comfort of one's own environment.
+            The growing demand for <strong>home-based rehabilitation</strong> stems from patients&apos; desire for personalized care in familiar surroundings. Unlike traditional clinic visits, <strong>in-home physiotherapy</strong> eliminates travel barriers and provides treatment in the comfort of one&apos;s own environment.
           </p>
           
           <div className="bg-blue-50 md:p-6 p-2 rounded-lg mb-6">
