@@ -3,6 +3,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { IoLogoWhatsapp } from "react-icons/io5";
+import FestivalBanner from "@/components/FestivalBanner";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -24,6 +25,7 @@ export default function RootLayout({ children }) {
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <footer>
+          <FestivalBanner/>
           <Navbar />
         </footer>
         <aside>

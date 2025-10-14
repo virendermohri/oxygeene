@@ -3,7 +3,11 @@ import "./globals.css";
 import CaretakerProfile from "@/components/CaretakerProfile";
 import Testimonials from "@/components/Testimonials";
 import Link from "next/link";
+import DiscountCarousel from '@/components/DiscountCarousel'
 import Image from "next/image";
+import MaleFemaleDiscounts from "@/components/MaleFemaleDiscounts";
+import HomeCareWomenVideo from "@/components/HomeCareVideo";
+import HomeCareForMen from "@/components/HomeCareForMen";
 export const metadata = {
   title: "Home Care Services in Chandigarh | Nursing & Elderly Care",
   description: "Book trusted home care in Chandigarh, Mohali & Panchkula. Trained caregivers for Elder Care, ICU, Nursing, Physiotherapy—safe & affordable by CareKwik.",
@@ -77,24 +81,12 @@ export default async function Home() {
 
         <Typewriter />
       </div>
-      {/* <Services/> */}
-      <div id='services' className="  px-4 md:mb-20 md:h-screen md:h-auto md:max-w-5xl  w-full mx-auto  py-8  ">
-        <div className="flex flex-col">
-          <p className='font-bold text-2xl mb-10'>Our Home Care Services</p>
-
-          <div className="grid md:grid-cols-3  grid-cols-2 justify-center md:gap-10 gap-6 ">
-            {services.map((item, index) => {
-              return <Link href={`/${slugifyServices(item.title)}`} className="flex cursor-pointer flex-col gap-2 " key={item.title}>
-                <Image src={item.image_url} className='w-full rounded-xl shadow' width={100} height={100} alt={item.title} />
-                <p className='md:font-semibold   text-gray-800 md:text-lg '>{item.title}</p>
-                <p className='text-gray-600 md:block hidden text-sm'>{item.description}</p>
-              </Link>
-            })}
-          </div>
-        </div>
-      </div>
-
-      <CaretakerProfile />
+      
+<DiscountCarousel/>
+<HomeCareWomenVideo/>
+<MaleFemaleDiscounts/>
+<HomeCareForMen/>
+      {/* <CaretakerProfile /> */}
       <section className="mt-16 bg-gray-50 py-10 px-4 max-w-6xl mx-auto">
         <h2 className="text-2xl font-bold text-center text-gray-800 mb-8">
           Explore Our Home heal Services in Chandigarh , Mohali & Panchkula

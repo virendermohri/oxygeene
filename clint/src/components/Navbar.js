@@ -5,11 +5,10 @@ import { FaRegHeart, FaHeart, FaChevronDown,FaPhoneAlt } from "react-icons/fa";
 import { AiFillHome, AiOutlineHome } from "react-icons/ai";
 import { CgShoppingBag } from "react-icons/cg";
 import { PiShoppingBagFill } from "react-icons/pi";
-import { IoNotificationsCircle } from "react-icons/io5";
-import { RiAccountCircleLine, RiUser3Fill, RiUser3Line, RiAccountCircleFill } from "react-icons/ri";
+import {RiUser3Fill, RiUser3Line } from "react-icons/ri";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import Image from "next/image";
+
 export default function Navbar() {
   const pathname = usePathname();
   const isHome = pathname === "/";
@@ -25,59 +24,25 @@ export default function Navbar() {
     { name: "About Us", href: "/about" },
     { name: "Contact Us", href: "/contact-us" },
   ];
-  const [open, setOpen] = useState(false);
-
-  const services = [
-    { title: 'Elder Care at Home', path: '/elder-care-at-home' },
-    { title: 'Physiotherapy at Home', path: '/physiotherapy-at-home' },
-    { title: 'Mother Baby Care at Home', path: '/mother-baby-care-at-home' },
-    { title: 'Nursing Care at Home', path: '/nursing-care-at-home' },
-    { title: 'ICU at Home', path: '/icu-at-home' },
-    { title: 'Lab Test at Home', path: '/lab-test-at-home' },
-  ];
+ 
   return (
     <nav className="">
-      <div className={` bg-white  shadow py-3 flex justify-between   items-center`}>
-        <div className={`flex gap-20 items-center w-full md:justify-around justify-between px-5 `}>
+      <div className={`bg-transparent md:border md:border-1 border-gray-200 flex justify-center   items-center`}>
+        <div className={`flex  items-center w-7xl px-5 py-3 justify-between `}>
           <div>
 
             <Link href="/">
-              <p className="  text-2xl md:font-bold font-bold ">CareKwik</p>
+              <p className="text-2xl md:font-bold font-bold text-[#003049]">CareKwik</p>
             </Link>
 
           </div>
           <div className="flex justify-between gap-10  items-center ">
-            <div className="relative group hidden md:block">
-              <button
-                onClick={() => setOpen(!open)}
-                className="flex cursor-pointer items-center gap-1 text-gray-800 hover:text-blue-600 font-medium"
-              >
-                Our Services <FaChevronDown size={18} />
-              </button>
-
-              <div
-                className={`absolute z-50 top-10 left-0 w-64 bg-white  rounded-lg shadow-lg transition-all duration-200 ease-in-out ${open ? 'block' : 'hidden'
-                  } group-hover:block`}
-              >
-                <ul className="p-4 space-y-2">
-                  {services.map((service) => (
-                    <li key={service.title}>
-                      <Link
-                        href={service.path}
-                        className="block text-gray-700 hover:text-blue-600 hover:underline"
-                      >
-                        {service.title}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
+            
             <div className="hidden  md:block">
               <ul className="flex space-x-10">
                 {navItems.map((item) => (
                   <li key={item.name}>
-                    <Link href={item.href} className=" font-semibold  hover:text-[#607AFB]">
+                    <Link href={item.href} className="text-gray-700">
                       {item.name}
                     </Link>
                   </li>
@@ -89,7 +54,7 @@ export default function Navbar() {
 
               <a
                 href="tel:+917015875541" 
-                className=" bg-blue-600 text-white px-4 py-3 rounded-full shadow flex items-center gap-2 hover:bg-blue-700 transition "
+                className="  bg-blue-600 text-white px-4 py-3 rounded flex items-center gap-2 hover:bg-blue-700 transition "
               >
                 <FaPhoneAlt size={16} />
                 <span className="md:text-base text-sm">Call Now</span>
