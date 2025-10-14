@@ -33,7 +33,7 @@ export default function FesitvalBanner() {
           <span className="md:block hidden ">🪔</span> <span>Celebrate a Healthy & Joyful Diwali with CareKwik</span>  <span className="md:block hidden ">🪔</span>
         </p>
         <Link
-          href="/offers"
+          href="/"
           className="bg-white text-orange-600 font-semibold text-sm md:text-base px-4 py-2 rounded-full shadow hover:bg-orange-50 hover:scale-105 transition-all"
         >
           Get Festive Discount 🎁
