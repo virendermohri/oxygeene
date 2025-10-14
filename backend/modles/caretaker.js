@@ -1,28 +1,17 @@
 const mongoose = require("mongoose");
 
 const caretakerSchema = new mongoose.Schema({
-  photo: {
-    type: String,
-    default: "/default-avatar.png",
-  },
   name: {
     type: String,
     required: true,
   },
-  email: {
-    type: String,
-    required: true,
-    unique: true,
-  },
+
   phone: {
     type: String,
     required: true,
     unique: true,
   },
-  password: {
-    type: String,
-    required: true,
-  },
+ 
   age: {
     type: Number,
     required: true,
@@ -57,9 +46,7 @@ const caretakerSchema = new mongoose.Schema({
     type: Number,
     default: 0,
   },
-  bio: {
-    type: String,
-  },
+  
   pricePerDay: {
     type: Number,
     required: true,
@@ -85,22 +72,7 @@ const caretakerSchema = new mongoose.Schema({
       },
     },
   ],
-  reviews: [
-    {
-      name: {
-        type: String,
-        required: true,
-      },
-      rating: {
-        type: Number,
-        required: true,
-      },
-      comment: {
-        type: String,
-        required: true,
-      },
-    },
-  ],
+  
 }, {
   timestamps: true,
 });
