@@ -137,7 +137,7 @@ const OxyTagline = () => {
                   <Link href={slugifyServices(item.route_url)} className="hover:underline underline-offset-8 w-full cursor-pointer" key={index}>
                     <div className="w-full">
                       <div className="flex w-full  items-center md:h-20 justify-center bg-gray-100 rounded p-3">
-                        <Image src={item.url} width={50} height={50} alt={item.title} className='w-auto h-auto ' />
+                        <Image src={item.url} width={60} height={60} alt={item.title} className='w-auto h-auto ' />
                       </div>
                     </div>
                     <p className='text-gray-700 text-center mt-2 mb-2 text-sm '>{item.title}</p>
