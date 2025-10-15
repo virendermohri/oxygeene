@@ -37,38 +37,21 @@ const OxyTagline = () => {
 
   ]
   const services = [
-    {
-      route_url: "Physiotherapy at home",
-      description: "Expert physiotherapy for recorey and pain management.",
-      image_url: "https://res.cloudinary.com/divlt5fqo/image/upload/v1751465176/wmremove-transformed_4_eemrcj.jpg",
+     {
+      route_url: "Physiotherapy at Home",
+      title: "Physiotherapy",
+      url: "https://res.cloudinary.com/divlt5fqo/image/upload/v1759132869/caregiver-assisting-senior-woman-with-gentle-support-in-a-compassionate-environment-png_h8kcyc.webp"
     },
     {
-      title: "Elder Care at Home",
-      description: "Compassionate care for seniors in the comfort of their home.",
-      image_url: "https://res.cloudinary.com/divlt5fqo/image/upload/v1753163918/16-SM1104377_lgfnew.jpg"
+      route_url: "Mother Baby Care at Home",
+      title: "Mother & Baby Care",
+      url: "https://res.cloudinary.com/divlt5fqo/image/upload/v1759132925/vecteezy_mother-holding-sweet-baby-young-mom-hugs-her-baby-with-love_68681949_qgfelw.png"
     },
     {
-      title: "ICU at Home",
-      description: "Advanced ICU setup and care at home.",
-      image_url: "https://res.cloudinary.com/divlt5fqo/image/upload/v1751540954/wmremove-transformed_5_rcxaud.jpg"
+      route_url: "ICU at Home",
+      title: "ICU Care",
+      url: "https://res.cloudinary.com/divlt5fqo/image/upload/v1759142494/patient-in-hospital-png_rii89z.webp"
     },
-    ,
-    {
-      title: "Nursing Care at Home",
-      description: "Skilled nursing care at home for safe recovery.",
-      image_url: "https://res.cloudinary.com/divlt5fqo/image/upload/v1753344614/220-SM987818_woof2x.jpg"
-    },
-
-    {
-      title: "Mother Baby Care at Home",
-      description: "Spacialized care for new mothers and infants.",
-      image_url: "https://res.cloudinary.com/divlt5fqo/image/upload/v1753210013/220-SM681360_vp9gp2.jpg"
-    },
-    {
-      title: "Lab test at Home",
-      description: "Spacialized care for new mothers and infants.",
-      image_url: "https://res.cloudinary.com/divlt5fqo/image/upload/v1753345685/20-SM88262_aahocp.jpg"
-    }
   ]
   const long_images = [{
     route_url: "Vaccination at Home",
@@ -146,6 +129,7 @@ const OxyTagline = () => {
 
 
             </div>
+            
             <div className="flex mt-5 justify-between  ">
               <div className="grid w-full grid-rows-1 grid-cols-2 gap-10 ">
 
