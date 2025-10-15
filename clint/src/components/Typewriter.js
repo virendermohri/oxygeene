@@ -111,7 +111,7 @@ const OxyTagline = () => {
               </Link>
             </div>
           </div>
-          <p className='text-4xl font-semibold mb-5 md:block hidden md:w-[70%]'>Home services at your doorstep</p>
+          <p className='text-4xl font-semibold mb-5 md:block hidden md:w-[70%]'>Trusted Home Healthcare at Your Doorstep</p>
           <div className="w-full static z-10 md:border-1 border-gray-300 p-6 -gray-300 rounded-xl ">
             <p className='text-gray-500 text-xl mb-5 md:mb-10 font-semibold '>What are looking for ?</p>
             <div className="grid  grid-rows-2 grid-cols-3 gap-3 md:gap-5">
