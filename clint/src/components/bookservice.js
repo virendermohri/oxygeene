@@ -41,21 +41,22 @@ const services = [
 
 ]
 
-const BookService = ({servicename}) => {
+const BookService = ({ servicename }) => {
   const [coupon, setCoupon] = useState(false)
   const [referral, setReferral] = useState(false)
   const [showModal, setShowModal] = useState(false);
+  const [loading, setLoading] = useState(false);
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-
+      setLoading(true)
       const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/bookservice/`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
           "auth-token": localStorage.getItem("auth-token"),
         },
-        body: JSON.stringify(({ ...form, serviceName:servicename  })),
+        body: JSON.stringify(({ ...form, serviceName: servicename })),
       });
 
       const response = await res.json();
@@ -145,40 +146,40 @@ const BookService = ({servicename}) => {
       <ToastContainer position="top-right" autoClose={2000} />
 
       <div className="">
-        
-        
+
+
         <form onSubmit={handleSubmit} className="space-y-5  ">
 
           <div className="flex flex-col gap-2">
 
             <div className="mb-1 ">
               <label className="block  text-base font-bold text-gray-700 mb-3">Caretaker Gender</label>
-              
+
               <div className="flex flex-wrap gap-3 ">
                 <label
                   className="text-sm font-medium leading-normal flex items-center justify-center rounded-xl border border-[#dde1e4] px-4 h-11 text-[#121517] has-[:checked]:border-[3px] has-[:checked]:px-3.5 has-[:checked]:border-[#318fcd] relative cursor-pointer"
                 >
                   Male
-                  <input type="radio"  onChange={handleChange} className="invisible absolute" name="caretakerType" value="Male" />
+                  <input type="radio" onChange={handleChange} className="invisible absolute" name="caretakerType" value="Male" />
                 </label>
                 <label
                   className="text-sm font-medium leading-normal flex items-center justify-center rounded-xl border border-[#dde1e4] px-4 h-11 text-[#121517] has-[:checked]:border-[3px] has-[:checked]:px-3.5 has-[:checked]:border-[#318fcd] relative cursor-pointer"
                 >
                   Female
-                  <input type="radio"  onChange={handleChange} className="invisible absolute" name="caretakerType" value="Female" />
+                  <input type="radio" onChange={handleChange} className="invisible absolute" name="caretakerType" value="Female" />
                 </label>
                 <label
                   className="text-sm font-medium leading-normal flex items-center justify-center rounded-xl border border-[#dde1e4] px-4 h-11 text-[#121517] has-[:checked]:border-[3px] has-[:checked]:px-3.5 has-[:checked]:border-[#318fcd] relative cursor-pointer"
                 >
                   Any
-                  <input type="radio"  onChange={handleChange} className="invisible absolute" name="caretakerType" value="Other" />
+                  <input type="radio" onChange={handleChange} className="invisible absolute" name="caretakerType" value="Other" />
                 </label>
               </div>
             </div>
             <div className="mb-1">
               <label className="block  text-base font-bold text-gray-700 mb-3">Schedule</label>
               <div className="flex gap-10 ">
-                
+
                 <input
                   type="date"
                   name="schedule"
@@ -210,7 +211,7 @@ const BookService = ({servicename}) => {
                 <option value="Other">Other</option>
               </select>
             </div>
-           
+
           </div>
           <div className="grid md:grid-cols-2 gap-5 md:gap-10 items-center md:justify-between ">
 
@@ -233,7 +234,7 @@ const BookService = ({servicename}) => {
             </div>
             <div className="mb-1">
               <label className="block  text-base font-bold text-gray-700 mb-3">Phone Number</label>
-              
+
               <input
                 type="tel"
                 name="phone"
@@ -283,33 +284,33 @@ const BookService = ({servicename}) => {
             type="submit"
             className="w-full bg-blue-600 text-white font-medium py-2 px-4 rounded-md hover:bg-blue-700 transition"
           >
-            Confirm Booking
+            {loading?"Booking...":"Confirm Booking" }
           </button>
         </form>
         {showModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center  bg-opacity-50 backdrop-blur-sm transition-opacity">
-          <div className="bg-white rounded-2xl shadow-2xl p-6 w-full max-w-sm mx-4 animate-fade-in relative">
-            <button
-              onClick={() => setShowModal(false)}
-              className="absolute top-2 right-3 text-gray-400 hover:text-gray-600 text-2xl"
-            >
-              &times;
-            </button>
-            <div className="flex flex-col items-center text-center">
-              <FaCheckCircle className="text-green-600 w-10 h-10 mb-2" />
-              <h2 className="text-base font-bold text-green-700">Booking Confirmed!</h2>
-              <p className="text-gray-600 mt-1">
-                Thank you for choosing <span className="font-semibold">CareKwik</span>.
-                <br />
-                Our team will contact you shortly to confirm your booking.
-              </p>
-              <p className="text-sm text-gray-400 mt-3 italic">
-                “Because every care request deserves a real human response.” 💙
-              </p>
+          <div className="fixed inset-0 z-50 flex items-center justify-center  bg-opacity-50 backdrop-blur-sm transition-opacity">
+            <div className="bg-white rounded-2xl shadow-2xl p-6 w-full max-w-sm mx-4 animate-fade-in relative">
+              <button
+                onClick={() => setShowModal(false)}
+                className="absolute top-2 right-3 text-gray-400 hover:text-gray-600 text-2xl"
+              >
+                &times;
+              </button>
+              <div className="flex flex-col items-center text-center">
+                <FaCheckCircle className="text-green-600 w-10 h-10 mb-2" />
+                <h2 className="text-base font-bold text-green-700">Booking Confirmed!</h2>
+                <p className="text-gray-600 mt-1">
+                  Thank you for choosing <span className="font-semibold">CareKwik</span>.
+                  <br />
+                  Our team will contact you shortly to confirm your booking.
+                </p>
+                <p className="text-sm text-gray-400 mt-3 italic">
+                  “Because every care request deserves a real human response.” 💙
+                </p>
+              </div>
             </div>
           </div>
-        </div>
-      )}
+        )}
       </div >
 
     </>
