@@ -8,28 +8,28 @@ export default function MaleFemaleDiscounts() {
       title: "🤱 Mother & Baby Care",
       image:
         "https://res.cloudinary.com/divlt5fqo/image/upload/v1753210013/220-SM681360_vp9gp2.jpg",
-      link: "/mother-baby-care",
+      link: "/mother-baby-care-at-home",
     },
     {
       id: 4,
       title: "💅 Women’s Wellness",
       image:
         "https://res.cloudinary.com/divlt5fqo/image/upload/v1760257125/120-SM1104381_onsgag.jpg",
-      link: "/wellness",
+      link: "/nursing-care-at-home",
     },
     {
       id: 2,
       title: "💆‍♀️ Postnatal Massage",
       image:
         "https://res.cloudinary.com/divlt5fqo/image/upload/v1759319367/2-SM1085993_t3htyq.jpg",
-      link: "/postnatal-massage",
+      link: "/physiotherapy-at-home",
     },
     {
       id: 3,
       title: "🏥 Nursing Assistance",
       image:
         "https://res.cloudinary.com/divlt5fqo/image/upload/v1760280974/1-SM224478_ihlgcn.jpg",
-      link: "/nursing-care",
+      link: "/nursing-care-at-home",
     },
   ];
     return (

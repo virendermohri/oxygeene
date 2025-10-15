@@ -124,7 +124,7 @@ export default function NursingCarePanchkula() {
                 {/* Hero Section */}
                 <div className="flex md:gap-10 flex-col md:flex-row justify-between ">
                     <Image
-                        src="https://res.cloudinary.com/divlt5fqo/image/upload/v1753344614/220-SM987818_woof2x.jpg"
+                        src="https://res.cloudinary.com/divlt5fqo/image/upload/v1760280974/1-SM224478_ihlgcn.jpg"
                         alt="Nursing Care at Home in Panchkula"
                         width={600}
                         height={450}

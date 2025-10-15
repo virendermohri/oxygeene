@@ -290,8 +290,7 @@ const BookService = ({ servicename }) => {
         {showModal && (
           <div className="fixed inset-0 z-50 flex items-center justify-center  bg-opacity-50 backdrop-blur-sm transition-opacity">
             <div className="bg-white rounded-2xl shadow-2xl p-6 w-full max-w-sm mx-4 animate-fade-in relative">
-              <button
-                onClick={() => setShowModal(false)}
+              <button disabled={loading} onClick={() => setShowModal(false)}
                 className="absolute top-2 right-3 text-gray-400 hover:text-gray-600 text-2xl"
               >
                 &times;
