@@ -54,7 +54,7 @@ const OxyTagline = () => {
     },
   ]
   const long_images = [{
-    route_url: "Vaccination at Home",
+    route_url: "Nursing Care at Home",
     title: "Vaccination",
     url: "https://res.cloudinary.com/divlt5fqo/image/upload/v1759142540/doctor-applying-vaccine-of-patient-free-png_x8gwum.webp"
   },
