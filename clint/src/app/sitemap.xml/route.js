@@ -25,7 +25,6 @@ export async function GET() {
     '/elder-care-at-home/mohali',
     '/elder-care-at-home/panchkula',
 
-
     // Mother & Baby Care
     '/mother-baby-care-at-home',
     '/mother-baby-care-at-home/chandigarh',
@@ -44,14 +43,28 @@ export async function GET() {
     '/lab-test-at-home/mohali',
     '/lab-test-at-home/panchkula',
     
-    //Nursing at home
+    // Nursing at Home
     '/nursing-care-at-home',
     '/nursing-care-at-home/chandigarh',
     '/nursing-care-at-home/mohali',
     '/nursing-care-at-home/panchkula',
   ];
 
-  const urls = [...staticUrls, ...dynamicUrls]
+  // Fetch blog slugs dynamically from API
+  let blogUrls = [];
+  try {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/blogs`);
+    if (res.ok) {
+      const data = await res.json();
+      blogUrls = data.blogs.map(blog => `/blog/${blog.slug}`);
+      blogUrls.unshift('/blog'); // add main blog page
+    }
+  } catch (err) {
+    console.error("Failed to fetch blog URLs for sitemap:", err);
+  }
+
+  // Combine all URLs
+  const urls = [...staticUrls, ...dynamicUrls, ...blogUrls]
     .map(
       path => `
     <url>
