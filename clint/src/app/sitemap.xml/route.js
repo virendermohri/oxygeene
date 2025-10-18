@@ -54,7 +54,6 @@ export async function GET() {
   let blogUrls = [];
   try {
     const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/blogs`);
-    
     if (res.ok) {
       const data = await res.json();
       blogUrls = data.blogs.map(blog => `/blog/${blog.slug}`);
