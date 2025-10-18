@@ -24,6 +24,7 @@ app.use("/api/caretaker", require('./routes/caretaker'));
 app.use("/api/product", require('./routes/product'));
 app.use("/api/referral", require('./routes/referral'));
 app.use("/api/complaint", require('./routes/complaint'));;
+app.use("/api/blogs", require('./routes/blog'));
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
 });
