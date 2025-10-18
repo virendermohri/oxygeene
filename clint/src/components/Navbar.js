@@ -19,11 +19,13 @@ export default function Navbar() {
     SetCSR(true)
     setUser(JSON.parse(localStorage.getItem("user")))
   }, [])
-  const navItems = [
-    { name: "Medical Equipment", href: "/medical-equipment" },
-    { name: "About Us", href: "/about" },
-    { name: "Contact Us", href: "/contact-us" },
-  ];
+const navItems = [
+  { name: "Medical Equipment", href: "/medical-equipment" },
+  { name: "Blog", href: "/blog" },
+  { name: "About Us", href: "/about" },
+  { name: "Contact Us", href: "/contact-us" },
+];
+
  
   return (
     <nav className="">
