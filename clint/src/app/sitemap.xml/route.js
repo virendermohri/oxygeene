@@ -10,6 +10,7 @@ export async function GET() {
     '/medical-equipment',
     '/privacy-policy',
     '/terms',
+    "/blog",
   ];
 
   const dynamicUrls = [
@@ -48,23 +49,21 @@ export async function GET() {
     '/nursing-care-at-home/chandigarh',
     '/nursing-care-at-home/mohali',
     '/nursing-care-at-home/panchkula',
+
+    //blog posts will be added here dynamically
+    '/blog',
+    '/blog/elder-care-for-women-at-home-mohali',
+    '/blog/physiotherapy-at-home-chandigarh',
+    '/blog/elder-care-at-home-mohali',
+    '/blog/mother-baby-care-at-home-chandigarh',
+    '/blog/mother-baby-care-at-home-mohali',
+    
   ];
 
-  // Fetch blog slugs dynamically from API
-  let blogUrls = [];
-  try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/blogs`);
-    if (res.ok) {
-      const data = await res.json();
-      blogUrls = data.blogs.map(blog => `/blog/${blog.slug}`);
-      blogUrls.unshift('/blog'); // add main blog page
-    }
-  } catch (err) {
-    console.error("Failed to fetch blog URLs for sitemap:", err);
-  }
 
+  
   // Combine all URLs
-  const urls = [...staticUrls, ...dynamicUrls, ...blogUrls]
+  const urls = [...staticUrls, ...dynamicUrls]
     .map(
       path => `
     <url>
