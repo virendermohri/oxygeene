@@ -57,7 +57,9 @@ export async function GET() {
     '/blog/elder-care-at-home-mohali',
     '/blog/mother-baby-care-at-home-chandigarh',
     '/blog/mother-baby-care-at-home-mohali',
-    
+    '/blog/baby-care-tips-for-new-mothers-chandigarh-mohali',
+    '/blog/benefits-of-physiotherapy-at-home-chandigarh-mohali',
+    '/blog/foods-to-avoid-during-pregnancy-expert-guide',
   ];
 
 
