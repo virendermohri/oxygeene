@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { IoLogoWhatsapp } from "react-icons/io5";
 import FestivalBanner from "@/components/FestivalBanner";
+import Script from "next/script";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
