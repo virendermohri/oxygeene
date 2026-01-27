@@ -157,7 +157,6 @@ export default function NursingCareMohali() {
                         </p>
                     </header>
 
-                    {/* Introduction */}
                     <section className="mb-12 bg-white rounded-xl   md:p-8 p-3">
                         <div className="flex items-center mb-6">
                             <FaHome className="text-3xl text-green-600 mr-4" />
