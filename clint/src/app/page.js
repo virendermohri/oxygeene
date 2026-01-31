@@ -116,7 +116,7 @@ export default async function Home() {
     "image": "https://res.cloudinary.com/divlt5fqo/image/upload/v1751259853/og_image_dav7mz.jpg",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://carekwik.com/logo.png",
+      "url": "https://res.cloudinary.com/divlt5fqo/image/upload/v1746254564/CareKwik_v9opqw.png",
       "width": 250,
       "height": 60
     },
